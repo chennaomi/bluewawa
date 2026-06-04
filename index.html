@@ -1,1203 +1,1956 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueWawa Media — Turn Blue into Wow.</title>
-    <meta name="description" content="We help global brands find their voice on Chinese social media. Xiaohongshu, WeChat, Douyin — localized content, operations, development & strategy.">
-    <!-- Font Awesome 6 图标库 (免费版) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --blue: #1E6091;
-            --blue-dark: #154a6e;
-            --orange: #F39C12;
-            --orange-light: #FFF3E0;
-            --mist: #EBF3FA;
-            --mist-border: #D4E4F2;
-            --dark: #2C3E50;
-            --gray: #6B7D8E;
-            --gray-light: #95A5A6;
-            --white: #FFFFFF;
-            --bg: #F8FAFB;
-            --shadow-sm: 0 2px 8px rgba(30, 96, 145, 0.06);
-            --shadow-md: 0 8px 30px rgba(30, 96, 145, 0.10);
-            --shadow-lg: 0 16px 48px rgba(30, 96, 145, 0.14);
-            --shadow-orange: 0 6px 24px rgba(243, 156, 18, 0.28);
-            --radius-sm: 0.75rem;
-            --radius: 1.25rem;
-            --radius-lg: 1.75rem;
-            --radius-xl: 2.5rem;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!-- ============ PRIMARY SEO ============ -->
+<title>Bluewawa Media — China Social Media Localization for Rednote &amp; WeChat</title>
+<meta name="description" content="Bluewawa Media is a China-based, bilingual social media localization partner. We help overseas brands get seen, remembered, and grow on Rednote (小红书) and WeChat (微信) — content, operation, KOL/KOC, development and consulting." />
+<meta name="keywords" content="China social media localization, Rednote, Xiaohongshu, 小红书, WeChat, 微信, China marketing agency, KOC seeding, WeChat Mini Program, China go-to-market, overseas brands China" />
+<meta name="author" content="Bluewawa Media" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#182E66" />
+<link rel="canonical" href="https://bluewawa.media/" />
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
+<!-- Favicon (inline SVG, brand colors) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23FFCE06'/%3E%3Ctext x='50%25' y='50%25' dy='.34em' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-size='52' fill='%234391D4'%3EB%3C/text%3E%3C/svg%3E" />
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--dark);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+<!-- ============ OPEN GRAPH (Facebook / LinkedIn / WeChat) ============ -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Bluewawa Media" />
+<meta property="og:title" content="Bluewawa Media — China Social Media Localization for Rednote &amp; WeChat" />
+<meta property="og:description" content="A China-based, bilingual partner helping overseas brands get seen, remembered, and grow on Rednote (小红书) and WeChat (微信)." />
+<meta property="og:url" content="https://bluewawa.media/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://bluewawa.media/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Bluewawa Media — Turn Blue into Wow" />
 
-        /* ============ NAVIGATION ============ */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(30, 96, 145, 0.08);
-            transition: var(--transition);
-            padding: 0 1.5rem;
-        }
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 68px;
-        }
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-        .nav-logo svg {
-            width: 42px;
-            height: 32px;
-            flex-shrink: 0;
-        }
-        .nav-logo-text {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--blue);
-            letter-spacing: -0.3px;
-            white-space: nowrap;
-        }
-        .nav-logo-text span {
-            color: var(--orange);
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color var(--transition);
-            position: relative;
-            white-space: nowrap;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--orange);
-            border-radius: 2px;
-            transition: width var(--transition);
-        }
-        .nav-links a:hover {
-            color: var(--blue);
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .nav-cta {
-            background: var(--orange);
-            color: #fff !important;
-            padding: 0.55rem 1.4rem;
-            border-radius: 2rem;
-            font-weight: 700 !important;
-            font-size: 0.9rem;
-            transition: all var(--transition);
-            box-shadow: 0 2px 10px rgba(243, 156, 18, 0.25);
-            letter-spacing: 0.2px;
-        }
-        .nav-cta:hover {
-            background: #e08d0b;
-            box-shadow: var(--shadow-orange);
-            transform: translateY(-1px);
-            color: #fff !important;
-        }
-        .nav-cta::after {
-            display: none !important;
-        }
+<!-- ============ TWITTER CARD ============ -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bluewawa Media — China Social Media Localization for Rednote &amp; WeChat" />
+<meta name="twitter:description" content="A China-based, bilingual partner helping overseas brands grow on Rednote (小红书) and WeChat (微信)." />
+<meta name="twitter:image" content="https://bluewawa.media/og-image.png" />
 
-        /* Hamburger */
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-            z-index: 1001;
-        }
-        .nav-toggle span {
-            display: block;
-            width: 26px;
-            height: 2.5px;
-            background: var(--blue);
-            border-radius: 3px;
-            transition: var(--transition);
-            transform-origin: center;
-        }
-        .nav-toggle.active span:nth-child(1) {
-            transform: translateY(7.5px) rotate(45deg);
-        }
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-        .nav-toggle.active span:nth-child(3) {
-            transform: translateY(-7.5px) rotate(-45deg);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #182E66;
+    --navy-deep: #0F1E48;
+    --navy-soft: #233E80;
+    --black: #150D13;
+    --yellow: #FFCE06;
+    --yellow-deep: #E0B400;
+    --terracotta: #BD5A3D;
+    --terracotta-deep: #9B4530;
+    --blue: #4391D4;
+    --cream: #FAF6EE;
+    --cream-dim: rgba(250,246,238,0.75);
+    --cream-dimmer: rgba(250,246,238,0.5);
+    --line: rgba(250,246,238,0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.5;
+    cursor: default;
+  }
+  a { color: inherit; text-decoration: none; cursor: pointer; }
+  button { font-family: inherit; cursor: pointer; }
+  summary { cursor: pointer; }
+  .tag { cursor: pointer; }
+  input, textarea { cursor: text; }
 
-        /* ============ HERO ============ */
-        .hero {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem 6rem;
-            text-align: center;
-            overflow: hidden;
-        }
-        .hero-bg-arcs {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 700px;
-            height: 500px;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.5;
-        }
-        .hero-bg-arcs .arc {
-            fill: none;
-            stroke: var(--blue);
-            stroke-width: 1.2;
-            stroke-linecap: round;
-            opacity: 0.10;
-        }
-        .hero-bg-arcs .arc.arc-orange {
-            stroke: var(--orange);
-            opacity: 0.18;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--orange-light);
-            color: #c2770b;
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.4rem 1.1rem;
-            border-radius: 2rem;
-            margin-bottom: 1.8rem;
-            letter-spacing: 0.3px;
-            border: 1px solid rgba(243, 156, 18, 0.2);
-        }
-        .hero-badge .dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--orange);
-            animation: pulse-dot 1.8s ease-in-out infinite;
-        }
-        @keyframes pulse-dot {
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.8);
-                opacity: 0.5;
-            }
-        }
-        .hero h1 {
-            font-size: clamp(2.4rem, 5vw, 3.8rem);
-            font-weight: 800;
-            color: var(--blue);
-            line-height: 1.15;
-            letter-spacing: -1px;
-            margin-bottom: 1.2rem;
-        }
-        .hero h1 .wow {
-            color: var(--orange);
-            position: relative;
-            display: inline-block;
-        }
-        .hero h1 .wow::after {
-            content: '';
-            position: absolute;
-            bottom: 6px;
-            left: 4px;
-            right: 4px;
-            height: 8px;
-            background: rgba(243, 156, 18, 0.2);
-            border-radius: 4px;
-            z-index: -1;
-        }
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 560px;
-            margin: 0 auto 2.4rem;
-            line-height: 1.7;
-        }
-        .hero-subtitle strong {
-            color: var(--dark);
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            padding: 0.85rem 1.8rem;
-            border-radius: 3rem;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            letter-spacing: 0.2px;
-            transition: all var(--transition);
-            white-space: nowrap;
-        }
-        .btn-primary {
-            background: var(--orange);
-            color: #fff;
-            box-shadow: 0 4px 16px rgba(243, 156, 18, 0.3);
-        }
-        .btn-primary:hover {
-            background: #e08d0b;
-            box-shadow: var(--shadow-orange);
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            background: var(--white);
-            color: var(--blue);
-            border: 2px solid var(--mist-border);
-        }
-        .btn-secondary:hover {
-            border-color: var(--blue);
-            background: var(--mist);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
-        .btn-arrow {
-            transition: transform var(--transition);
-        }
-        .btn:hover .btn-arrow {
-            transform: translateX(3px);
-        }
+  /* ============ NAV ============ */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 60px; border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; background: var(--navy); z-index: 100;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; font-size: 22px; letter-spacing: -0.5px;
+    color: var(--cream);
+  }
+  .logo .b { color: var(--blue); }
+  .logo .w {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 0 4px;
+  }
+  .logo .dot { color: var(--terracotta); }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: var(--cream-dim); }
+  .nav-links a { transition: color 0.2s; }
+  .nav-links a:hover { color: var(--yellow); }
+  .nav-cta {
+    background: var(--terracotta); color: var(--cream);
+    padding: 10px 20px; font-size: 13px; font-weight: 600;
+    border: none; cursor: pointer; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--terracotta-deep); }
 
-        /* 浮动装饰图标 */
-        .floating-icons {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .float-icon {
-            position: absolute;
-            font-size: 1.8rem;
-            color: var(--blue);
-            opacity: 0.15;
-            animation: float 6s ease-in-out infinite;
-        }
-        .float-icon.orange {
-            color: var(--orange);
-            opacity: 0.2;
-        }
-        .float-icon:nth-child(1) {
-            top: 15%;
-            left: 8%;
-            animation-delay: 0s;
-            font-size: 2rem;
-        }
-        .float-icon:nth-child(2) {
-            top: 25%;
-            right: 10%;
-            animation-delay: 1.2s;
-            font-size: 2.4rem;
-        }
-        .float-icon:nth-child(3) {
-            bottom: 20%;
-            left: 12%;
-            animation-delay: 2.4s;
-            font-size: 2.2rem;
-        }
-        .float-icon:nth-child(4) {
-            bottom: 15%;
-            right: 8%;
-            animation-delay: 3.6s;
-            font-size: 2.6rem;
-        }
-        .float-icon:nth-child(5) {
-            top: 45%;
-            left: 20%;
-            animation-delay: 0.8s;
-            font-size: 1.6rem;
-        }
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            30% {
-                transform: translateY(-18px) rotate(3deg);
-            }
-            60% {
-                transform: translateY(-8px) rotate(-2deg);
-            }
-        }
+  /* ============ HERO ============ */
+  .hero {
+    padding: 72px 60px 96px;
+    position: relative;
+    min-height: calc(100vh - 75px);
+    min-height: calc(100svh - 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero > * { position: relative; z-index: 2; }
 
-        /* ============ SECTION COMMONS ============ */
-        .section {
-            padding: 5rem 2rem;
-        }
-        .section-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .section-label {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--orange);
-            margin-bottom: 0.6rem;
-        }
-        .section-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-            font-weight: 800;
-            color: var(--blue);
-            margin-bottom: 0.8rem;
-            letter-spacing: -0.5px;
-        }
-        .section-desc {
-            color: var(--gray);
-            font-size: 1.05rem;
-            max-width: 560px;
-            line-height: 1.7;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-        .section-header .section-desc {
-            margin: 0 auto;
-        }
+  /* Animated background orbs */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    will-change: transform;
+  }
+  .orb-yellow {
+    width: 580px; height: 580px;
+    background: var(--yellow);
+    top: -160px; right: 6%;
+    opacity: 0.55;
+    animation: drift-1 16s ease-in-out infinite;
+  }
+  .orb-terracotta {
+    width: 540px; height: 540px;
+    background: var(--terracotta);
+    bottom: -140px; left: 2%;
+    opacity: 0.7;
+    animation: drift-2 20s ease-in-out infinite;
+  }
+  .orb-blue {
+    width: 680px; height: 680px;
+    background: var(--blue);
+    top: 22%; left: 32%;
+    opacity: 0.5;
+    animation: drift-3 24s ease-in-out infinite;
+  }
+  .orb-yellow-sm {
+    width: 320px; height: 320px;
+    background: var(--yellow);
+    bottom: 14%; right: 4%;
+    opacity: 0.45;
+    animation: drift-4 14s ease-in-out infinite;
+  }
+  @keyframes drift-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-140px, 90px) scale(1.15); }
+    50% { transform: translate(80px, 180px) scale(0.95); }
+    75% { transform: translate(120px, -70px) scale(1.08); }
+  }
+  @keyframes drift-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(180px, -120px) scale(1.1); }
+    50% { transform: translate(-100px, -200px) scale(0.88); }
+    75% { transform: translate(-160px, -60px) scale(1.05); }
+  }
+  @keyframes drift-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(140px, 160px) scale(1.15); }
+    50% { transform: translate(-180px, -100px) scale(0.92); }
+    75% { transform: translate(-80px, 140px) scale(1.08); }
+  }
+  @keyframes drift-4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-100px, -110px) scale(1.2); }
+    50% { transform: translate(120px, 80px) scale(0.9); }
+    75% { transform: translate(60px, -140px) scale(1.1); }
+  }
 
-        /* ============ SERVICES ============ */
-        .services-section {
-            background: var(--white);
-            border-top: 1px solid rgba(30, 96, 145, 0.06);
-            border-bottom: 1px solid rgba(30, 96, 145, 0.06);
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-        .service-card {
-            background: var(--bg);
-            border-radius: var(--radius-lg);
-            padding: 2rem 1.6rem;
-            transition: all var(--transition);
-            border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--mist-border);
-            background: #fff;
-        }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--mist);
-            opacity: 0;
-            transition: all 0.5s ease;
-            z-index: 0;
-        }
-        .service-card:hover::before {
-            opacity: 1;
-            width: 120px;
-            height: 120px;
-            top: -40px;
-            right: -40px;
-        }
-        .service-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 1.2rem;
-            position: relative;
-            z-index: 1;
-        }
-        .service-icon.localization {
-            background: #E8F4FD;
-            color: #1E6091;
-        }
-        .service-icon.operations {
-            background: #FFF3E0;
-            color: #F39C12;
-        }
-        .service-icon.development {
-            background: #EDE7F6;
-            color: #5B3E96;
-        }
-        .service-icon.consulting {
-            background: #E8F6F3;
-            color: #1A7A5C;
-        }
-        .service-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        .service-card p {
-            font-size: 0.9rem;
-            color: var(--gray);
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
+  /* Cursor spotlight */
+  .cursor-spotlight {
+    position: absolute;
+    top: 0; left: 0;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,206,6,0.35) 0%, rgba(255,206,6,0.12) 35%, transparent 65%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(30px);
+    transform: translate(-9999px, -9999px);
+    transition: opacity 0.4s;
+    opacity: 0;
+    will-change: transform;
+    mix-blend-mode: screen;
+  }
+  .hero:hover .cursor-spotlight { opacity: 1; }
 
-        /* ============ PLATFORMS ============ */
-        .platforms-scroll {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .platform-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55rem;
-            padding: 0.7rem 1.4rem;
-            border-radius: 3rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all var(--transition);
-            cursor: default;
-            border: 2px solid transparent;
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-            color: var(--dark);
-        }
-        .platform-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        .platform-tag i {
-            font-size: 1.1rem;
-        }
-        /* 平台图标色彩保留品牌色，但可微调 */
-        .platform-tag .fa-weixin {
-            color: #07C160;
-        }
-        .platform-tag .fa-tiktok {
-            color: #1A1A1A;
-        }
-        .platform-tag .fa-weibo {
-            color: #E6162D;
-        }
-        .platform-tag .fa-bilibili {
-            color: #FB7299;
-        }
-        .platform-tag .fa-book {
-            color: #FF2442;
-        }
+  /* Headline 3D tilt */
+  .hero-headline {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
 
-        /* ============ PROCESS ============ */
-        .process-section {
-            background: var(--mist);
-            position: relative;
-            overflow: hidden;
-        }
-        .process-section::before {
-            content: '';
-            position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            pointer-events: none;
-        }
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        .process-step {
-            text-align: center;
-            padding: 1.5rem 1rem;
-            position: relative;
-        }
-        .process-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--white);
-            color: var(--blue);
-            font-weight: 800;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition);
-            border: 3px solid var(--mist-border);
-        }
-        .process-step:hover .process-num {
-            background: var(--blue);
-            color: #fff;
-            border-color: var(--blue);
-            box-shadow: var(--shadow-md);
-            transform: scale(1.08);
-        }
-        .process-step h4 {
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 0.3rem;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-        }
-        .process-step p {
-            font-size: 0.85rem;
-            color: var(--gray);
-            line-height: 1.5;
-        }
+  /* Magnetic buttons */
+  .btn-primary, .btn-secondary, .nav-cta {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
+    will-change: transform;
+  }
 
-        /* ============ STATS / TRUST ============ */
-        .stats-row {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            text-align: center;
-        }
-        .stat-item h3 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: var(--blue);
-            letter-spacing: -1px;
-            line-height: 1;
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 0.2rem;
-        }
-        .stat-item h3 span {
-            color: var(--orange);
-        }
-        .stat-item p {
-            font-size: 0.85rem;
-            color: var(--gray);
-            margin-top: 0.3rem;
-            font-weight: 500;
-        }
+  /* Hero noise/grain overlay */
+  .hero-noise {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
-        /* ============ CTA BANNER ============ */
-        .cta-banner {
-            background: var(--blue);
-            color: #fff;
-            text-align: center;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-banner::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.03);
-            pointer-events: none;
-        }
-        .cta-banner-inner {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .cta-banner h2 {
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
-            font-weight: 800;
-            margin-bottom: 0.8rem;
-            letter-spacing: -0.5px;
-        }
-        .cta-banner h2 .wow-cta {
-            color: var(--orange);
-            font-style: italic;
-        }
-        .cta-banner p {
-            font-size: 1rem;
-            opacity: 0.85;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        .cta-banner .btn-primary {
-            background: #fff;
-            color: var(--blue);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            font-weight: 700;
-        }
-        .cta-banner .btn-primary:hover {
-            background: #fff;
-            color: #154a6e;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-            transform: translateY(-2px);
-        }
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 32px; right: 60px;
+    z-index: 3;
+    font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    display: flex; align-items: center; gap: 14px;
+    font-weight: 600;
+  }
+  .scroll-indicator .line {
+    width: 1px; height: 48px;
+    background: var(--yellow);
+    transform-origin: top;
+    animation: scroll-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes scroll-pulse {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.01% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
 
-        /* 背景浮动小点 */
-        .banner-dots {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .banner-dot {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: rgba(255,255,255,0.25);
-            border-radius: 50%;
-            animation: dotFloat 5s infinite ease-in-out;
-        }
-        .banner-dot:nth-child(1) {
-            top: 20%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-        .banner-dot:nth-child(2) {
-            top: 60%;
-            left: 80%;
-            animation-delay: 1s;
-            width: 8px;
-            height: 8px;
-        }
-        .banner-dot:nth-child(3) {
-            top: 80%;
-            left: 25%;
-            animation-delay: 2s;
-        }
-        .banner-dot:nth-child(4) {
-            top: 30%;
-            left: 70%;
-            animation-delay: 3s;
-            width: 10px;
-            height: 10px;
-        }
-        .banner-dot:nth-child(5) {
-            top: 10%;
-            left: 50%;
-            animation-delay: 1.5s;
-        }
-        @keyframes dotFloat {
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-                opacity: 0.25;
-            }
-            50% {
-                transform: translateY(-20px) scale(1.4);
-                opacity: 0.6;
-            }
-        }
+  .hero-meta {
+    display: flex; justify-content: space-between;
+    margin-bottom: 64px;
+    align-items: flex-start;
+  }
+  .hero-tag {
+    font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--cream-dim); font-weight: 600;
+  }
+  .hero-year {
+    text-align: right;
+  }
+  .hero-year .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; color: var(--cream);
+    letter-spacing: 1px;
+  }
+  .hero-year .zh {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 12px; color: var(--cream-dim);
+    letter-spacing: 3px; margin-top: 4px;
+  }
+  .hero-headline {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 8.2vw, 150px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--cream);
+    white-space: nowrap;
+  }
+  .hero-headline .yellow {
+    color: var(--yellow);
+    font-style: italic;
+    display: inline-block;
+  }
+  .hero-headline .terra {
+    color: var(--terracotta);
+    font-style: italic;
+  }
+  .hero-headline .blue-word {
+    color: var(--blue);
+    font-style: italic;
+    display: inline-block;
+  }
+  .hero-headline .vert {
+    display: inline-block;
+    font-family: 'Noto Serif SC', serif;
+    writing-mode: vertical-rl;
+    font-size: 0.12em;
+    color: var(--yellow);
+    vertical-align: top;
+    margin-left: 12px;
+    margin-top: 12px;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+  }
+  .hero-bottom {
+    margin-top: 48px;
+    display: flex; flex-direction: column; gap: 36px;
+    align-items: flex-start;
+  }
+  .hero-sub {
+    font-size: clamp(18px, 2vw, 28px);
+    line-height: 1.4;
+    color: var(--cream-dim);
+    max-width: none;
+    white-space: nowrap;
+  }
+  .hero-sub .zh { color: var(--yellow); font-weight: 600; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--yellow); color: var(--black);
+    padding: 18px 32px; font-size: 14px; font-weight: 700;
+    border: none; cursor: pointer; letter-spacing: 0.5px;
+    transition: background 0.2s;
+    text-transform: uppercase;
+  }
+  .btn-primary:hover { background: var(--yellow-deep); }
+  .btn-secondary {
+    background: transparent; color: var(--cream);
+    padding: 18px 32px; font-size: 14px; font-weight: 600;
+    border: 1.5px solid var(--cream); cursor: pointer;
+    transition: all 0.2s; letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .btn-secondary:hover { background: var(--cream); color: var(--navy); }
 
-        /* ============ FOOTER ============ */
-        .footer {
-            background: var(--dark);
-            color: #bcc8d4;
-            padding: 3rem 2rem 1.5rem;
-            font-size: 0.9rem;
-        }
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 2rem;
-        }
-        .footer-col h4 {
-            color: #fff;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-        }
-        .footer-col a,
-        .footer-col p {
-            color: #94a8b8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.4rem;
-            transition: color var(--transition);
-            font-size: 0.85rem;
-        }
-        .footer-col a:hover {
-            color: var(--orange);
-        }
-        .footer-bottom {
-            max-width: 1100px;
-            margin: 2rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            font-size: 0.8rem;
-            color: #7a8d9b;
-        }
-        .footer-logo-sm {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        .footer-logo-sm span {
-            color: var(--orange);
-        }
+  .seal-floating {
+    position: absolute;
+    top: 180px; right: 80px;
+    width: 130px; height: 130px;
+    background: var(--terracotta); color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900; font-size: 32px;
+    letter-spacing: 2px;
+    box-shadow: 0 12px 40px rgba(189,90,61,0.5);
+    z-index: 3;
+    --mx: 0px; --my: 0px;
+    transform: translate(var(--mx), var(--my)) rotate(-8deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: seal-float 6s ease-in-out infinite;
+  }
+  @keyframes seal-float {
+    0%, 100% { transform: translate(var(--mx), var(--my)) rotate(-8deg); }
+    50% { transform: translate(var(--mx), calc(var(--my) - 14px)) rotate(-5deg); }
+  }
 
-        /* ============ RESPONSIVE ============ */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 280px;
-                height: 100vh;
-                background: #fff;
-                flex-direction: column;
-                padding: 5rem 2rem 2rem;
-                gap: 1.5rem;
-                box-shadow: -4px 0 30px rgba(0, 0, 0, 0.12);
-                transition: right var(--transition);
-                z-index: 1000;
-                align-items: flex-start;
-            }
-            .nav-links.open {
-                right: 0;
-            }
-            .nav-links a {
-                font-size: 1.05rem;
-            }
-            .nav-toggle {
-                display: flex;
-            }
-            .nav-cta {
-                display: inline-block;
-                text-align: center;
-                width: 100%;
-            }
-            .hero {
-                padding: 3rem 1.2rem 4rem;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            .hero-bg-arcs {
-                width: 340px;
-                height: 280px;
-                top: 10px;
-            }
-            .section {
-                padding: 3rem 1.2rem;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            .process-steps {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.8rem;
-            }
-            .stats-row {
-                gap: 1.2rem;
-            }
-            .stat-item h3 {
-                font-size: 1.8rem;
-            }
-            .footer-inner {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
-            }
-            .float-icon {
-                display: none;
-            }
-        }
-        @media (max-width: 420px) {
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-            .footer-inner {
-                grid-template-columns: 1fr;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            .platforms-scroll {
-                gap: 0.6rem;
-            }
-            .platform-tag {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-        }
+  /* ============ TRUST STRIP ============ */
+  .trust {
+    padding: 28px 60px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-size: 12px; color: var(--cream-dim);
+    display: flex; gap: 48px; align-items: center;
+    font-weight: 500; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .trust .dot { color: var(--yellow); }
 
-        .nav-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 999;
-        }
-        .nav-overlay.show {
-            display: block;
-        }
-    </style>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="70b4ca0b-05bd-4a04-8910-1d719dd67725"></script>
+  /* ============ SECTION COMMON ============ */
+  section.block {
+    padding: 120px 60px;
+    border-bottom: 1px solid var(--line);
+  }
+  section.block.deep { background: var(--navy-deep); }
+
+  /* ============ PLATFORMS ============ */
+  .platforms-grid {
+    display: grid; grid-template-columns: 1fr; gap: 28px;
+  }
+  .platform-card {
+    --accent: var(--yellow);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    min-height: 360px;
+    overflow: hidden;
+    background: var(--navy-deep);
+    border: 1px solid var(--line);
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), border-color 0.4s;
+  }
+  .platform-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+  }
+  /* logo half */
+  .platform-logo {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .platform-logo svg {
+    width: 44%; height: auto;
+    transition: transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .platform-card:hover .platform-logo svg { transform: scale(1.07); }
+  .platform-card.xhs .platform-logo { background: #FF2442; }
+  .platform-card.xhs .platform-logo svg { width: 62%; }
+  .platform-card.wechat .platform-logo { background: #07C160; }
+  /* alternate logo side for editorial rhythm */
+  .platform-card:nth-child(even) .platform-logo { order: 2; }
+  .platform-card:nth-child(even) .platform-content { order: 1; }
+  .platform-overlay { display: none; }
+  /* content half */
+  .platform-content {
+    position: relative;
+    padding: 52px 56px;
+    display: flex; flex-direction: column; justify-content: center;
+    color: var(--cream);
+  }
+  .platform-bar {
+    width: 40px; height: 3px;
+    background: var(--accent);
+    margin-bottom: 24px;
+    transition: width 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .platform-card:hover .platform-bar { width: 100px; }
+  .platform-zh {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(40px, 4vw, 60px);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: var(--cream);
+    letter-spacing: 2px;
+  }
+  .platform-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    color: var(--accent);
+  }
+  .platform-tag {
+    font-size: 12px;
+    color: var(--cream-dim);
+    margin-bottom: 22px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .platform-stat {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--yellow);
+    border-top: 1px solid rgba(250,246,238,0.2);
+    padding-top: 18px;
+    letter-spacing: 0.5px;
+  }
+  .platform-card.xhs { --accent: #FF2442; }
+  .platform-card.wechat { --accent: #07C160; }
+
+  /* secondary platforms — understated */
+  .platforms-more {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .platforms-more-label {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--cream-dimmer); font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .platforms-more-list {
+    font-size: 14px; line-height: 2;
+    color: var(--cream-dim);
+  }
+  .platforms-more-list .sep {
+    color: var(--cream-dimmer);
+    margin: 0 6px;
+  }
+  .platforms-more-list .zh {
+    color: var(--cream-dimmer);
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  /* ============ INTERLUDE (parallax image break) ============ */
+  .interlude {
+    position: relative;
+    height: 70vh;
+    min-height: 480px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    border-bottom: 1px solid var(--line);
+  }
+  .parallax-bg {
+    position: absolute;
+    top: -20%; left: 0;
+    width: 100%; height: 140%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    will-change: transform;
+  }
+  .interlude:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .interlude.dark:after {
+    background: linear-gradient(100deg, rgba(15,30,72,0.92) 0%, rgba(15,30,72,0.7) 50%, rgba(21,13,19,0.5) 100%);
+  }
+  .interlude.warm:after {
+    background: linear-gradient(260deg, rgba(189,90,61,0.55) 0%, rgba(15,30,72,0.85) 60%, rgba(15,30,72,0.95) 100%);
+  }
+  .interlude-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+  }
+  .interlude .section-label { margin-bottom: 24px; }
+  .interlude h2 {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: clamp(48px, 7.5vw, 104px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--cream);
+    margin-bottom: 24px;
+  }
+  .interlude h2 em { color: var(--yellow); font-style: italic; }
+  .interlude h2 .terra { color: var(--terracotta); font-style: italic; }
+  .interlude p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--cream-dim);
+    max-width: 640px;
+    line-height: 1.4;
+  }
+  .interlude p .zh {
+    font-family: 'Noto Serif SC', serif;
+    color: var(--yellow);
+    font-style: normal;
+    font-weight: 700;
+  }
+  .section-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--yellow); font-weight: 700; margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: clamp(44px, 6vw, 84px);
+    font-weight: 900;
+    margin-bottom: 56px;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    max-width: 1000px;
+    color: var(--cream);
+  }
+  .section-title em { color: var(--yellow); font-style: italic; }
+  .section-title .terra { color: var(--terracotta); font-style: italic; }
+
+  /* ============ PROBLEM ============ */
+  .problem-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .problem-card {
+    background: var(--navy-deep); color: var(--cream);
+    padding: 44px 36px;
+    transition: all 0.3s;
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .problem-card:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 0;
+    background: var(--yellow);
+    transition: height 0.3s;
+  }
+  .problem-card:hover { transform: translateY(-6px); border-color: var(--yellow); background: var(--navy-soft); }
+  .problem-card:hover:before { height: 100%; }
+  .problem-card .x {
+    font-family: 'Playfair Display', serif;
+    color: var(--terracotta); font-size: 56px; font-weight: 900;
+    line-height: 1; margin-bottom: 28px;
+  }
+  .problem-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; margin-bottom: 16px;
+    line-height: 1.3;
+    color: var(--cream);
+  }
+  .problem-card p {
+    font-size: 15px; line-height: 1.65;
+    color: var(--cream-dim);
+  }
+  .problem-closing {
+    margin-top: 64px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-style: italic;
+    color: var(--cream-dim);
+  }
+  .problem-closing .yellow { color: var(--yellow); font-weight: 700; }
+
+  /* ============ SERVICES ============ */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+    border-top: 1px solid var(--cream-dimmer);
+    border-left: 1px solid var(--cream-dimmer);
+  }
+  .service {
+    padding: 52px 44px;
+    border-right: 1px solid var(--cream-dimmer);
+    border-bottom: 1px solid var(--cream-dimmer);
+    transition: background 0.2s;
+  }
+  .service:hover { background: var(--navy-deep); }
+  .service-num {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 4px 12px;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+  .service h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px; font-weight: 900;
+    line-height: 1.05; margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+  .service .zh-sub {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 15px; color: var(--terracotta);
+    font-weight: 700; margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+  .service .tagline {
+    font-style: italic; font-size: 16px;
+    color: var(--cream-dim); margin-bottom: 28px;
+  }
+  .service ul {
+    list-style: none;
+  }
+  .service li {
+    font-size: 14px; padding: 10px 0;
+    border-top: 1px solid var(--line);
+    color: var(--cream);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .service li:before {
+    content: '→'; color: var(--yellow); font-weight: 700;
+  }
+
+  /* ============ CASES ============ */
+  .cases {
+    display: grid; grid-template-columns: 1fr; gap: 20px;
+  }
+  .case {
+    background: var(--navy-deep);
+    padding: 52px;
+    display: grid; grid-template-columns: 280px 1fr 280px; gap: 52px;
+    align-items: start;
+    transition: all 0.3s;
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .case:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 0; height: 3px;
+    background: linear-gradient(90deg, var(--yellow), var(--terracotta));
+    transition: width 0.4s;
+  }
+  .case:hover { border-color: var(--terracotta); background: var(--navy-soft); }
+  .case:hover:before { width: 100%; }
+  .case-num {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px; font-weight: 700;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 4px 12px;
+    letter-spacing: 2px; margin-bottom: 16px;
+  }
+  .case-industry {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 900;
+    line-height: 1.1; margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+  .case-timeline {
+    display: inline-block;
+    font-size: 11px; color: var(--terracotta); font-weight: 700;
+    border: 1px solid var(--terracotta); padding: 5px 12px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .case-body p { margin-bottom: 14px; font-size: 15px; line-height: 1.65; color: var(--cream-dim); }
+  .case-body strong { color: var(--yellow); display: block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-top: 20px; margin-bottom: 6px; font-weight: 700; }
+  .case-body strong:first-child { margin-top: 0; }
+  .case-results .result-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 900; color: var(--cream);
+    line-height: 1; letter-spacing: -0.03em;
+  }
+  .case-results .result-num.accent {
+    color: var(--yellow);
+    font-style: italic;
+  }
+  .case-results .result-label {
+    font-size: 12px; color: var(--cream-dim);
+    margin-bottom: 28px; margin-top: 6px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .case-cta {
+    margin-top: 64px; text-align: center;
+    padding: 48px;
+    border: 1.5px dashed var(--yellow);
+  }
+  .case-cta p {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-style: italic; margin-bottom: 24px;
+    color: var(--cream);
+  }
+
+  /* ============ WHY ============ */
+  .why-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px;
+  }
+  .pillar {
+    padding: 40px 0;
+    border-top: 2px solid var(--yellow);
+  }
+  .pillar-num {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px; font-weight: 700;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 4px 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .pillar h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 900;
+    line-height: 1.05; margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+  .pillar h3 em { color: var(--yellow); font-style: italic; }
+  .pillar p {
+    font-size: 16px; line-height: 1.65;
+    color: var(--cream-dim); max-width: 460px;
+  }
+
+  /* ============ PROCESS ============ */
+  .process {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+    border-top: 1px solid var(--cream-dimmer);
+  }
+  .step {
+    padding: 40px 24px;
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  .step:last-child { border-right: none; }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px; font-weight: 900;
+    color: var(--cream);
+    line-height: 1; margin-bottom: 28px;
+    letter-spacing: -0.04em;
+    position: relative;
+    display: inline-block;
+    font-style: italic;
+  }
+  .step:nth-child(odd) .step-num { color: var(--yellow); }
+  .step:nth-child(even) .step-num { color: var(--terracotta); }
+  .step h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700;
+    margin-bottom: 12px; line-height: 1.2;
+    color: var(--cream);
+  }
+  .step p {
+    font-size: 13px; line-height: 1.55;
+    color: var(--cream-dim);
+  }
+
+  /* ============ INDUSTRIES ============ */
+  .industry-tags {
+    display: flex; flex-wrap: wrap; gap: 14px;
+  }
+  .tag {
+    border: 1.5px solid var(--cream);
+    padding: 14px 24px;
+    font-size: 14px; font-weight: 600;
+    background: transparent;
+    color: var(--cream);
+    transition: all 0.2s;
+    cursor: default;
+    letter-spacing: 0.5px;
+  }
+  .tag:hover {
+    background: var(--yellow);
+    color: var(--black);
+    border-color: var(--yellow);
+    transform: translateY(-2px);
+  }
+  .industries-closing {
+    margin-top: 48px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-style: italic;
+    color: var(--cream-dim);
+  }
+
+  /* ============ FAQ ============ */
+  .faq-list { max-width: 920px; }
+  details.faq-item {
+    border-top: 1px solid var(--line);
+    padding: 0;
+  }
+  details.faq-item:last-child { border-bottom: 1px solid var(--line); }
+  details.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 32px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px;
+    transition: color 0.2s;
+    color: var(--cream);
+  }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary:hover { color: var(--yellow); }
+  details.faq-item summary:after {
+    content: '+';
+    background: var(--yellow);
+    color: var(--black);
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    font-weight: 400;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  details.faq-item[open] summary:after {
+    transform: rotate(45deg);
+    background: var(--terracotta);
+    color: var(--cream);
+  }
+  details.faq-item .answer {
+    padding: 0 0 32px;
+    font-size: 16px; line-height: 1.7;
+    color: var(--cream-dim);
+    max-width: 720px;
+  }
+
+  /* ============ ABOUT ============ */
+  .about {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px;
+    align-items: start;
+  }
+  .about-facts {
+    position: relative;
+    display: flex; flex-direction: column;
+    border-top: 1px solid var(--cream-dimmer);
+  }
+  .about-facts .fact {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--cream-dimmer);
+  }
+  .about-facts .fact-num {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px; font-weight: 700;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 4px 12px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .about-facts .fact h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px; font-weight: 900;
+    line-height: 1.1;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .about-facts .fact h3 em { color: var(--yellow); font-style: italic; }
+  .about-facts .fact .zh {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px; color: var(--terracotta);
+    letter-spacing: 3px; font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .about-facts .fact p {
+    font-size: 15px; line-height: 1.65;
+    color: var(--cream-dim);
+    max-width: 44ch;
+  }
+  .about-facts-seal {
+    position: absolute;
+    top: -28px; right: -8px;
+    width: 76px; height: 76px;
+    background: var(--yellow);
+    color: var(--black);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900; font-size: 18px;
+    letter-spacing: 1px;
+    transform: rotate(-8deg);
+    box-shadow: 0 8px 24px rgba(255,206,6,0.25);
+    z-index: 2;
+  }
+  .about-right { display: flex; flex-direction: column; gap: 40px; }
+  .about-text p {
+    font-size: 19px; line-height: 1.7;
+    color: var(--cream-dim); margin-bottom: 22px;
+  }
+  .about-text p strong { color: var(--yellow); font-weight: 700; }
+  .about-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-style: italic;
+    line-height: 1.25;
+    padding: 36px 0 36px 40px;
+    border-left: 4px solid var(--terracotta);
+    color: var(--cream);
+  }
+  .about-quote .yellow { color: var(--yellow); }
+
+  /* ============ CONTACT ============ */
+  .contact-section {
+    background: var(--navy-deep);
+    color: var(--cream);
+    padding: 120px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-section:before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    opacity: 0.18;
+    filter: blur(80px);
+    animation: drift-2 24s ease-in-out infinite;
+  }
+  .contact-section:after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: var(--yellow);
+    opacity: 0.12;
+    filter: blur(80px);
+    animation: drift-3 28s ease-in-out infinite;
+  }
+  .contact-section > * { position: relative; z-index: 2; }
+  .contact-section .section-label { color: var(--yellow); }
+  .contact-section .section-title { color: var(--cream); }
+  .contact-section .section-title em { color: var(--yellow); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px;
+    margin-top: 24px;
+  }
+  .contact-form .field {
+    margin-bottom: 28px;
+  }
+  .contact-form label {
+    display: block;
+    font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-bottom: 8px; font-weight: 700;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid var(--cream-dimmer);
+    padding: 14px 0;
+    color: var(--cream);
+    font-family: inherit;
+    font-size: 17px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-bottom-color: var(--yellow); }
+  .contact-form textarea { resize: vertical; min-height: 80px; }
+  .contact-form button {
+    margin-top: 20px;
+    background: var(--yellow); color: var(--black);
+    padding: 22px 40px; font-size: 14px; font-weight: 700;
+    border: none; cursor: pointer; letter-spacing: 1px;
+    transition: background 0.2s;
+    text-transform: uppercase;
+  }
+  .contact-form button:hover { background: var(--yellow-deep); }
+
+  .contact-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    margin-bottom: 28px;
+    color: var(--cream);
+  }
+  .contact-info p {
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--cream);
+  }
+  .contact-info p strong {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .contact-seal {
+    margin-top: 48px;
+    width: 100px; height: 100px;
+    background: var(--terracotta);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900; font-size: 24px;
+    color: var(--cream);
+    letter-spacing: 2px;
+    transform: rotate(-6deg);
+    box-shadow: 0 12px 32px rgba(189,90,61,0.4);
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--black);
+    color: var(--cream);
+    padding: 60px;
+    border-top: 1px solid var(--line);
+  }
+  .footer-top {
+    display: flex; justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap; gap: 40px;
+  }
+  .footer-brand {
+    max-width: 360px;
+  }
+  .footer-brand .logo { font-size: 28px; color: var(--cream); }
+  .footer-brand .logo .b { color: var(--blue); }
+  .footer-brand .logo .w { background: var(--yellow); color: var(--black); padding: 0 4px; }
+  .footer-brand .logo .dot { color: var(--terracotta); }
+  .footer-brand .zh-name {
+    margin-top: 8px;
+    font-family: 'Noto Serif SC', serif;
+    color: var(--cream-dim);
+    font-size: 14px; letter-spacing: 2px;
+  }
+  .footer-brand p {
+    margin-top: 16px;
+    font-size: 14px; line-height: 1.65;
+    color: var(--cream-dim);
+  }
+  .footer-cols {
+    display: flex; gap: 60px;
+  }
+  .footer-col h5 {
+    font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px; font-weight: 700;
+    color: var(--yellow);
+  }
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    color: var(--cream-dim);
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--yellow); }
+  .footer-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px;
+    color: var(--cream-dimmer);
+    flex-wrap: wrap; gap: 16px;
+    letter-spacing: 1px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1024px) {
+    nav, .hero, .trust, section.block, .contact-section, footer { padding-left: 32px; padding-right: 32px; }
+    .nav-links { display: none; }
+    .seal-floating { width: 90px; height: 90px; font-size: 22px; top: 120px; right: 32px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .case { grid-template-columns: 1fr; gap: 24px; padding: 36px; }
+    .why-grid { grid-template-columns: 1fr; gap: 0; }
+    .process { grid-template-columns: 1fr 1fr; }
+    .step { border-bottom: 1px solid var(--line); }
+    .about { grid-template-columns: 1fr; gap: 48px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .footer-top { flex-direction: column; }
+    .hero-meta { flex-direction: column; gap: 24px; }
+    .hero-year { text-align: left; }
+    .hero-bottom { gap: 32px; }
+    .scroll-indicator { right: 32px; bottom: 24px; }
+    .orb { filter: blur(70px); }
+    .platforms-grid { gap: 20px; }
+    .platform-card { grid-template-columns: 1fr; min-height: 0; }
+    .platform-card .platform-logo { min-height: 240px; order: 0 !important; }
+    .platform-card .platform-content { order: 0 !important; padding: 40px 36px; }
+  }
+  @media (max-width: 1024px) {
+    .interlude { padding-left: 32px; padding-right: 32px; height: 60vh; min-height: 400px; }
+    .interlude p { font-size: 18px; }
+  }
+  @media (max-width: 600px) {
+    section.block, .contact-section, footer { padding-top: 72px; padding-bottom: 72px; padding-left: 24px; padding-right: 24px; }
+    .hero { padding: 60px 24px 100px; }
+    .hero-headline { white-space: normal; }
+    .hero-sub { white-space: normal; }
+    nav { padding: 20px 24px; }
+    .trust { padding: 24px; gap: 16px; font-size: 11px; flex-wrap: wrap; }
+    .process { grid-template-columns: 1fr; }
+    .footer-cols { flex-direction: column; gap: 32px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .seal-floating { display: none; }
+    .scroll-indicator { display: none; }
+    .orb { opacity: 0.5 !important; }
+    .interlude { padding-left: 24px; padding-right: 24px; height: 50vh; min-height: 360px; }
+    .interlude p { font-size: 16px; }
+  }
+  /* Back to top */
+  .back-to-top {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    width: 56px; height: 56px;
+    background: var(--yellow);
+    color: var(--black);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 200;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(15,13,19,0.4), 0 0 0 1px rgba(255,206,6,0.3);
+    opacity: 0;
+    transform: translateY(20px) scale(0.85);
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.16,1,0.3,1),
+                transform 0.35s cubic-bezier(0.16,1,0.3,1),
+                background 0.2s;
+    will-change: transform, opacity;
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .back-to-top:hover {
+    background: var(--cream);
+  }
+  .back-to-top svg {
+    width: 22px; height: 22px;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s;
+  }
+  .back-to-top:hover svg { transform: translateY(-3px); }
+  .back-to-top .label {
+    position: absolute;
+    right: 68px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--cream);
+    background: var(--black);
+    padding: 8px 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+  }
+  .back-to-top:hover .label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  @media (max-width: 600px) {
+    .back-to-top { width: 48px; height: 48px; bottom: 20px; right: 20px; }
+    .back-to-top .label { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .orb, .seal-floating, .scroll-indicator .line,
+    .contact-section:before, .contact-section:after {
+      animation: none !important;
+    }
+  }
+</style>
+
+<!-- ============ STRUCTURED DATA (JSON-LD) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Bluewawa Media",
+  "alternateName": "蓝哇哇传媒",
+  "url": "https://bluewawa.media/",
+  "image": "https://bluewawa.media/og-image.png",
+  "description": "China-based, bilingual social media localization partner helping overseas brands grow on Rednote (Xiaohongshu) and WeChat — content, operation, KOL/KOC, development and consulting.",
+  "slogan": "Turn Blue into Wow.",
+  "areaServed": "CN",
+  "knowsLanguage": ["en", "zh-CN"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@bluewawa.media",
+    "contactType": "sales",
+    "availableLanguage": ["en", "zh-CN"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/bluewawa-media"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Operation", "description": "Rednote and WeChat account setup, content, community and paid ads." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Localization", "description": "Native Chinese copywriting, cover design and short-video editing." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Development", "description": "WeChat Mini Programs, H5 campaign pages and data dashboards." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consulting", "description": "China go-to-market strategy, platform planning and compliance." } }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bluewawa Media",
+  "url": "https://bluewawa.media/",
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do we need a Chinese business entity to start?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. We help brands launch through cross-border setups first, then localize when the numbers justify it." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until we see results on Rednote?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Real traction in 60–90 days if content and seeding are done right. Anyone promising faster is selling you bots." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's a realistic budget for a 3-month pilot?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on scope and platform mix. We'll size it together on the call — no surprises, no inflated retainers." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need to be on both Rednote and WeChat?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. We'll recommend the right mix for your stage — usually Rednote first for discovery and reputation, then WeChat to convert and retain through Official Accounts, Mini Programs and private community." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you build the tech — Mini Programs, H5, dashboards?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all in-house. WeChat Mini Programs, H5 campaign pages, membership systems and data dashboards, with WeChat Pay and logistics integration." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you report progress and prove ROI?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Regular bilingual reports plus a shared live dashboard — content performance, audience profiles, engagement, leads and conversion funnels." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
-    <!-- ==================== NAVIGATION ==================== -->
-    <header class="nav" id="navbar">
-        <div class="nav-inner">
-            <a href="#" class="nav-logo" aria-label="BlueWawa Media Home">
-                <svg viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 10 65 Q 15 45 20 65" stroke="#1E6091" stroke-width="5" fill="none" stroke-linecap="round"/>
-                    <path d="M 25 60 Q 32 35 39 60" stroke="#1E6091" stroke-width="5" fill="none" stroke-linecap="round"/>
-                    <path d="M 44 55 Q 53 25 62 55" stroke="#1E6091" stroke-width="5" fill="none" stroke-linecap="round"/>
-                    <path d="M 67 50 Q 78 15 89 50" stroke="#F39C12" stroke-width="5" fill="none" stroke-linecap="round"/>
-                    <path d="M 14 75 Q 8 75 8 80 L 8 82 Q 8 86 12 86 L 17 86 Q 21 86 21 82 L 21 78 Q 21 74 17 74 Z" fill="#1E6091"/>
-                </svg>
-                <span class="nav-logo-text">Blue<span>Wawa</span></span>
-            </a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#platforms">Platforms</a></li>
-                    <li><a href="#process">How We Work</a></li>
-                    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-                </ul>
-            </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-    <div class="nav-overlay" id="navOverlay"></div>
+<!-- ============ NAV ============ -->
+<nav>
+  <a href="#top" class="logo"><span class="b">Blue</span><span class="w">wawa</span><span class="dot">.</span></a>
+  <div class="nav-links">
+    <a href="#platforms">Platforms</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why us</a>
+    <a href="#process">How we work</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact"><button class="nav-cta">Book a call →</button></a>
+</nav>
 
-    <!-- ==================== HERO ==================== -->
-    <section class="hero">
-        <!-- 背景声波弧线 -->
-        <svg class="hero-bg-arcs" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="arc" d="M 50 380 Q 180 120 350 380" />
-            <path class="arc" d="M 100 400 Q 250 100 450 400" />
-            <path class="arc" d="M 160 420 Q 330 70 550 420" />
-            <path class="arc arc-orange" d="M 220 440 Q 400 40 640 440" />
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <!-- animated background layers -->
+  <div class="hero-bg">
+    <div class="orb orb-blue"></div>
+    <div class="orb orb-terracotta"></div>
+    <div class="orb orb-yellow"></div>
+    <div class="orb orb-yellow-sm"></div>
+  </div>
+  <div class="cursor-spotlight"></div>
+  <div class="hero-noise"></div>
+
+  <div class="hero-meta">
+    <div class="hero-tag">Bluewawa Media</div>
+  </div>
+
+  <h1 class="hero-headline">
+    Turn <span class="blue-word">Blue</span><br />
+    into <span class="yellow">Wow</span>.
+  </h1>
+
+  <div class="hero-bottom">
+    <p class="hero-sub">
+      We help your brand get <span class="zh">seen</span>, <span class="zh">remembered</span>, and <span class="zh">grow</span> in China.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact"><button class="btn-primary">Book a call →</button></a>
+      <a href="#services"><button class="btn-secondary">What we do</button></a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ============ PLATFORMS ============ -->
+<section class="block" id="platforms">
+  <div class="section-label">Where We Play</div>
+  <h2 class="section-title">Two <em>platforms</em>.<br />One <span class="terra">mission</span>.</h2>
+  <p style="font-size: 17px; color: var(--cream-dim); margin-bottom: 56px; max-width: 640px;">The two ecosystems that decide whether a brand exists in China: <strong style="color:var(--cream)">Rednote</strong> for discovery, <strong style="color:var(--cream)">WeChat</strong> for the closed loop. We work natively on both.</p>
+  <div class="platforms-grid">
+    <article class="platform-card xhs">
+      <div class="platform-logo">
+        <svg viewBox="0 0 24 24" fill="#fff" aria-label="Xiaohongshu" xmlns="http://www.w3.org/2000/svg"><path d="M22.405 9.879c.002.016.01.02.07.019h.725a.797.797 0 0 0 .78-.972.794.794 0 0 0-.884-.618.795.795 0 0 0-.692.794c0 .101-.002.666.001.777zm-11.509 4.808c-.203.001-1.353.004-1.685.003a2.528 2.528 0 0 1-.766-.126.025.025 0 0 0-.03.014L7.7 16.127a.025.025 0 0 0 .01.032c.111.06.336.124.495.124.66.01 1.32.002 1.981 0 .01 0 .02-.006.023-.015l.712-1.545a.025.025 0 0 0-.024-.036zM.477 9.91c-.071 0-.076.002-.076.01a.834.834 0 0 0-.01.08c-.027.397-.038.495-.234 3.06-.012.24-.034.389-.135.607-.026.057-.033.042.003.112.046.092.681 1.523.787 1.74.008.015.011.02.017.02.008 0 .033-.026.047-.044.147-.187.268-.391.371-.606.306-.635.44-1.325.486-1.706.014-.11.021-.22.03-.33l.204-2.616.022-.293c.003-.029 0-.033-.03-.034zm7.203 3.757a1.427 1.427 0 0 1-.135-.607c-.004-.084-.031-.39-.235-3.06a.443.443 0 0 0-.01-.082c-.004-.011-.052-.008-.076-.008h-1.48c-.03.001-.034.005-.03.034l.021.293c.076.982.153 1.964.233 2.946.05.4.186 1.085.487 1.706.103.215.223.419.37.606.015.018.037.051.048.049.02-.003.742-1.642.804-1.765.036-.07.03-.055.003-.112zm3.861-.913h-.872a.126.126 0 0 1-.116-.178l1.178-2.625a.025.025 0 0 0-.023-.035l-1.318-.003a.148.148 0 0 1-.135-.21l.876-1.954a.025.025 0 0 0-.023-.035h-1.56c-.01 0-.02.006-.024.015l-.926 2.068c-.085.169-.314.634-.399.938a.534.534 0 0 0-.02.191.46.46 0 0 0 .23.378.981.981 0 0 0 .46.119h.59c.041 0-.688 1.482-.834 1.972a.53.53 0 0 0-.023.172.465.465 0 0 0 .23.398c.15.092.342.12.475.12l1.66-.001c.01 0 .02-.006.023-.015l.575-1.28a.025.025 0 0 0-.024-.035zm-6.93-4.937H3.1a.032.032 0 0 0-.034.033c0 1.048-.01 2.795-.01 6.829 0 .288-.269.262-.28.262h-.74c-.04.001-.044.004-.04.047.001.037.465 1.064.555 1.263.01.02.03.033.051.033.157.003.767.009.938-.014.153-.02.3-.06.438-.132.3-.156.49-.419.595-.765.052-.172.075-.353.075-.533.002-2.33 0-4.66-.007-6.991a.032.032 0 0 0-.032-.032zm11.784 6.896c0-.014-.01-.021-.024-.022h-1.465c-.048-.001-.049-.002-.05-.049v-4.66c0-.072-.005-.07.07-.07h.863c.08 0 .075.004.075-.074V8.393c0-.082.006-.076-.08-.076h-3.5c-.064 0-.075-.006-.075.073v1.445c0 .083-.006.077.08.077h.854c.075 0 .07-.004.07.07v4.624c0 .095.008.084-.085.084-.37 0-1.11-.002-1.304 0-.048.001-.06.03-.06.03l-.697 1.519s-.014.025-.008.036c.006.01.013.008.058.008 1.748.003 3.495.002 5.243.002.03-.001.034-.006.035-.033v-1.539zm4.177-3.43c0 .013-.007.023-.02.024-.346.006-.692.004-1.037.004-.014-.002-.022-.01-.022-.024-.005-.434-.007-.869-.01-1.303 0-.072-.006-.071.07-.07l.733-.003c.041 0 .081.002.12.015.093.025.16.107.165.204.006.431.002 1.153.001 1.153zm2.67.244a1.953 1.953 0 0 0-.883-.222h-.18c-.04-.001-.04-.003-.042-.04V10.21c0-.132-.007-.263-.025-.394a1.823 1.823 0 0 0-.153-.53 1.533 1.533 0 0 0-.677-.71 2.167 2.167 0 0 0-1-.258c-.153-.003-.567 0-.72 0-.07 0-.068.004-.068-.065V7.76c0-.031-.01-.041-.046-.039H17.93s-.016 0-.023.007c-.006.006-.008.012-.008.023v.546c-.008.036-.057.015-.082.022h-.95c-.022.002-.028.008-.03.032v1.481c0 .09-.004.082.082.082h.913c.082 0 .072.128.072.128V11.19s.003.117-.06.117h-1.482c-.068 0-.06.082-.06.082v1.445s-.01.068.064.068h1.457c.082 0 .076-.006.076.079v3.225c0 .088-.007.081.082.081h1.43c.09 0 .082.007.082-.08v-3.27c0-.029.006-.035.033-.035l2.323-.003c.098 0 .191.02.28.061a.46.46 0 0 1 .274.407c.008.395.003.79.003 1.185 0 .259-.107.367-.33.367h-1.218c-.023.002-.029.008-.028.033.184.437.374.871.57 1.303a.045.045 0 0 0 .04.026c.17.005.34.002.51.003.15-.002.517.004.666-.01a2.03 2.03 0 0 0 .408-.075c.59-.18.975-.698.976-1.313v-1.981c0-.128-.01-.254-.034-.38 0 .078-.029-.641-.724-.998z"/></svg>
+      </div>
+      <div class="platform-overlay"></div>
+      <div class="platform-content">
+        <div class="platform-bar"></div>
+        <h3 class="platform-zh">小红书</h3>
+        <div class="platform-en">Rednote</div>
+        <p class="platform-tag">Notes · Seeding · Search Discovery</p>
+        <div class="platform-stat">~350M monthly active users</div>
+      </div>
+    </article>
+    <article class="platform-card wechat">
+      <div class="platform-logo">
+        <svg viewBox="0 0 64 64" aria-label="WeChat">
+          <g fill="#fff">
+            <ellipse cx="25" cy="24" rx="21" ry="17.5"/>
+            <path d="M12 36.5l-4.5 8.5 10-5z"/>
+            <ellipse cx="44.5" cy="41" rx="16.5" ry="14"/>
+            <path d="M54 51.5l3.5 6.5-8-4z"/>
+          </g>
+          <g fill="#07C160">
+            <circle cx="18.5" cy="21.5" r="2.6"/>
+            <circle cx="31.5" cy="21.5" r="2.6"/>
+            <circle cx="39" cy="38.5" r="2.1"/>
+            <circle cx="50" cy="38.5" r="2.1"/>
+          </g>
         </svg>
+      </div>
+      <div class="platform-overlay"></div>
+      <div class="platform-content">
+        <div class="platform-bar"></div>
+        <h3 class="platform-zh">微信</h3>
+        <div class="platform-en">WeChat</div>
+        <p class="platform-tag">Official Accounts · Mini Programs · Private Traffic</p>
+        <div class="platform-stat">~1.4B monthly active users</div>
+      </div>
+    </article>
+  </div>
 
-        <!-- 漂浮的活力图标 -->
-        <div class="floating-icons">
-            <i class="fa-solid fa-heart float-icon orange"></i>
-            <i class="fa-solid fa-comment-dots float-icon"></i>
-            <i class="fa-solid fa-share-nodes float-icon orange"></i>
-            <i class="fa-solid fa-star float-icon"></i>
-            <i class="fa-solid fa-thumbs-up float-icon orange"></i>
-        </div>
+  <div class="platforms-more">
+    <div class="platforms-more-label">+ Also active on</div>
+    <p class="platforms-more-list">
+      Douyin <span class="zh">(抖音)</span><span class="sep">·</span>Bilibili <span class="zh">(B站)</span><span class="sep">·</span>Weibo <span class="zh">(微博)</span><span class="sep">·</span>Zhihu <span class="zh">(知乎)</span><span class="sep">·</span>Kuaishou <span class="zh">(快手)</span><span class="sep">·</span>Toutiao <span class="zh">(头条)</span><span class="sep">·</span>Dianping <span class="zh">(大众点评)</span><span class="sep">·</span>Meituan <span class="zh">(美团)</span><span class="sep">·</span>Ctrip <span class="zh">(携程)</span><span class="sep">·</span>Qunar <span class="zh">(去哪儿)</span><span class="sep">·</span>Fliggy <span class="zh">(飞猪)</span><span class="sep">·</span>Mafengwo <span class="zh">(马蜂窝)</span><span class="sep">·</span>Taobao <span class="zh">(淘宝)</span><span class="sep">·</span>Tmall <span class="zh">(天猫)</span><span class="sep">·</span>JD <span class="zh">(京东)</span><span class="sep">·</span>Pinduoduo <span class="zh">(拼多多)</span>
+    </p>
+  </div>
+</section>
 
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="dot"></span> China Social Media Experts
-            </div>
-            <h1>Turn Blue into <span class="wow">Wow.</span></h1>
-            <p class="hero-subtitle">
-                We help <strong>global brands</strong> find their voice on Chinese social media —
-                from <strong>Xiaohongshu</strong> to <strong>WeChat</strong> to <strong>Douyin</strong>.
-                Localized content, smart operations, and real results.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    Start Your China Journey <span class="btn-arrow">→</span>
-                </a>
-                <a href="#services" class="btn btn-secondary">
-                    Explore Services
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- ============ PROBLEM ============ -->
+<section class="block" id="problem">
+  <div class="section-label">The China Problem</div>
+  <h2 class="section-title">So you want to <em>crack China</em>?</h2>
+  <p style="font-size: 18px; color: var(--cream-dim); margin-bottom: 48px; max-width: 600px;">Most brands try one of three things. None of them work.</p>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="x">✕</div>
+      <h3>"We'll just run Google Ads."</h3>
+      <p>Google, Instagram, Facebook, YouTube — all blocked. Your Western playbook doesn't load here.</p>
+    </div>
+    <div class="problem-card">
+      <div class="x">✕</div>
+      <h3>"We'll translate our English content."</h3>
+      <p>A direct translation in China reads like a robot wrote it. Chinese consumers can smell foreign copy from a mile away (字面翻译 = 翻车).</p>
+    </div>
+    <div class="problem-card">
+      <div class="x">✕</div>
+      <h3>"We'll hire one KOL and see."</h3>
+      <p>China runs on KOC seeding (素人种草), not one-off influencer drops. One post ≠ a strategy.</p>
+    </div>
+  </div>
+  <p class="problem-closing">You don't need a translator.<br />You need a <span class="yellow">localizer</span>.</p>
+</section>
 
-    <!-- ==================== SERVICES ==================== -->
-    <section class="section services-section" id="services">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-label">What We Do</span>
-                <h2 class="section-title">Full-Stack China Social Media</h2>
-                <p class="section-desc">From strategy to execution, we bridge the gap between your brand and Chinese consumers.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon localization"><i class="fa-solid fa-language"></i></div>
-                    <h3>Content Localization</h3>
-                    <p>We don't just translate — we <strong>transcreate</strong>. Your brand voice, culturally adapted for Chinese audiences on every platform.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon operations"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>Social Operations</h3>
-                    <p>Day-to-day management of your Xiaohongshu, WeChat & Douyin accounts. Content calendars, community engagement & KOL coordination.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon development"><i class="fa-solid fa-code"></i></div>
-                    <h3>Platform Development</h3>
-                    <p>WeChat Mini Programs, H5 campaigns, and custom social commerce solutions — built natively for the Chinese digital ecosystem.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon consulting"><i class="fa-solid fa-compass"></i></div>
-                    <h3>Strategic Consulting</h3>
-                    <p>Market entry strategy, platform selection, competitor audits & data-driven recommendations tailored to your industry.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ INTERLUDE 1 ============ -->
+<section class="interlude dark">
+  <div class="parallax-bg" data-speed="0.35" style="background-image: url('https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1920&q=80&auto=format&fit=crop');"></div>
+  <div class="interlude-content">
+    <div class="section-label">A different playbook</div>
+    <h2>There's a <em>better way</em>.<br />有更好的方法。</h2>
+    <p>It's how we've launched 50+ overseas brands into China — quietly, natively, and without burning a quarter on bad translations.</p>
+  </div>
+</section>
 
-    <!-- ==================== PLATFORMS ==================== -->
-    <section class="section" id="platforms">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-label">Platforms We Master</span>
-                <h2 class="section-title">Where Your Audience Lives</h2>
-                <p class="section-desc">We create platform-native content that resonates — not recycled global assets.</p>
-            </div>
-            <div class="platforms-scroll">
-                <span class="platform-tag"><i class="fa-solid fa-book"></i> Xiaohongshu <small style="color:#95a5a6;font-weight:400;">小红书</small></span>
-                <span class="platform-tag"><i class="fa-brands fa-weixin"></i> WeChat <small style="color:#95a5a6;font-weight:400;">微信</small></span>
-                <span class="platform-tag"><i class="fa-brands fa-tiktok"></i> Douyin <small style="color:#95a5a6;font-weight:400;">抖音</small></span>
-                <span class="platform-tag"><i class="fa-brands fa-weibo"></i> Weibo <small style="color:#95a5a6;font-weight:400;">微博</small></span>
-                <span class="platform-tag"><i class="fa-brands fa-bilibili"></i> Bilibili <small style="color:#95a5a6;font-weight:400;">B站</small></span>
-            </div>
-            <p style="text-align:center;margin-top:1.5rem;font-size:0.9rem;color:var(--gray);">…and more. If it matters in China, we're on it.</p>
-        </div>
-    </section>
+<!-- ============ SERVICES ============ -->
+<section class="block deep" id="services">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">Four things. We do them <em>well</em>.</h2>
+  <div class="services-grid">
+    <div class="service">
+      <div class="service-num">01</div>
+      <h3>Social Operation</h3>
+      <div class="zh-sub">平台运营</div>
+      <p class="tagline">We run your accounts like locals, because we are.</p>
+      <ul>
+        <li>Rednote (小红书) account setup, seeding-note matrix, search keywords</li>
+        <li>WeChat (微信) Official Account, Channels (视频号) + Mini Program ops</li>
+        <li>Private community (私域) building, KOL/KOC campaigns &amp; paid ads</li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-num">02</div>
+      <h3>Content Localization</h3>
+      <div class="zh-sub">内容本地化</div>
+      <p class="tagline">Not translation. Re-creation.</p>
+      <ul>
+        <li>Native Chinese copywriting by humans who grew up here</li>
+        <li>Cover design + short-video editing tuned to Rednote &amp; Channels</li>
+        <li>KOL & KOC campaigns with real engagement, not bot views</li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-num">03</div>
+      <h3>Development</h3>
+      <div class="zh-sub">技术开发</div>
+      <p class="tagline">Tech that actually works inside the Great Firewall.</p>
+      <ul>
+        <li>WeChat Mini Programs (小程序)</li>
+        <li>H5 campaign pages</li>
+        <li>CRM + private traffic (私域) integration</li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-num">04</div>
+      <h3>Consulting</h3>
+      <div class="zh-sub">战略咨询</div>
+      <p class="tagline">Before you spend money, talk to us.</p>
+      <ul>
+        <li>China go-to-market strategy</li>
+        <li>Platform & budget planning</li>
+        <li>Compliance: ICP filing (ICP 备案), ad law, cross-border</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== PROCESS ==================== -->
-    <section class="section process-section" id="process">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-label">How We Work</span>
-                <h2 class="section-title">Simple Process, Real Impact</h2>
-                <p class="section-desc">A proven framework that gets your brand from "unknown" to "unmissable" on Chinese social media.</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-num"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <h4><i class="fa-solid fa-eye" style="color:var(--blue);"></i> Discover</h4>
-                    <p>We learn your brand, goals & audience — then map the competitive landscape.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-num"><i class="fa-solid fa-pen-to-square"></i></div>
-                    <h4><i class="fa-solid fa-globe" style="color:var(--orange);"></i> Localize</h4>
-                    <p>Content strategy & creative that feels <em>native</em>, not foreign.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-num"><i class="fa-solid fa-comments"></i></div>
-                    <h4><i class="fa-solid fa-users" style="color:var(--blue);"></i> Engage</h4>
-                    <p>Launch, manage & optimize — with real-time community interaction.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-num"><i class="fa-solid fa-chart-line"></i></div>
-                    <h4><i class="fa-solid fa-rocket" style="color:var(--orange);"></i> Grow</h4>
-                    <p>Data-driven iteration. Scale what works, pivot what doesn't.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ INTERLUDE 2 ============ -->
+<section class="interlude warm">
+  <div class="parallax-bg" data-speed="0.4" style="background-image: url('https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=1920&q=80&auto=format&fit=crop');"></div>
+  <div class="interlude-content">
+    <div class="section-label">The pace</div>
+    <h2>China moves at<br />the <em>speed of social</em>.</h2>
+    <p>Hesitate, and your competitor already owns the hashtag. <span class="zh">慢一步，少一年。</span></p>
+  </div>
+</section>
 
-    <!-- ==================== STATS / TRUST ==================== -->
-    <section class="section">
-        <div class="section-inner">
-            <div class="stats-row">
-                <div class="stat-item">
-                    <h3><span>5</span>+</h3>
-                    <p><i class="fa-solid fa-mobile-screen" style="color:var(--blue);"></i> Major Platforms</p>
-                </div>
-                <div class="stat-item">
-                    <h3><span>100</span>%</h3>
-                    <p><i class="fa-solid fa-flag" style="color:var(--orange);"></i> China-Focused Team</p>
-                </div>
-                <div class="stat-item">
-                    <h3><i class="fa-solid fa-language" style="color:var(--blue);"></i></h3>
-                    <p>EN ↔ 中文 Native-Level</p>
-                </div>
-                <div class="stat-item">
-                    <h3><i class="fa-solid fa-circle-nodes" style="color:var(--orange);"></i></h3>
-                    <p>End-to-End Solution</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ WHY ============ -->
+<section class="block" id="why">
+  <div class="section-label">Why Bluewawa</div>
+  <h2 class="section-title">Why brands <em>choose us</em>.</h2>
+  <div class="why-grid">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3>Sharp <em>focus</em>.</h3>
+      <p>We only do China social media localization — Rednote and WeChat — with a systematic, repeatable methodology. No jack-of-all-trades.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3>Blended <em>team</em>.</h3>
+      <p>A China &amp; international team means no cultural mismatch and barrier-free English communication. You get the local context without the language gap.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3>Content <em>+ tech engine</em>.</h3>
+      <p>We write notes that actually perform <em>and</em> build the Mini Programs, H5 and dashboards behind them. One team, not five vendors stitched together.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <h3>Transparent <em>reporting</em>.</h3>
+      <p>Regular bilingual reports on growth, engagement, leads and conversion — progress you can see and understand. No "engagement rate" smoke screens.</p>
+    </div>
+  </div>
+  <p class="problem-closing" style="margin-top:64px;">Not just an operations agency — <span class="yellow">your China partner</span>.</p>
+</section>
 
-    <!-- ==================== CTA BANNER ==================== -->
-    <section class="cta-banner" id="contact">
-        <div class="banner-dots">
-            <span class="banner-dot"></span>
-            <span class="banner-dot"></span>
-            <span class="banner-dot"></span>
-            <span class="banner-dot"></span>
-            <span class="banner-dot"></span>
-        </div>
-        <div class="cta-banner-inner">
-            <h2>Ready to turn <span class="wow-cta">Blue</span> into <span class="wow-cta">Wow</span>?</h2>
-            <p>Let's talk about your brand's China social media strategy. No jargon, no fluff — just a clear path to connecting with Chinese consumers.</p>
-            <a href="mailto:hello@bluewawa.media" class="btn btn-primary">
-                <i class="fa-solid fa-envelope"></i> hello@bluewawa.media <span class="btn-arrow">→</span>
-            </a>
-        </div>
-    </section>
+<!-- ============ PROCESS ============ -->
+<section class="block deep" id="process">
+  <div class="section-label">How We Work</div>
+  <h2 class="section-title">From hello to <em>growth</em>, in 5 steps.</h2>
+  <div class="process">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>Discovery</h4>
+      <p>Needs alignment + a free market scan. We figure out if we're a fit.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>Proposal</h4>
+      <p>A custom plan with goals broken down. Locked scope, locked budget.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>Kick-off</h4>
+      <p>Team alignment and asset handover. Everyone on the same page.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>Execution</h4>
+      <p>Content, operation & tech in 2-week iterations, with live data.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <h4>Optimize</h4>
+      <p>Monthly review & strategy tuning. Double down on what works.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-col">
-                <div class="footer-logo-sm">Blue<span>Wawa</span> Media</div>
-                <p style="margin-top:0.3rem;">Turn Blue into Wow.<br>把你的好，说给中国听。</p>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <a href="#services"><i class="fa-solid fa-language" style="margin-right:0.3rem;"></i>Content Localization</a>
-                <a href="#services"><i class="fa-solid fa-bolt" style="margin-right:0.3rem;"></i>Social Operations</a>
-                <a href="#services"><i class="fa-solid fa-code" style="margin-right:0.3rem;"></i>Platform Development</a>
-                <a href="#services"><i class="fa-solid fa-compass" style="margin-right:0.3rem;"></i>Strategic Consulting</a>
-            </div>
-            <div class="footer-col">
-                <h4>Platforms</h4>
-                <a href="#platforms"><i class="fa-solid fa-book" style="margin-right:0.3rem;"></i>Xiaohongshu</a>
-                <a href="#platforms"><i class="fa-brands fa-weixin" style="margin-right:0.3rem;"></i>WeChat</a>
-                <a href="#platforms"><i class="fa-brands fa-tiktok" style="margin-right:0.3rem;"></i>Douyin</a>
-                <a href="#platforms"><i class="fa-brands fa-weibo" style="margin-right:0.3rem;"></i>Weibo & Bilibili</a>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <a href="mailto:hello@bluewawa.media"><i class="fa-solid fa-envelope" style="margin-right:0.3rem;"></i>hello@bluewawa.media</a>
-                <a href="https://bluewawa.media"><i class="fa-solid fa-globe" style="margin-right:0.3rem;"></i>bluewawa.media</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            © 2026 蓝哇哇文化传媒有限公司 &nbsp;|&nbsp; BlueWawa Media. All rights reserved.
-        </div>
-    </footer>
+<!-- ============ INDUSTRIES ============ -->
+<section class="block deep">
+  <div class="section-label">Industries</div>
+  <h2 class="section-title">We've worked with brands in:</h2>
+  <div class="industry-tags">
+    <div class="tag">Travel & Hospitality</div>
+    <div class="tag">F&B</div>
+    <div class="tag">Beauty & Skincare</div>
+    <div class="tag">Fashion & Apparel</div>
+    <div class="tag">Tech & SaaS</div>
+    <div class="tag">Luxury</div>
+    <div class="tag">Education</div>
+    <div class="tag">Wellness</div>
+    <div class="tag">Home & Lifestyle</div>
+  </div>
+  <p class="industries-closing">Don't see yours? Talk to us anyway — strategy travels.</p>
+</section>
 
-    <!-- ==================== MOBILE NAV SCRIPT ==================== -->
-    <script>
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        const navOverlay = document.getElementById('navOverlay');
-        const allNavLinks = navLinks.querySelectorAll('a');
+<!-- ============ FAQ ============ -->
+<section class="block" id="faq">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Questions, <em>answered</em>.</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>Do we need a Chinese business entity to start?</summary>
+      <div class="answer">No. We help brands launch through cross-border (跨境) setups first, then localize when the numbers justify it.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How long until we see results on Rednote?</summary>
+      <div class="answer">Real traction in 60–90 days if content + seeding are done right. Anyone promising faster is selling you bots.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What's a realistic budget for a 3-month pilot?</summary>
+      <div class="answer">It depends on scope and platform mix. We'll size it together on the call — no surprises, no inflated retainers.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Do we need to be on both Rednote and WeChat?</summary>
+      <div class="answer">Not necessarily. We'll recommend the right mix for your stage — usually Rednote first for discovery and reputation, then WeChat to convert and retain through Official Accounts, Mini Programs and private community (私域).</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can you build the tech — Mini Programs, H5, dashboards?</summary>
+      <div class="answer">Yes, all in-house. WeChat Mini Programs, H5 campaign pages, membership systems and data dashboards — with WeChat Pay and logistics integration. Content and development sit on the same team, so nothing gets lost between vendors.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How do you report progress and prove ROI?</summary>
+      <div class="answer">Regular bilingual reports plus a shared live dashboard — content performance, audience profiles, engagement, leads and conversion funnels. We tie content to outcomes you can read in English, not just likes.</div>
+    </details>
+  </div>
+</section>
 
-        function openNav() {
-            navLinks.classList.add('open');
-            navToggle.classList.add('active');
-            navOverlay.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeNav() {
-            navLinks.classList.remove('open');
-            navToggle.classList.remove('active');
-            navOverlay.classList.remove('show');
-            document.body.style.overflow = '';
-        }
+<!-- ============ ABOUT ============ -->
+<section class="block deep" id="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title">Who <em>we are</em>.</h2>
+  <div class="about">
+    <div class="about-facts">
+      <div class="about-facts-seal">中国</div>
+      <div class="fact">
+        <div class="fact-num">01</div>
+        <h3>Based in <em>China</em>.</h3>
+        <div class="zh">基于中国 · 服务世界</div>
+        <p>We live and work where your customers scroll, search and decide. No timezone telephone games, no second-hand context.</p>
+      </div>
+      <div class="fact">
+        <div class="fact-num">02</div>
+        <h3><em>Bilingual</em> team.</h3>
+        <div class="zh">双语团队 · 无缝沟通</div>
+        <p>A blended China &amp; international crew across strategy, content, design and dev. English in, native Chinese out.</p>
+      </div>
+      <div class="fact">
+        <div class="fact-num">03</div>
+        <h3>In-house, <em>not outsourced</em>.</h3>
+        <div class="zh">自有团队 · 不外包</div>
+        <p>Every post, video, page and Mini Program is built by our own team. No freelancer roulette, no vendor stitching.</p>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-text">
+        <p><strong>Bluewawa Media is a China-based, bilingual social media localization partner.</strong> We help overseas brands grow on Rednote (小红书) and WeChat (微信) — through content that doesn't feel translated and strategy that doesn't feel borrowed.</p>
+        <p>A blended China &amp; international team across strategy, content, design, and dev. We're not the biggest. We're the ones who actually pick up the phone.</p>
+      </div>
+      <div class="about-quote">
+        "Content that doesn't feel translated. Strategy that doesn't feel <span class="yellow">borrowed</span>."
+      </div>
+    </div>
+  </div>
+</section>
 
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.contains('open') ? closeNav() : openNav();
-        });
-        navOverlay.addEventListener('click', closeNav);
-        allNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('open')) closeNav();
-            });
-        });
+<!-- ============ CONTACT ============ -->
+<section class="contact-section" id="contact">
+  <div class="section-label">Let's Talk</div>
+  <h2 class="section-title">Let the world hear your <em>wow</em>.</h2>
+  <p style="font-size: 18px; color: var(--cream-dim); max-width: 600px; margin-bottom: 8px;">Your product already earned its audience everywhere else. China is the gap — let's close it. 30-minute call, no deck, no pitch.</p>
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navLinks.classList.contains('open')) closeNav();
-        });
-    </script>
+  <div class="contact-grid">
+    <form class="contact-form" id="contactForm">
+      <div class="field">
+        <label>Your name</label>
+        <input type="text" name="name" required />
+      </div>
+      <div class="field">
+        <label>Company</label>
+        <input type="text" name="company" />
+      </div>
+      <div class="field">
+        <label>Work email</label>
+        <input type="email" name="email" required />
+      </div>
+      <div class="field">
+        <label>Country / region</label>
+        <input type="text" name="country" />
+      </div>
+      <div class="field">
+        <label>What are you trying to do in China?</label>
+        <textarea name="message" rows="3"></textarea>
+      </div>
+      <button type="submit">Book my free China-readiness call →</button>
+    </form>
+
+    <div class="contact-info">
+      <h4>Other ways to reach us</h4>
+      <p><strong>Email</strong>hello@bluewawa.media</p>
+      <!-- <p><strong>WeChat</strong>Scan QR or search: bluewawa_media</p>
+      <p><strong>LinkedIn</strong>/company/bluewawa-media</p> -->
+      <p><strong>Response time</strong>Within 24 hours (GMT+8)</p>
+      <div class="contact-seal">回信</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo"><span class="b">Blue</span><span class="w">wawa</span><span class="dot">.</span></div>
+      <p>A bilingual social media localization partner helping overseas brands grow on Rednote (小红书) and WeChat (微信).</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Social Operation</a>
+        <a href="#services">Localization</a>
+        <a href="#services">Development</a>
+        <a href="#services">Consulting</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#about">About</a>
+        <a href="#why">Why us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Social</h5>
+        <a href="#">LinkedIn</a>
+        <a href="#">Rednote</a>
+        <a href="#">WeChat</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Bluewawa Media · All rights reserved.</span>
+    <span>bluewawa.media</span>
+  </div>
+</footer>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="back-to-top" aria-label="Back to top" type="button">
+  <span class="label">Back to top</span>
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function() {
+  // Skip interactions on touch devices and reduced-motion users
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isTouch || reducedMotion) return;
+
+  const hero = document.querySelector('.hero');
+  const spotlight = document.querySelector('.cursor-spotlight');
+  const headline = document.querySelector('.hero-headline');
+  if (!hero) return;
+
+  let targetX = 0, targetY = 0;
+  let currentX = 0, currentY = 0;
+  let inHero = false;
+
+  hero.addEventListener('mouseenter', () => { inHero = true; });
+  hero.addEventListener('mouseleave', () => {
+    inHero = false;
+    if (headline) headline.style.transform = '';
+  });
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    targetX = e.clientX - rect.left;
+    targetY = e.clientY - rect.top;
+  });
+
+  function tick() {
+    // Lerp for smooth follow
+    currentX += (targetX - currentX) * 0.12;
+    currentY += (targetY - currentY) * 0.12;
+
+    if (spotlight && inHero) {
+      spotlight.style.transform = `translate(${currentX - 300}px, ${currentY - 300}px)`;
+    }
+
+    if (headline && inHero) {
+      const rect = hero.getBoundingClientRect();
+      const nx = (currentX / rect.width - 0.5) * 2;
+      const ny = (currentY / rect.height - 0.5) * 2;
+      headline.style.transform =
+        `perspective(1400px) rotateX(${ny * -2.5}deg) rotateY(${nx * 3}deg) translateZ(0)`;
+    }
+
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // Magnetic effect on buttons
+  const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .tag');
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const strength = btn.classList.contains('tag') ? 0.25 : 0.35;
+      btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+
+  // Subtle parallax on the floating seal (counter to mouse for depth)
+  const seal = document.querySelector('.seal-floating');
+  if (seal) {
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const nx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const ny = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      seal.style.setProperty('--mx', `${nx * -20}px`);
+      seal.style.setProperty('--my', `${ny * -20}px`);
+    });
+  }
+})();
+
+// Back to top button
+(function() {
+  const btn = document.querySelector('.back-to-top');
+  if (!btn) return;
+
+  const threshold = 600;
+  let ticking = false;
+
+  function check() {
+    if (window.scrollY > threshold) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(check);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Magnetic effect
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  if (!isTouch) {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.setProperty('--bx', `${x * 0.3}px`);
+      btn.style.setProperty('--by', `${y * 0.3}px`);
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.setProperty('--bx', '0px');
+      btn.style.setProperty('--by', '0px');
+    });
+  }
+})();
+
+// Scroll parallax for interlude background images
+(function() {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
+
+  const parallaxLayers = document.querySelectorAll('.parallax-bg');
+  if (!parallaxLayers.length) return;
+
+  let ticking = false;
+
+  function updateParallax() {
+    const viewportH = window.innerHeight;
+    parallaxLayers.forEach(layer => {
+      const parent = layer.parentElement;
+      const rect = parent.getBoundingClientRect();
+      // Only update if section is roughly in viewport (perf)
+      if (rect.bottom < -200 || rect.top > viewportH + 200) return;
+      const speed = parseFloat(layer.dataset.speed || 0.35);
+      // Center-based offset — when section center is at viewport center, offset = 0
+      const sectionCenter = rect.top + rect.height / 2;
+      const viewportCenter = viewportH / 2;
+      const offset = (viewportCenter - sectionCenter) * speed;
+      layer.style.transform = `translate3d(0, ${offset}px, 0)`;
+    });
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  updateParallax();
+})();
+
+// Contact form — open user's email client with a prefilled message
+(function() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const TO = 'hello@bluewawa.media';
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const get = (k) => (data.get(k) || '').toString().trim();
+    const name = get('name');
+    const company = get('company');
+    const email = get('email');
+    const country = get('country');
+    const message = get('message');
+
+    const subject = `New China-readiness inquiry — ${name}${company ? ' / ' + company : ''}`;
+    const body =
+`Hi Bluewawa team,
+
+I'd like to book a free China-readiness call.
+
+— Name: ${name}
+— Company: ${company || '—'}
+— Work email: ${email}
+— Country / region: ${country || '—'}
+
+What I'm trying to do in China:
+${message || '(not specified)'}
+
+Thanks!`;
+
+    const href = `mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = href;
+  });
+})();
+</script>
+
 </body>
 </html>
