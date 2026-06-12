@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'Gloock';
+    src: url('file:///C:/Users/sunxi/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/6c39aabf-63f7-45cf-9790-656e18e11c81/5575e47d-2812-482d-92f8-5731df27e1ef/skills/canvas-design/canvas-fonts/Gloock-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'Instrument Sans';
+    src: url('file:///C:/Users/sunxi/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/6c39aabf-63f7-45cf-9790-656e18e11c81/5575e47d-2812-482d-92f8-5731df27e1ef/skills/canvas-design/canvas-fonts/InstrumentSans-Regular.ttf');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Instrument Sans';
+    src: url('file:///C:/Users/sunxi/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/6c39aabf-63f7-45cf-9790-656e18e11c81/5575e47d-2812-482d-92f8-5731df27e1ef/skills/canvas-design/canvas-fonts/InstrumentSans-Bold.ttf');
+    font-weight: 700;
+  }
+
+  :root {
+    --navy: #182E66;
+    --navy-deep: #0F1E48;
+    --yellow: #FFCE06;
+    --terracotta: #BD5A3D;
+    --blue: #4391D4;
+    --cream: #FAF6EE;
+    --cream-dim: rgba(250,246,238,0.72);
+    --cream-dimmer: rgba(250,246,238,0.45);
+    --line: rgba(250,246,238,0.16);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--navy); }
+
+  body {
+    background:
+      radial-gradient(1400px 900px at 22% 8%, #1D3777 0%, var(--navy) 48%, #142757 100%);
+    color: var(--cream);
+    font-family: 'Instrument Sans', sans-serif;
+    position: relative;
+  }
+
+  .frame {
+    position: absolute;
+    inset: 0;
+    padding: 54px 70px 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ---------- header ---------- */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--line);
+  }
+  .logo {
+    font-family: 'Gloock', serif;
+    font-size: 42px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .logo .b { color: var(--blue); }
+  .logo .w { color: var(--cream); }
+  .logo .dot { color: var(--yellow); }
+  .kicker {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4.5px;
+    color: var(--cream-dim);
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 64px;
+  }
+  .slogan {
+    font-family: 'Gloock', serif;
+    font-size: 124px;
+    line-height: 1.04;
+    letter-spacing: -2px;
+  }
+  .slogan .blue { color: var(--blue); }
+  .slogan .wow { color: var(--yellow); }
+
+  /* ---------- seal ---------- */
+  .seal {
+    position: absolute;
+    right: 38px;
+    top: 50%;
+    width: 178px;
+    height: 178px;
+    margin-top: -89px;
+    transform: rotate(-7deg);
+  }
+  .seal .ring-outer {
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid rgba(189,90,61,0.55);
+    border-radius: 50%;
+  }
+  .seal .ring-inner {
+    position: absolute;
+    inset: 9px;
+    border: 3px solid var(--terracotta);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .seal .char {
+    font-family: 'KaiTi', 'SimKai', serif;
+    font-size: 96px;
+    line-height: 1;
+    color: var(--terracotta);
+    -webkit-text-stroke: 1.2px var(--terracotta);
+    padding-bottom: 8px;
+  }
+
+  /* ---------- footer ---------- */
+  .footer {
+    position: absolute;
+    left: 70px;
+    right: 70px;
+    bottom: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 17px;
+    color: var(--cream-dim);
+  }
+  .footer .domain {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--cream);
+  }
+  .platforms {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  .platform {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    letter-spacing: 0.5px;
+  }
+  .pdot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .pdot.red { background: #FF2442; }
+  .pdot.green { background: #07C160; }
+  .sep { color: var(--cream-dimmer); }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="header">
+      <div class="logo"><span class="b">Blue</span><span class="w">wawa</span><span class="dot">.</span></div>
+      <div class="kicker">CHINA SOCIAL MEDIA LOCALIZATION</div>
+    </div>
+
+    <div class="hero">
+      <div class="slogan">
+        Turn <span class="blue">Blue</span><br>
+        into <span class="wow">Wow.</span>
+      </div>
+      <div class="seal">
+        <div class="ring-outer"></div>
+        <div class="ring-inner"><div class="char">哇</div></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="domain">bluewawa.media</div>
+      <div class="platforms">
+        <div class="platform"><span class="pdot red"></span>Rednote 小红书</div>
+        <span class="sep">·</span>
+        <div class="platform"><span class="pdot green"></span>WeChat 微信</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

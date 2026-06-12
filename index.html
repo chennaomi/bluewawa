@@ -244,6 +244,57 @@
     100% { transform: scaleY(0); transform-origin: bottom; }
   }
 
+  /* ============ HERO ENTRANCE CHOREOGRAPHY ============ */
+  .hero-bg {
+    animation: hero-bloom 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes hero-bloom {
+    from { opacity: 0; transform: scale(1.12); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  /* masked word-by-word reveal */
+  .hl-word {
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.12em 0.08em 0.06em;
+    margin: -0.12em -0.08em -0.06em;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .hl-word:hover { transform: translateY(-0.045em); }
+  .hl-in {
+    display: inline-block;
+    transform-origin: 0 100%;
+    animation: word-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--d, 0s);
+  }
+  @keyframes word-rise {
+    from { transform: translateY(130%) rotate(5deg); }
+    to { transform: translateY(0) rotate(0deg); }
+  }
+  /* the full stop drops in and bounces */
+  .dot-drop {
+    display: inline-block;
+    transform-origin: 50% 100%;
+    animation: dot-drop 0.75s cubic-bezier(0.34, 1.2, 0.64, 1) 1.3s both;
+  }
+  @keyframes dot-drop {
+    0% { transform: translateY(-1.4em); opacity: 0; }
+    40% { opacity: 1; }
+    58% { transform: translateY(0) scaleY(1); }
+    74% { transform: translateY(0) scaleY(0.72); }
+    88% { transform: translateY(-0.1em) scaleY(1.04); }
+    100% { transform: translateY(0) scaleY(1); }
+  }
+  /* staggered fade-up for the rest */
+  @keyframes hero-fade-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-meta { animation: hero-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+  .hero-sub { animation: hero-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.05s both; }
+  .hero-ctas { animation: hero-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both; }
+  .scroll-indicator { animation: hero-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.8s both; }
+
   .hero-meta {
     display: flex; justify-content: space-between;
     margin-bottom: 64px;
@@ -339,14 +390,34 @@
     background: var(--terracotta); color: var(--cream);
     display: flex; align-items: center; justify-content: center;
     font-family: 'Noto Serif SC', serif;
-    font-weight: 900; font-size: 32px;
+    font-weight: 900; font-size: 44px;
     letter-spacing: 2px;
     box-shadow: 0 12px 40px rgba(189,90,61,0.5);
     z-index: 3;
     --mx: 0px; --my: 0px;
     transform: translate(var(--mx), var(--my)) rotate(-8deg);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    animation: seal-float 6s ease-in-out infinite;
+    animation:
+      seal-stamp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1.55s both,
+      seal-float 6s ease-in-out 2.3s infinite;
+  }
+  @keyframes seal-stamp {
+    0% { opacity: 0; transform: translate(var(--mx), var(--my)) rotate(-22deg) scale(2.6); }
+    70% { opacity: 1; transform: translate(var(--mx), var(--my)) rotate(-7deg) scale(0.93); }
+    100% { opacity: 1; transform: translate(var(--mx), var(--my)) rotate(-8deg) scale(1); }
+  }
+  .seal-floating::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 3px solid var(--terracotta);
+    opacity: 0;
+    pointer-events: none;
+    animation: seal-ring 0.9s ease-out 2.05s;
+  }
+  @keyframes seal-ring {
+    0% { opacity: 0.85; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.65); }
   }
   @keyframes seal-float {
     0%, 100% { transform: translate(var(--mx), var(--my)) rotate(-8deg); }
@@ -1232,7 +1303,9 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .orb, .seal-floating, .scroll-indicator .line,
+    .orb, .seal-floating, .seal-floating::after, .scroll-indicator .line,
+    .hero-bg, .hl-in, .dot-drop,
+    .hero-meta, .hero-sub, .hero-ctas, .scroll-indicator,
     .contact-section:before, .contact-section:after {
       animation: none !important;
     }
@@ -1263,7 +1336,9 @@
     "availableLanguage": ["en", "zh-CN"]
   },
   "sameAs": [
-    "https://www.linkedin.com/company/bluewawa-media"
+    "https://www.linkedin.com/company/bluewawa-media",
+    "https://www.facebook.com/profile.php?id=61590503946333",
+    "https://www.tiktok.com/@bluewawa.media"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -1359,9 +1434,13 @@
   </div>
 
   <h1 class="hero-headline">
-    Turn <span class="blue-word">Blue</span><br />
-    into <span class="yellow">Wow</span>.
+    <span class="hl-word"><span class="hl-in" style="--d:0.35s">Turn</span></span>
+    <span class="hl-word"><span class="hl-in blue-word" style="--d:0.5s">Blue</span></span><br />
+    <span class="hl-word"><span class="hl-in" style="--d:0.65s">into</span></span>
+    <span class="hl-word"><span class="hl-in yellow" style="--d:0.8s">Wow</span></span><span class="dot-drop">.</span>
   </h1>
+
+  <div class="seal-floating" aria-hidden="true">哇!</div>
 
   <div class="hero-bottom">
     <p class="hero-sub">
@@ -1716,6 +1795,7 @@
       <h4>Other ways to reach us</h4>
       <p><strong>Email</strong><a href="mailto:hello@bluewawa.media">hello@bluewawa.media</a></p>
       <p><strong>Facebook</strong><a href="https://www.facebook.com/profile.php?id=61590503946333" target="_blank" rel="noopener noreferrer">facebook.com/bluewawa</a></p>
+      <p><strong>TikTok</strong><a href="https://www.tiktok.com/@bluewawa.media" target="_blank" rel="noopener noreferrer">@bluewawa.media</a></p>
       <!-- <p><strong>WeChat</strong>Scan QR or search: bluewawa_media</p>
       <p><strong>LinkedIn</strong>/company/bluewawa-media</p> -->
       <p><strong>Response time</strong>Within 24 hours (GMT+8)</p>
@@ -1747,9 +1827,8 @@
       </div>
       <div class="footer-col">
         <h5>Social</h5>
-        <a href="#">LinkedIn</a>
-        <a href="#">Rednote</a>
-        <a href="#">WeChat</a>
+        <a href="https://www.tiktok.com/@bluewawa.media" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://www.facebook.com/profile.php?id=61590503946333" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
     </div>
   </div>
