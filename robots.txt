@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bluewawa.media/sitemap.xml
+Sitemap: https://www.bluewawa.media/sitemap.xml

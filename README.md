@@ -1,13 +1,15 @@
 # Bluewawa Media 官网
 
 单页 HTML 门户网站（无框架、纯 HTML/CSS/JS），面向海外品牌的中国社媒本地化服务。
-线上地址：**https://bluewawa.media**（GitHub Pages 部署，自定义域名见 `CNAME`，指向 `www.bluewawa.media`）。
+线上地址：**https://www.bluewawa.media**（GitHub Pages 部署，自定义域名见 `CNAME`）。
 
 ## 文件说明
 
 | 文件 | 说明 |
 | --- | --- |
 | `index.html` | 网站本体（深蓝编辑风、5 色配色），HTML/CSS/JS 全部内联在这一个文件里 |
+| `rednote-marketing/index.html` | Rednote / Xiaohongshu Marketing 独立 SEO 落地页 |
+| `wechat-marketing/index.html` | WeChat Marketing 独立 SEO 落地页 |
 | `CNAME` | GitHub Pages 自定义域名（`www.bluewawa.media`） |
 | `favicon.png` | 站点图标（48×48，黄底蓝 B） |
 | `og-image.png` | 社交分享图（1200×630），OG/Twitter 标签引用。源文件为 `.claude/og-image.html`，改动后用无头 Chrome 截图重新生成（注意：Edge 无头模式有渲染 bug，需用 Chrome） |
@@ -25,8 +27,8 @@
 
 ### SEO 配置（均在 `<head>`）
 
-- title / description / keywords / canonical（指向 `https://bluewawa.media/`）
-- Open Graph + Twitter Card（分享图指向 `https://bluewawa.media/og-image.png`）
+- title / description / canonical（指向 `https://www.bluewawa.media/`）
+- Open Graph + Twitter Card（分享图指向 `https://www.bluewawa.media/og-image.png`）
 - 三段 JSON-LD 结构化数据：`ProfessionalService`、`WebSite`、`FAQPage`（FAQ 内容改动时需同步更新 FAQPage）
 
 ### 联系方式
@@ -79,7 +81,7 @@ npx serve .
 
 ## 部署
 
-推送到 `main` 分支即由 GitHub Pages 自动发布。注意保持 canonical / og:url / sitemap 中的 `https://bluewawa.media/` 与实际域名一致。
+推送到 `main` 分支即由 GitHub Pages 自动发布。注意保持 canonical / og:url / sitemap 中的 `https://www.bluewawa.media/` 与实际域名一致。
 
 ## 待办
 
