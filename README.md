@@ -34,7 +34,7 @@
 ### 联系方式
 
 - 联系表单为 `mailto:` 方案——提交后调起用户本地邮件客户端，收件人写死在页面底部 JS 的 `TO` 常量里（`hello@bluewawa.media`）。后续可升级为 Formspree 等表单服务
-- Contact 区块已上线的真实链接：Email（`mailto:hello@bluewawa.media`）、Facebook（`facebook.com/profile.php?id=61590503946333`）、TikTok（`tiktok.com/@bluewawa.media`）。页脚 Social 栏为 TikTok + Facebook 真实链接
+- Contact 区块已上线的真实链接：Email（`mailto:hello@bluewawa.media`）、WhatsApp（`wa.me/8618611314374`）、Facebook（`facebook.com/profile.php?id=61590503946333`）、TikTok（`tiktok.com/@bluewawa.media`）。页脚 Social 栏包含 WhatsApp、TikTok 和 Facebook 真实链接
 - WeChat / LinkedIn 联系方式暂以 HTML 注释形式保留在 Contact 区块中，待账号就绪后取消注释
 
 ## 品牌配色（CSS 变量，`:root`）
