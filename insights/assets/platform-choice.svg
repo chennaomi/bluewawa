@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">One goal. Two possible starting points.</title><desc id="desc">Rednote content discovery and WeChat customer relationships are two possible starting points for a China marketing plan.</desc>
+<rect width="1200" height="630" fill="#e9e3d6"/>
+<path d="M60 90H1140M60 540H1140" stroke="#182e66" stroke-opacity=".2"/>
+<text x="65" y="65" font-family="Arial,sans-serif" font-size="17" fill="#182e66" letter-spacing="4">BLUEWAWA FIELD GUIDE / 01</text>
+<rect x="80" y="140" width="490" height="300" rx="2" fill="#182e66"/>
+<rect x="630" y="140" width="490" height="300" rx="2" fill="#d2dfd3"/>
+<circle cx="122" cy="181" r="8" fill="#ff6178"/><circle cx="672" cy="181" r="8" fill="#376346"/>
+<text x="145" y="187" font-family="Arial,sans-serif" font-size="17" fill="#faf6ee" letter-spacing="2">REDNOTE</text>
+<text x="695" y="187" font-family="Arial,sans-serif" font-size="17" fill="#182e66" letter-spacing="2">WECHAT</text>
+<text x="115" y="286" font-family="Georgia,serif" font-size="53" fill="#faf6ee">Be discovered.</text>
+<text x="665" y="286" font-family="Georgia,serif" font-size="53" fill="#182e66">Build a journey.</text>
+<text x="115" y="340" font-family="Arial,sans-serif" font-size="22" fill="#dce2ef">Content · Context · Questions</text>
+<text x="665" y="340" font-family="Arial,sans-serif" font-size="22" fill="#405c4a">Information · Service · Follow-up</text>
+<path d="M325 440V490H875V440M600 490V530" fill="none" stroke="#bd5a3d" stroke-width="3"/>
+<circle cx="600" cy="490" r="7" fill="#bd5a3d"/>
+<text x="600" y="585" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#182e66">Start with the customer’s next step.</text>
+</svg>

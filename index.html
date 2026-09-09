@@ -11,6 +11,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#182E66" />
 <link rel="canonical" href="https://www.bluewawa.media/" />
+<link rel="stylesheet" href="/insights/assets/teaser.css" />
 
 <!-- Favicon (brand colors) -->
 <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
@@ -684,6 +685,99 @@
   }
   .section-title em { color: var(--yellow); font-style: italic; }
   .section-title .terra { color: var(--terracotta); font-style: italic; }
+
+  /* ============ SAMPLE WORK ============ */
+  #sample-work { scroll-margin-top: 100px; }
+  .samples-heading { display: flex; align-items: flex-end; gap: 40px; margin-bottom: 40px; }
+  .samples-heading .section-title { margin-bottom: 0; flex: 1; }
+  .samples-intro { max-width: 365px; color: var(--cream-dim); font-size: 16px; line-height: 1.75; }
+  .samples-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; }
+  .sample-card { min-width: 0; border: 1px solid var(--line); background: var(--navy-deep); }
+  .sample-topline { padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .sample-platform { font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+  .sample-platform::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 9px; background: #FF6178; border-radius: 50%; }
+  .sample-card-wechat .sample-platform::before { background: #52D58B; }
+  .sample-badge { padding: 4px 8px; border: 1px solid var(--line); color: var(--cream-dim); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+  .sample-visual { height: 470px; padding: 30px; color: var(--navy-deep); overflow: hidden; }
+  .sample-visual-rednote { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 24px; align-items: center; background: #E9E2D5; }
+  .sample-brief { padding: 18px 0; border-top: 2px solid var(--terracotta); }
+  .sample-kicker { display: block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+  .sample-brief blockquote { margin: 18px 0; font-family: 'Playfair Display', serif; font-size: clamp(20px, 2vw, 28px); line-height: 1.3; }
+  .sample-brief p { font-size: 12px; line-height: 1.7; color: #535C65; }
+  .sample-brief .sample-direction { margin-top: 24px; font-size: 12px; font-weight: 700; color: var(--navy); }
+  .sample-cover { position: relative; min-width: 0; padding: 24px 20px 0; background: #FAF6EE; box-shadow: 0 10px 28px rgba(15,30,72,.12); }
+  .sample-cover .sample-kicker { color: #80513B; font-size: 9px; letter-spacing: 1px; }
+  .sample-cover-title { margin: 18px 0 12px; font-family: 'Noto Serif SC', serif; font-size: clamp(27px, 3vw, 42px); font-weight: 700; line-height: 1.4; letter-spacing: -1px; }
+  .sample-cover-sub { color: #535C65; font-size: 11px; line-height: 1.7; }
+  .sample-coast { display: block; width: calc(100% + 40px); height: 130px; margin: 20px -20px 0; }
+  .sample-cover-footer { margin: 0 -20px; padding: 10px 14px; color: #FAF6EE; background: var(--navy); font-size: 9px; letter-spacing: 1px; }
+  .sample-visual-wechat { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); align-items: center; gap: 24px; background: #DDE7DE; }
+  .sample-phone { min-width: 0; padding: 14px 12px 12px; border: 5px solid var(--navy-deep); border-radius: 24px; background: #FAF6EE; box-shadow: 0 10px 28px rgba(15,30,72,.12); }
+  .sample-phone-speaker { width: 36px; height: 4px; margin: 0 auto 15px; background: var(--navy-deep); border-radius: 8px; }
+  .sample-phone-header { padding-bottom: 12px; border-bottom: 1px solid #D9DED7; font-size: 10px; text-align: center; color: #535C65; }
+  .sample-phone-story { padding: 20px 5px; }
+  .sample-phone-story .sample-kicker { color: #376346; font-size: 9px; }
+  .sample-phone-title { margin: 12px 0; font-family: 'Noto Serif SC', serif; font-size: 25px; font-weight: 700; line-height: 1.4; }
+  .sample-phone-copy { font-size: 11px; color: #535C65; line-height: 1.8; }
+  .sample-phone-cta { margin-top: 18px; padding: 11px 8px; color: #fff; background: #286541; text-align: center; font-size: 12px; font-weight: 700; }
+  .sample-phone-menu { display: flex; justify-content: space-around; gap: 4px; border-top: 1px solid #D9DED7; padding-top: 12px; color: #535C65; font-size: 10px; }
+  .sample-journey { list-style: none; }
+  .sample-journey li { padding: 0 0 20px 15px; border-left: 1px solid #96B49C; position: relative; }
+  .sample-journey li:last-child { padding-bottom: 0; }
+  .sample-journey li::before { content: ''; width: 7px; height: 7px; background: #286541; border-radius: 50%; position: absolute; left: -4px; top: 5px; }
+  .sample-journey strong { display: block; font-size: 13px; margin-bottom: 5px; }
+  .sample-journey span { display: block; font-size: 11px; line-height: 1.65; color: #535C65; }
+  .sample-caption { padding: 12px 24px; border-bottom: 1px solid var(--line); color: var(--cream-dim); font-size: 11px; line-height: 1.6; }
+  .sample-body { padding: 28px; }
+  .sample-body h3 { margin-bottom: 14px; font-family: 'Playfair Display', serif; font-size: 30px; line-height: 1.15; }
+  .sample-description { color: var(--cream-dim); font-size: 15px; line-height: 1.75; }
+  .sample-deliverables { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 24px; list-style: none; }
+  .sample-deliverables li { padding: 5px 9px; background: rgba(250,246,238,.06); color: var(--cream-dim); font-size: 11px; }
+  .sample-details { border-top: 1px solid var(--line); }
+  .sample-details summary { padding: 18px 0 2px; font-size: 13px; font-weight: 600; color: var(--yellow); }
+  .sample-details[open] summary { padding-bottom: 18px; }
+  .sample-detail-content { font-size: 13px; line-height: 1.8; color: var(--cream-dim); }
+  .sample-detail-content p + p { margin-top: 14px; }
+  .sample-detail-content strong { color: var(--cream); }
+  .sample-copy { margin: 16px 0; padding: 18px; border-left: 2px solid var(--terracotta); background: rgba(250,246,238,.04); }
+  .samples-footer { margin-top: 28px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+  .samples-footer p { max-width: 640px; font-size: 12px; line-height: 1.75; color: var(--cream-dim); }
+  .samples-contact { padding: 12px 0; flex-shrink: 0; color: var(--yellow); font-size: 14px; font-weight: 600; border-bottom: 1px solid var(--yellow); }
+  @media (max-width: 1100px) {
+    .samples-heading { display: block; }
+    .samples-intro { margin-top: 24px; max-width: 640px; }
+    .samples-grid { gap: 20px; }
+    .sample-visual { padding: 22px; gap: 16px; }
+  }
+  @media (max-width: 900px) {
+    .samples-grid { grid-template-columns: 1fr; }
+    .sample-visual { height: auto; min-height: 360px; padding: 30px; gap: 30px; }
+    .sample-visual-rednote { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .sample-visual-wechat { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .sample-cover-title { font-size: 36px; }
+    .sample-brief blockquote { font-size: 28px; }
+    .samples-footer { align-items: flex-start; flex-direction: column; gap: 16px; }
+  }
+  @media (max-width: 480px) {
+    .sample-topline { padding: 16px; gap: 8px; }
+    .sample-platform { font-size: 11px; }
+    .sample-badge { font-size: 9px; }
+    .sample-visual { padding: 24px 18px; gap: 20px; }
+    .sample-visual-rednote { grid-template-columns: 1fr; }
+    .sample-brief { padding: 12px 0 0; }
+    .sample-brief blockquote { margin: 12px 0; font-size: 24px; }
+    .sample-brief .sample-direction { margin-top: 12px; }
+    .sample-cover { max-width: 280px; width: 100%; justify-self: center; }
+    .sample-visual-wechat { grid-template-columns: 1fr; }
+    .sample-phone { width: 100%; max-width: 260px; justify-self: center; }
+    .sample-journey { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .sample-journey li { padding: 0 0 0 15px; }
+    .sample-journey strong, .sample-journey span { display: inline; }
+    .sample-journey strong { margin-right: 6px; }
+    .sample-body { padding: 24px 20px; }
+    .sample-body h3 { font-size: 27px; }
+    .sample-caption { padding: 12px 18px; }
+  }
 
   /* ============ PROBLEM ============ */
   .problem-grid {
@@ -1366,7 +1460,7 @@
   "alternateName": "蓝哇哇传媒",
   "url": "https://www.bluewawa.media/",
   "image": "https://www.bluewawa.media/og-image.png",
-  "description": "China-based, bilingual social media localization partner helping overseas brands grow on Rednote (Xiaohongshu) and WeChat — content, operation, KOL/KOC, development and consulting.",
+  "description": "China-based, bilingual social media localization partner helping overseas brands grow on Rednote and WeChat — content, operation, KOL/KOC, development and consulting.",
   "slogan": "Turn Blue into Wow.",
   "areaServed": "CN",
   "knowsLanguage": ["en", "zh-CN"],
@@ -1457,11 +1551,12 @@
 <nav aria-label="Primary navigation">
   <a href="#top" class="logo"><span class="b">Blue</span><span class="w">wawa</span><span class="dot">.</span></a>
   <div class="nav-links">
+    <a href="#sample-work">Sample work</a>
     <a href="#platforms">Platforms</a>
     <a href="#services">Services</a>
     <a href="#why">Why us</a>
     <a href="#process">How we work</a>
-    <a href="#contact">Contact</a>
+    <a href="/insights/">Insights</a>
   </div>
   <a href="#contact" class="nav-cta">Book a call →</a>
 </nav>
@@ -1481,7 +1576,7 @@
   <div class="hero-noise"></div>
 
   <div class="hero-meta">
-    <div class="hero-tag">Bluewawa Media</div>
+    <div class="hero-tag">Rednote &amp; WeChat marketing for global brands</div>
   </div>
 
   <h1 class="hero-headline">
@@ -1499,13 +1594,125 @@
     </p>
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">Book a call →</a>
-      <a href="#services" class="btn-secondary">What we do</a>
+      <a href="#sample-work" class="btn-secondary">See sample work</a>
     </div>
   </div>
 
   <div class="scroll-indicator">
     <span>scroll</span>
     <div class="line"></div>
+  </div>
+</section>
+
+<!-- ============ SAMPLE WORK ============ -->
+<section class="block deep" id="sample-work" aria-labelledby="samples-title">
+  <div class="section-label">Content &amp; deliverables</div>
+  <div class="samples-heading">
+    <h2 class="section-title" id="samples-title">See what we <em>create</em>.</h2>
+    <p class="samples-intro">One fictional coastal stay. Two ways to bring its story to life in China, from a Rednote content concept to a WeChat enquiry journey.</p>
+  </div>
+
+  <div class="samples-grid">
+    <article class="sample-card" aria-labelledby="sample-rednote-title">
+      <div class="sample-topline">
+        <span class="sample-platform">01 / Rednote</span>
+        <span class="sample-badge">Concept project</span>
+      </div>
+      <figure>
+        <div class="sample-visual sample-visual-rednote">
+          <div class="sample-brief">
+            <span class="sample-kicker">The English brief</span>
+            <blockquote>“A quiet coastal stay for a slower weekend.”</blockquote>
+            <p>Introduce a fictional seaside guesthouse to Chinese-speaking travellers planning a short break.</p>
+            <p class="sample-direction">A local editorial angle →</p>
+          </div>
+          <div class="sample-cover">
+            <span class="sample-kicker">Weekend field notes / 01</span>
+            <p class="sample-cover-title" lang="zh-CN">这个周末<br />把时间交给海</p>
+            <p class="sample-cover-sub" lang="zh-CN">两天一夜慢下来<br />看海 · 散步 · 好好睡一觉</p>
+            <svg class="sample-coast" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <rect width="300" height="130" fill="#DDE8E4" />
+              <circle cx="233" cy="33" r="17" fill="#BD5A3D" />
+              <path d="M0 64 Q70 50 150 66 T300 62 V130 H0Z" fill="#4391D4" />
+              <path d="M0 89 Q75 72 150 89 T300 83 V130 H0Z" fill="#182E66" />
+              <path d="M0 116 Q90 95 160 115 T300 106 V130 H0Z" fill="#E9D8BC" />
+              <path d="M30 70 H80 M170 77 H210 M85 97 H125" stroke="#FAF6EE" stroke-width="2" opacity=".7" />
+            </svg>
+            <div class="sample-cover-footer">BLUEWAWA STUDIO / CONCEPT COVER</div>
+          </div>
+        </div>
+        <figcaption class="sample-caption">English brief → Chinese headline, cover and note. Original concept artwork; not a published client post.</figcaption>
+      </figure>
+      <div class="sample-body">
+        <h3 id="sample-rednote-title">A story made for the scroll.</h3>
+        <p class="sample-description">Turn a broad brand promise into a specific weekend idea, with a readable cover and Chinese copy built around the traveller’s next question.</p>
+        <ul class="sample-deliverables" aria-label="Rednote sample deliverables">
+          <li>Editorial angle</li><li>Cover concept</li><li>Chinese copy</li>
+        </ul>
+        <details class="sample-details">
+          <summary>Read the sample &amp; creative thinking</summary>
+          <div class="sample-detail-content">
+            <p><strong>The angle:</strong> Give “a slower weekend” a concrete shape: two days by the sea, with space to rest rather than a packed itinerary.</p>
+            <blockquote class="sample-copy" lang="zh-CN">
+              <p><strong>这个周末，把时间交给海。</strong></p>
+              <p>不赶景点，也不把行程排满。留一个下午沿着海边走走，第二天睡醒，再决定去哪儿。</p>
+              <p>两天一夜的海边假期，你更在意房间里的风景，还是出门就能散步的海岸？</p>
+            </blockquote>
+            <p><strong>The cover:</strong> A short headline, generous spacing and a coastal illustration carry one clear idea at a glance.</p>
+            <p><strong>Before publishing:</strong> Confirm the property’s location, access, amenities and imagery, then add practical details and relevant search terms based on the actual destination.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="sample-card sample-card-wechat" aria-labelledby="sample-wechat-title">
+      <div class="sample-topline">
+        <span class="sample-platform">02 / WeChat</span>
+        <span class="sample-badge">Concept project</span>
+      </div>
+      <figure>
+        <div class="sample-visual sample-visual-wechat">
+          <div class="sample-phone">
+            <div class="sample-phone-speaker" aria-hidden="true"></div>
+            <div class="sample-phone-header">COASTAL STAY / CONCEPT</div>
+            <div class="sample-phone-story">
+              <span class="sample-kicker">A weekend by the sea</span>
+              <p class="sample-phone-title" lang="zh-CN">你的海边周末<br />从这里开始</p>
+              <p class="sample-phone-copy" lang="zh-CN">想来住几天？告诉我们预计入住日期和同行人数，一起安排适合你的海边假期。</p>
+              <div class="sample-phone-cta" lang="zh-CN">咨询入住 →</div>
+            </div>
+            <div class="sample-phone-menu" lang="zh-CN"><span>了解住宿</span><span>周边指南</span><span>联系我们</span></div>
+          </div>
+          <ol class="sample-journey" aria-label="Proposed enquiry journey">
+            <li><strong>01 / Read</strong><span>A useful stay guide.</span></li>
+            <li><strong>02 / Enquire</strong><span>Dates, guests and preferences.</span></li>
+            <li><strong>03 / Follow up</strong><span>The team confirms availability.</span></li>
+          </ol>
+        </div>
+        <figcaption class="sample-caption">Article → enquiry → team follow-up. Illustrative layout; the controls shown here are part of the mockup.</figcaption>
+      </figure>
+      <div class="sample-body">
+        <h3 id="sample-wechat-title">Give interest a next step.</h3>
+        <p class="sample-description">Connect a stay guide to a focused enquiry, so the guest knows what to share and the team has the context to respond.</p>
+        <ul class="sample-deliverables" aria-label="WeChat sample deliverables">
+          <li>Content outline</li><li>Menu structure</li><li>Enquiry flow</li>
+        </ul>
+        <details class="sample-details">
+          <summary>Explore the flow &amp; delivery scope</summary>
+          <div class="sample-detail-content">
+            <p><strong>Read:</strong> Structure the article around the stay, room choices, transport and useful pre-arrival questions. Use verified property information and approved photos.</p>
+            <p><strong>Enquire:</strong> Ask for intended dates, party size, a preferred contact method and optional requests. Explain how the team will use these details.</p>
+            <p><strong>Follow up:</strong> Acknowledge receipt, then have the team check availability and reply. An enquiry is not a confirmed reservation.</p>
+            <p><strong>Delivery scope:</strong> Chinese article copy, a three-part menu plan, enquiry-page wireframes and a handover checklist. Account setup and a working integration would be scoped separately.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+  </div>
+
+  <div class="samples-footer">
+    <p>Both samples are self-initiated demonstrations for a fictional business. They illustrate our approach and proposed deliverables, not client engagements or measured campaign results.</p>
+    <a class="samples-contact" href="#contact">Discuss your brief →</a>
   </div>
 </section>
 
@@ -1517,7 +1724,7 @@
   <div class="platforms-grid">
     <article class="platform-card xhs">
       <div class="platform-logo">
-        <svg viewBox="0 0 24 24" fill="#fff" aria-label="Xiaohongshu" xmlns="http://www.w3.org/2000/svg"><path d="M22.405 9.879c.002.016.01.02.07.019h.725a.797.797 0 0 0 .78-.972.794.794 0 0 0-.884-.618.795.795 0 0 0-.692.794c0 .101-.002.666.001.777zm-11.509 4.808c-.203.001-1.353.004-1.685.003a2.528 2.528 0 0 1-.766-.126.025.025 0 0 0-.03.014L7.7 16.127a.025.025 0 0 0 .01.032c.111.06.336.124.495.124.66.01 1.32.002 1.981 0 .01 0 .02-.006.023-.015l.712-1.545a.025.025 0 0 0-.024-.036zM.477 9.91c-.071 0-.076.002-.076.01a.834.834 0 0 0-.01.08c-.027.397-.038.495-.234 3.06-.012.24-.034.389-.135.607-.026.057-.033.042.003.112.046.092.681 1.523.787 1.74.008.015.011.02.017.02.008 0 .033-.026.047-.044.147-.187.268-.391.371-.606.306-.635.44-1.325.486-1.706.014-.11.021-.22.03-.33l.204-2.616.022-.293c.003-.029 0-.033-.03-.034zm7.203 3.757a1.427 1.427 0 0 1-.135-.607c-.004-.084-.031-.39-.235-3.06a.443.443 0 0 0-.01-.082c-.004-.011-.052-.008-.076-.008h-1.48c-.03.001-.034.005-.03.034l.021.293c.076.982.153 1.964.233 2.946.05.4.186 1.085.487 1.706.103.215.223.419.37.606.015.018.037.051.048.049.02-.003.742-1.642.804-1.765.036-.07.03-.055.003-.112zm3.861-.913h-.872a.126.126 0 0 1-.116-.178l1.178-2.625a.025.025 0 0 0-.023-.035l-1.318-.003a.148.148 0 0 1-.135-.21l.876-1.954a.025.025 0 0 0-.023-.035h-1.56c-.01 0-.02.006-.024.015l-.926 2.068c-.085.169-.314.634-.399.938a.534.534 0 0 0-.02.191.46.46 0 0 0 .23.378.981.981 0 0 0 .46.119h.59c.041 0-.688 1.482-.834 1.972a.53.53 0 0 0-.023.172.465.465 0 0 0 .23.398c.15.092.342.12.475.12l1.66-.001c.01 0 .02-.006.023-.015l.575-1.28a.025.025 0 0 0-.024-.035zm-6.93-4.937H3.1a.032.032 0 0 0-.034.033c0 1.048-.01 2.795-.01 6.829 0 .288-.269.262-.28.262h-.74c-.04.001-.044.004-.04.047.001.037.465 1.064.555 1.263.01.02.03.033.051.033.157.003.767.009.938-.014.153-.02.3-.06.438-.132.3-.156.49-.419.595-.765.052-.172.075-.353.075-.533.002-2.33 0-4.66-.007-6.991a.032.032 0 0 0-.032-.032zm11.784 6.896c0-.014-.01-.021-.024-.022h-1.465c-.048-.001-.049-.002-.05-.049v-4.66c0-.072-.005-.07.07-.07h.863c.08 0 .075.004.075-.074V8.393c0-.082.006-.076-.08-.076h-3.5c-.064 0-.075-.006-.075.073v1.445c0 .083-.006.077.08.077h.854c.075 0 .07-.004.07.07v4.624c0 .095.008.084-.085.084-.37 0-1.11-.002-1.304 0-.048.001-.06.03-.06.03l-.697 1.519s-.014.025-.008.036c.006.01.013.008.058.008 1.748.003 3.495.002 5.243.002.03-.001.034-.006.035-.033v-1.539zm4.177-3.43c0 .013-.007.023-.02.024-.346.006-.692.004-1.037.004-.014-.002-.022-.01-.022-.024-.005-.434-.007-.869-.01-1.303 0-.072-.006-.071.07-.07l.733-.003c.041 0 .081.002.12.015.093.025.16.107.165.204.006.431.002 1.153.001 1.153zm2.67.244a1.953 1.953 0 0 0-.883-.222h-.18c-.04-.001-.04-.003-.042-.04V10.21c0-.132-.007-.263-.025-.394a1.823 1.823 0 0 0-.153-.53 1.533 1.533 0 0 0-.677-.71 2.167 2.167 0 0 0-1-.258c-.153-.003-.567 0-.72 0-.07 0-.068.004-.068-.065V7.76c0-.031-.01-.041-.046-.039H17.93s-.016 0-.023.007c-.006.006-.008.012-.008.023v.546c-.008.036-.057.015-.082.022h-.95c-.022.002-.028.008-.03.032v1.481c0 .09-.004.082.082.082h.913c.082 0 .072.128.072.128V11.19s.003.117-.06.117h-1.482c-.068 0-.06.082-.06.082v1.445s-.01.068.064.068h1.457c.082 0 .076-.006.076.079v3.225c0 .088-.007.081.082.081h1.43c.09 0 .082.007.082-.08v-3.27c0-.029.006-.035.033-.035l2.323-.003c.098 0 .191.02.28.061a.46.46 0 0 1 .274.407c.008.395.003.79.003 1.185 0 .259-.107.367-.33.367h-1.218c-.023.002-.029.008-.028.033.184.437.374.871.57 1.303a.045.045 0 0 0 .04.026c.17.005.34.002.51.003.15-.002.517.004.666-.01a2.03 2.03 0 0 0 .408-.075c.59-.18.975-.698.976-1.313v-1.981c0-.128-.01-.254-.034-.38 0 .078-.029-.641-.724-.998z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#fff" aria-label="Rednote" xmlns="http://www.w3.org/2000/svg"><path d="M22.405 9.879c.002.016.01.02.07.019h.725a.797.797 0 0 0 .78-.972.794.794 0 0 0-.884-.618.795.795 0 0 0-.692.794c0 .101-.002.666.001.777zm-11.509 4.808c-.203.001-1.353.004-1.685.003a2.528 2.528 0 0 1-.766-.126.025.025 0 0 0-.03.014L7.7 16.127a.025.025 0 0 0 .01.032c.111.06.336.124.495.124.66.01 1.32.002 1.981 0 .01 0 .02-.006.023-.015l.712-1.545a.025.025 0 0 0-.024-.036zM.477 9.91c-.071 0-.076.002-.076.01a.834.834 0 0 0-.01.08c-.027.397-.038.495-.234 3.06-.012.24-.034.389-.135.607-.026.057-.033.042.003.112.046.092.681 1.523.787 1.74.008.015.011.02.017.02.008 0 .033-.026.047-.044.147-.187.268-.391.371-.606.306-.635.44-1.325.486-1.706.014-.11.021-.22.03-.33l.204-2.616.022-.293c.003-.029 0-.033-.03-.034zm7.203 3.757a1.427 1.427 0 0 1-.135-.607c-.004-.084-.031-.39-.235-3.06a.443.443 0 0 0-.01-.082c-.004-.011-.052-.008-.076-.008h-1.48c-.03.001-.034.005-.03.034l.021.293c.076.982.153 1.964.233 2.946.05.4.186 1.085.487 1.706.103.215.223.419.37.606.015.018.037.051.048.049.02-.003.742-1.642.804-1.765.036-.07.03-.055.003-.112zm3.861-.913h-.872a.126.126 0 0 1-.116-.178l1.178-2.625a.025.025 0 0 0-.023-.035l-1.318-.003a.148.148 0 0 1-.135-.21l.876-1.954a.025.025 0 0 0-.023-.035h-1.56c-.01 0-.02.006-.024.015l-.926 2.068c-.085.169-.314.634-.399.938a.534.534 0 0 0-.02.191.46.46 0 0 0 .23.378.981.981 0 0 0 .46.119h.59c.041 0-.688 1.482-.834 1.972a.53.53 0 0 0-.023.172.465.465 0 0 0 .23.398c.15.092.342.12.475.12l1.66-.001c.01 0 .02-.006.023-.015l.575-1.28a.025.025 0 0 0-.024-.035zm-6.93-4.937H3.1a.032.032 0 0 0-.034.033c0 1.048-.01 2.795-.01 6.829 0 .288-.269.262-.28.262h-.74c-.04.001-.044.004-.04.047.001.037.465 1.064.555 1.263.01.02.03.033.051.033.157.003.767.009.938-.014.153-.02.3-.06.438-.132.3-.156.49-.419.595-.765.052-.172.075-.353.075-.533.002-2.33 0-4.66-.007-6.991a.032.032 0 0 0-.032-.032zm11.784 6.896c0-.014-.01-.021-.024-.022h-1.465c-.048-.001-.049-.002-.05-.049v-4.66c0-.072-.005-.07.07-.07h.863c.08 0 .075.004.075-.074V8.393c0-.082.006-.076-.08-.076h-3.5c-.064 0-.075-.006-.075.073v1.445c0 .083-.006.077.08.077h.854c.075 0 .07-.004.07.07v4.624c0 .095.008.084-.085.084-.37 0-1.11-.002-1.304 0-.048.001-.06.03-.06.03l-.697 1.519s-.014.025-.008.036c.006.01.013.008.058.008 1.748.003 3.495.002 5.243.002.03-.001.034-.006.035-.033v-1.539zm4.177-3.43c0 .013-.007.023-.02.024-.346.006-.692.004-1.037.004-.014-.002-.022-.01-.022-.024-.005-.434-.007-.869-.01-1.303 0-.072-.006-.071.07-.07l.733-.003c.041 0 .081.002.12.015.093.025.16.107.165.204.006.431.002 1.153.001 1.153zm2.67.244a1.953 1.953 0 0 0-.883-.222h-.18c-.04-.001-.04-.003-.042-.04V10.21c0-.132-.007-.263-.025-.394a1.823 1.823 0 0 0-.153-.53 1.533 1.533 0 0 0-.677-.71 2.167 2.167 0 0 0-1-.258c-.153-.003-.567 0-.72 0-.07 0-.068.004-.068-.065V7.76c0-.031-.01-.041-.046-.039H17.93s-.016 0-.023.007c-.006.006-.008.012-.008.023v.546c-.008.036-.057.015-.082.022h-.95c-.022.002-.028.008-.03.032v1.481c0 .09-.004.082.082.082h.913c.082 0 .072.128.072.128V11.19s.003.117-.06.117h-1.482c-.068 0-.06.082-.06.082v1.445s-.01.068.064.068h1.457c.082 0 .076-.006.076.079v3.225c0 .088-.007.081.082.081h1.43c.09 0 .082.007.082-.08v-3.27c0-.029.006-.035.033-.035l2.323-.003c.098 0 .191.02.28.061a.46.46 0 0 1 .274.407c.008.395.003.79.003 1.185 0 .259-.107.367-.33.367h-1.218c-.023.002-.029.008-.028.033.184.437.374.871.57 1.303a.045.045 0 0 0 .04.026c.17.005.34.002.51.003.15-.002.517.004.666-.01a2.03 2.03 0 0 0 .408-.075c.59-.18.975-.698.976-1.313v-1.981c0-.128-.01-.254-.034-.38 0 .078-.029-.641-.724-.998z"/></svg>
       </div>
       <div class="platform-overlay"></div>
       <div class="platform-content">
@@ -1597,7 +1804,7 @@
   <div class="interlude-content">
     <div class="section-label">A different playbook</div>
     <h2>There's a <em>better way</em>.<br />有更好的方法。</h2>
-    <p>It's how we've launched 50+ overseas brands into China — quietly, natively, and without burning a quarter on bad translations.</p>
+    <p>We bring local context to your China launch, connecting native content, platform strategy and a clear next step for your audience.</p>
   </div>
 </section>
 
@@ -1744,6 +1951,9 @@
 </section>
 
 <!-- ============ FAQ ============ -->
+<!-- INSIGHTS:START -->
+<section class="insights-teaser" aria-labelledby="insights-teaser-title"><div class="insights-teaser-inner"><div class="insights-teaser-head"><div><p>Bluewawa Insights</p><h2 id="insights-teaser-title">Plan your next step.</h2></div><a href="/insights/">All guides ↗</a></div><div class="insights-teaser-grid"><article><span>China market planning / 6 min read</span><h3><a href="/insights/rednote-vs-wechat/">Rednote vs WeChat: Where Should Your Brand Start?</a></h3><p>Start with the customer problem: being discovered, helping an interested buyer decide, or supporting an existing relationship. Choose the platform and scope around that job.</p><a href="/insights/rednote-vs-wechat/" aria-label="Read Rednote vs WeChat: Where Should Your Brand Start?">Read the guide ↗</a></article><article><span>Rednote / 6 min read</span><h3><a href="/insights/rednote-content-localization/">How to Localize Brand Content for Rednote</a></h3><p>Follow an English hospitality brief through audience framing, headline choices, cover hierarchy and a Chinese note. Includes a clearly labelled concept example.</p><a href="/insights/rednote-content-localization/" aria-label="Read How to Localize Brand Content for Rednote">Read the guide ↗</a></article><article><span>WeChat / 7 min read</span><h3><a href="/insights/wechat-launch-checklist/">A WeChat Launch Checklist for Overseas Brands</a></h3><p>Prepare the account, content and people behind a useful WeChat presence. Start with ownership and a working customer journey, then decide what to build next.</p><a href="/insights/wechat-launch-checklist/" aria-label="Read A WeChat Launch Checklist for Overseas Brands">Read the guide ↗</a></article></div></div></section>
+<!-- INSIGHTS:END -->
 <section class="block" id="faq">
   <div class="section-label">FAQ</div>
   <h2 class="section-title">Questions, <em>answered</em>.</h2>
@@ -1876,6 +2086,7 @@
       </div>
       <div class="footer-col">
         <h2>Company</h2>
+        <a href="/insights/">Insights</a>
         <a href="#about">About</a>
         <a href="#why">Why us</a>
         <a href="#faq">FAQ</a>

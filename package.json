@@ -1,0 +1,12 @@
+{
+  "name": "bluewawa-media",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-insights.mjs",
+    "check": "node scripts/check-site.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": { "marked": "18.0.12" }
+}

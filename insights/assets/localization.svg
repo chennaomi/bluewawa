@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">From a global brief to a local story</title><desc id="desc">An English coastal stay brief becomes a Chinese editorial concept, then a headline, cover and note.</desc>
+<rect width="1200" height="630" fill="#e6dfd0"/>
+<text x="65" y="65" font-family="Arial,sans-serif" font-size="17" fill="#182e66" letter-spacing="4">BLUEWAWA FIELD GUIDE / 02</text>
+<path d="M60 90H1140" stroke="#182e66" stroke-opacity=".2"/>
+<rect x="70" y="145" width="440" height="375" fill="#faf6ee"/>
+<text x="105" y="195" font-family="Arial,sans-serif" font-size="17" fill="#9b4530" letter-spacing="3">THE BRIEF</text>
+<text x="105" y="275" font-family="Georgia,serif" font-size="44" fill="#182e66"><tspan x="105">A quiet coastal stay</tspan><tspan x="105" dy="62">for a slower</tspan><tspan x="105" dy="62">weekend.</tspan></text>
+<path d="M545 330H625M605 310L625 330L605 350" stroke="#bd5a3d" fill="none" stroke-width="4"/>
+<rect x="660" y="125" width="460" height="430" fill="#182e66"/>
+<text x="695" y="177" font-family="Arial,sans-serif" font-size="17" fill="#ffce06" letter-spacing="3">THE LOCAL STORY</text>
+<text x="695" y="262" font-family="Georgia,serif" font-size="46" fill="#faf6ee"><tspan x="695">One weekend.</tspan><tspan x="695" dy="58">Room to slow down.</tspan></text>
+<circle cx="1030" cy="385" r="26" fill="#bd5a3d"/>
+<path d="M660 440Q775 400 890 440T1120 425V555H660Z" fill="#4391d4"/>
+<path d="M660 487Q775 447 890 487T1120 472V555H660Z" fill="#0f1e48"/>
+<text x="695" y="530" font-family="Arial,sans-serif" font-size="17" fill="#faf6ee" letter-spacing="1">HEADLINE / COVER / CHINESE NOTE</text>
+<text x="70" y="590" font-family="Arial,sans-serif" font-size="17" fill="#596171">A fictional hospitality concept. A practical creative process.</text>
+</svg>
