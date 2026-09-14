@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Ask for evidence you can assess.</title><desc id="desc">Compare agency work through evidence, delivery scope and client control.</desc>
+<rect width="1200" height="630" fill="#e6dfd0"/>
+<text x="60" y="65" font-family="Arial,sans-serif" font-size="17" fill="#182e66" letter-spacing="4">BLUEWAWA FIELD GUIDE / 09</text>
+<path d="M60 90H1140" stroke="#182e66" stroke-opacity=".2"/>
+<text x="60" y="177" font-family="Georgia,serif" font-size="51" fill="#182e66">Ask for evidence you can assess.</text>
+<rect x="60" y="240" width="350" height="280" rx="3" fill="#faf6ee"/>
+<text x="83" y="283" font-family="Arial,sans-serif" font-size="16" letter-spacing="2" fill="#9b4530">01 / EVIDENCE</text>
+<text x="83" y="354" font-family="Georgia,serif" font-size="36" fill="#182e66"><tspan x="83">See the work.</tspan><tspan x="83" dy="46">Ask who did it.</tspan></text>
+<path d="M83 439H387" stroke="#182e66" stroke-opacity=".25"/>
+<text x="83" y="482" font-family="Arial,sans-serif" font-size="16" fill="#596171">Samples + context + role</text>
+<rect x="425" y="240" width="350" height="280" rx="3" fill="#faf6ee"/>
+<text x="448" y="283" font-family="Arial,sans-serif" font-size="16" letter-spacing="2" fill="#9b4530">02 / DELIVERY</text>
+<text x="448" y="354" font-family="Georgia,serif" font-size="36" fill="#182e66"><tspan x="448">Know what</tspan><tspan x="448" dy="46">you will receive.</tspan></text>
+<path d="M448 439H752" stroke="#182e66" stroke-opacity=".25"/>
+<text x="448" y="482" font-family="Arial,sans-serif" font-size="16" fill="#596171">Team + scope + reporting</text>
+<rect x="790" y="240" width="350" height="280" rx="3" fill="#182e66"/>
+<text x="813" y="283" font-family="Arial,sans-serif" font-size="16" letter-spacing="2" fill="#ffce06">03 / CONTROL</text>
+<text x="813" y="354" font-family="Georgia,serif" font-size="36" fill="#faf6ee"><tspan x="813">Keep a clear</tspan><tspan x="813" dy="46">handover route.</tspan></text>
+<path d="M813 439H1117" stroke="#faf6ee" stroke-opacity=".25"/>
+<text x="813" y="482" font-family="Arial,sans-serif" font-size="16" fill="#faf6ee">Access + files + records</text>
+<text x="60" y="583" font-family="Arial,sans-serif" font-size="17" fill="#596171">A Bluewawa planning framework. Adapt to your audience and operating scope.</text>
+</svg>

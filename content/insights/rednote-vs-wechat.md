@@ -6,7 +6,7 @@
   "category": "China market planning",
   "categoryId": "china-market-planning",
   "datePublished": "2026-09-09",
-  "dateModified": "2026-09-09",
+  "dateModified": "2026-09-14",
   "summary": "Start with the customer problem: being discovered, helping an interested buyer decide, or supporting an existing relationship. Choose the platform and scope around that job.",
   "takeaway": "Consider Rednote when you need to test discovery and content relevance. Consider WeChat when you already have an audience to serve or a clear enquiry, service or repeat-engagement journey. Neither platform is an automatic first choice for every brand.",
   "cover": "platform-choice",
@@ -105,3 +105,5 @@ Measure the question you set out to answer. Content engagement can suggest relev
 If you need to develop local creative, start with the [Rednote content localization guide](/insights/rednote-content-localization/). If you need to organise account ownership, content and follow-up, use the [WeChat launch checklist](/insights/wechat-launch-checklist/).
 
 The best first scope is one the brand can resource, review and learn from. Expand when there is a clear reason to add the next platform or tool.
+
+Ready to scope the first engagement? The [90-day Rednote pilot guide](/insights/rednote-90-day-pilot/) defines phased deliverables and review decisions. Use the [agency evaluation worksheet](/insights/evaluate-china-social-media-agency/) when comparing implementation partners.

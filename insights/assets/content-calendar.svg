@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">A month with a clear purpose.</title><desc id="desc">Four editorial jobs: introduce the offer, help readers choose, answer practical questions and support an enquiry.</desc>
+<rect width="1200" height="630" fill="#e6dfd0"/>
+<text x="60" y="65" font-family="Arial,sans-serif" font-size="17" fill="#182e66" letter-spacing="4">BLUEWAWA FIELD GUIDE / 06</text>
+<path d="M60 90H1140" stroke="#182e66" stroke-opacity=".2"/>
+<text x="60" y="177" font-family="Georgia,serif" font-size="51" fill="#182e66">A month with a clear purpose.</text>
+<rect x="60" y="240" width="258" height="280" rx="3" fill="#faf6ee"/>
+<text x="83" y="283" font-family="Arial,sans-serif" font-size="16" letter-spacing="2" fill="#9b4530">WEEK 01</text>
+<text x="83" y="354" font-family="Georgia,serif" font-size="31" fill="#182e66"><tspan x="83">Introduce</tspan><tspan x="83" dy="46">the offer.</tspan></text>
+<path d="M83 439H295" stroke="#182e66" stroke-opacity=".25"/>
+<text x="83" y="482" font-family="Arial,sans-serif" font-size="16" fill="#596171">Who is it for?</text>
+<rect x="334" y="240" width="258" height="280" rx="3" fill="#faf6ee"/>
+<text x="357" y="283" font-family="Arial,sans-serif" font-size="16" letter-spacing="2" fill="#9b4530">WEEK 02</text>
+<text x="357" y="354" font-family="Georgia,serif" font-size="31" fill="#182e66"><tspan x="357">Help readers</tspan><tspan x="357" dy="46">choose.</tspan></text>
+<path d="M357 439H569" stroke="#182e66" stroke-opacity=".25"/>
+<text x="357" y="482" font-family="Arial,sans-serif" font-size="16" fill="#596171">Does it fit?</text>
+<rect x="608" y="240" width="258" height="280" rx="3" fill="#faf6ee"/>
+<text x="631" y="283" font-family="Arial,sans-serif" font-size="16" letter-spacing="2" fill="#9b4530">WEEK 03</text>
+<text x="631" y="354" font-family="Georgia,serif" font-size="31" fill="#182e66"><tspan x="631">Answer the</tspan><tspan x="631" dy="46">questions.</tspan></text>
+<path d="M631 439H843" stroke="#182e66" stroke-opacity=".25"/>
+<text x="631" y="482" font-family="Arial,sans-serif" font-size="16" fill="#596171">What should I check?</text>
+<rect x="882" y="240" width="258" height="280" rx="3" fill="#182e66"/>
+<text x="905" y="283" font-family="Arial,sans-serif" font-size="16" letter-spacing="2" fill="#ffce06">WEEK 04</text>
+<text x="905" y="354" font-family="Georgia,serif" font-size="31" fill="#faf6ee"><tspan x="905">Explain the</tspan><tspan x="905" dy="46">next step.</tspan></text>
+<path d="M905 439H1117" stroke="#faf6ee" stroke-opacity=".25"/>
+<text x="905" y="482" font-family="Arial,sans-serif" font-size="16" fill="#faf6ee">How do I enquire?</text>
+<text x="60" y="583" font-family="Arial,sans-serif" font-size="17" fill="#596171">A Bluewawa planning framework. Adapt to your audience and operating scope.</text>
+</svg>

@@ -89,12 +89,12 @@ function card(article, featured = false) {
 
 export function indexPage(articles) {
   const title = 'China Marketing Insights: Rednote & WeChat Guides';
-  const description = 'Practical English guides for overseas brands planning Rednote and WeChat marketing: platform choices, content localization and launch preparation.';
+  const description = 'Practical Rednote and WeChat guides for overseas brands: budgets, pilot programmes, agency evaluation, platform choices and localized content.';
   return head({title, description, path:'/insights/', schema:{'@context':'https://schema.org','@type':'CollectionPage',name:title,url:`${origin}/insights/`,description,inLanguage:'en',mainEntity:{'@type':'ItemList',itemListElement:articles.map((article,index)=>({'@type':'ListItem',position:index+1,url:origin+articleUrl(article),name:article.title}))}}}) + header() + `
   <main id="main-content">
-    <section class="index-intro shell"><p class="eyebrow">Bluewawa Insights / Field guides</p><div class="intro-grid"><h1>A clearer route<br>into <em>China.</em></h1><div><p>Practical reads for your next marketing decision. Choose a platform, shape your content and plan a launch your team can operate.</p><nav class="topic-links" aria-label="Browse guide topics">${['china-market-planning','rednote','wechat'].map(category=>{const article=articles.find(item=>item.categoryId===category);return article ? `<a href="#guide-${article.slug}">${category==='china-market-planning'?'China planning':escape(article.category)}</a>` : '';}).join('')}</nav></div></div></section>
+    <section class="index-intro shell"><p class="eyebrow">Bluewawa Insights / Field guides</p><div class="intro-grid"><h1>A clearer route<br>into <em>China.</em></h1><div><p>Practical reads for your next marketing decision. Choose a platform, plan your budget and scope the work your team needs next.</p><nav class="topic-links" aria-label="Browse guide topics">${['china-market-planning','rednote','wechat'].map(category=>{const article=articles.find(item=>item.categoryId===category);return article ? `<a href="#guide-${article.slug}">${category==='china-market-planning'?'China planning':escape(article.category)}</a>` : '';}).join('')}</nav></div></div></section>
     <section class="shell featured-section" aria-label="Start here">${card(articles[0],true)}</section>
-    <section class="shell guide-section" aria-labelledby="guides-title"><div class="section-heading"><h2 id="guides-title">Build your next move.</h2><span>Content &amp; launch preparation</span></div><div class="guide-grid">${articles.slice(1).map(article=>card(article)).join('')}</div></section>
+    <section class="shell guide-section" aria-labelledby="guides-title"><div class="section-heading"><h2 id="guides-title">Build your next move.</h2><span>Strategy, budgets &amp; delivery</span></div><div class="guide-grid">${articles.slice(1).map(article=>card(article)).join('')}</div></section>
     <section class="index-cta"><div class="shell"><p class="eyebrow">From reading to planning</p><h2>What does your brand<br>need to do <em>next?</em></h2><p>Explore our services or bring a focused brief to a conversation.</p><div class="cta-links"><a href="/rednote-marketing/">Rednote services ↗</a><a href="/wechat-marketing/">WeChat services ↗</a><a href="/#contact" data-umami-event="insights-contact-click">Talk to Bluewawa ↗</a></div></div></section>
   </main>` + footer();
 }
@@ -106,7 +106,9 @@ export function articlePage(article, articles) {
     {'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:origin+'/'},{'@type':'ListItem',position:2,name:'Insights',item:origin+'/insights/'},{'@type':'ListItem',position:3,name:article.title,item:origin+path}]}
   ]};
   const toc = `<ol>${article.headings.filter(heading=>heading.depth===2).map(heading=>`<li><a href="#${heading.id}">${escape(heading.text)}</a></li>`).join('')}</ol>`;
-  const related = articles.filter(other=>other.slug!==article.slug);
+  const related = articles.filter(other=>other.slug!==article.slug)
+    .sort((a,b)=>Number(b.categoryId===article.categoryId)-Number(a.categoryId===article.categoryId))
+    .slice(0,2);
   return head({title:article.title,description:article.description,path,schema}) + header() + `
   <main id="main-content">
     <div class="shell"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span><span>${escape(article.category)}</span></nav></div>
@@ -129,6 +131,8 @@ export function articlePage(article, articles) {
 }
 
 export function relatedLinks(articles, category) {
-  const relevant = category ? articles.filter(article=>article.categoryId===category || article.categoryId==='china-market-planning') : articles;
+  const relevant = (category
+    ? [...articles.filter(article=>article.categoryId===category), ...articles.filter(article=>article.categoryId==='china-market-planning')]
+    : [articles[0], articles.find(article=>article.categoryId==='rednote'), articles.find(article=>article.categoryId==='wechat')].filter(Boolean)).slice(0,3);
   return `<section class="insights-teaser" aria-labelledby="insights-teaser-title"><div class="insights-teaser-inner"><div class="insights-teaser-head"><div><p>Bluewawa Insights</p><h2 id="insights-teaser-title">Plan your next step.</h2></div><a href="/insights/">All guides ↗</a></div><div class="insights-teaser-grid">${relevant.map(article=>`<article><span>${escape(article.category)} / ${article.readingTime} min read</span><h3><a href="${articleUrl(article)}">${escape(article.title)}</a></h3><p>${escape(article.summary)}</p><a href="${articleUrl(article)}" aria-label="Read ${escape(article.title)}">Read the guide ↗</a></article>`).join('')}</div></div></section>`;
 }

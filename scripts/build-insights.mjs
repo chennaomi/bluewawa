@@ -82,9 +82,9 @@ for (const page of pages) {
 
 const latestDate = articles.reduce((latest,article)=>article.dateModified > latest ? article.dateModified : latest,'2026-09-09');
 const sitemapEntries = [
-  {url:'/',date:'2026-09-09'},
-  {url:'/rednote-marketing/',date:'2026-09-09'},
-  {url:'/wechat-marketing/',date:'2026-09-09'},
+  {url:'/',date:'2026-09-14'},
+  {url:'/rednote-marketing/',date:'2026-09-14'},
+  {url:'/wechat-marketing/',date:'2026-09-14'},
   {url:'/insights/',date:latestDate},
   ...articles.map(article=>({url:`/insights/${article.slug}/`,date:article.dateModified}))
 ];

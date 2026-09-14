@@ -6,7 +6,7 @@
   "category": "WeChat",
   "categoryId": "wechat",
   "datePublished": "2026-09-09",
-  "dateModified": "2026-09-09",
+  "dateModified": "2026-09-14",
   "summary": "Prepare the account, content and people behind a useful WeChat presence. Start with ownership and a working customer journey, then decide what to build next.",
   "takeaway": "Before launch, agree the account’s purpose and ownership, verify the setup available to your entity, prepare a useful first content set, and test the complete enquiry and response journey. Build only the features you can operate.",
   "cover": "launch-checklist",
@@ -141,3 +141,5 @@ Before going live, bring the decisions together in one short document:
 - A measurement plan and the date of the first review.
 
 If those items are incomplete, reduce the launch scope until the team can operate it reliably. If the platform choice itself is still unclear, start with [Rednote vs WeChat](/insights/rednote-vs-wechat/). If you need to adapt global assets into locally useful content, see our [Rednote localization walkthrough](/insights/rednote-content-localization/) for an example of the editorial process.
+
+If a partner will help with launch and operations, use the [China social media agency evaluation worksheet](/insights/evaluate-china-social-media-agency/) to check its delivery evidence, access plan and handover responsibilities.

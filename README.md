@@ -73,6 +73,27 @@
 - 内容本地化指南使用 `/insights/rednote-content-localization/`；旧地址通过静态页面跳转到新地址，JavaScript 跳转保留查询参数和锚点，并提供 meta refresh 与手动链接作为后备。该机制不是服务器端 HTTP 301。
 - 询盘表单仍使用 `mailto:`，尚未接入数据存储、邮件通知或预约后台。
 
+## 第二批文章（2026-09-14）
+
+第二批共补充六篇英文指南，文章中心现有九篇；新增内容沿用 Rednote 命名、机构作者、静态正文和 SEO 元数据。
+
+| 文章路径 | 搜索意图与内容 |
+| --- | --- |
+| `/insights/rednote-keyword-research/` | Rednote keyword research：中文种子词、研究记录表、选题简报与复盘 |
+| `/insights/rednote-creator-brief/` | Rednote creator brief：达人合作简报、交付边界、审核与报告，附虚构住宿样例 |
+| `/insights/wechat-content-calendar/` | WeChat content calendar：首月四周编辑计划、双语审核、咨询承接与维护 |
+| `/insights/rednote-marketing-costs/` | Rednote marketing costs：服务、制作、达人、广告费用边界，假设预算表与报价比较 |
+| `/insights/rednote-90-day-pilot/` | 90-day Rednote pilot：30／60／90 天阶段交付、指标定义与继续／调整／停止决策 |
+| `/insights/evaluate-china-social-media-agency/` | China social media agency evaluation：作品证据、团队与交付范围、报告、账号控制与交接核对表 |
+
+每篇配有原创 SVG 流程图、正文内链和对应服务入口。平台背景引用官方来源；工作表、种子词和四周日历是建议方法与演示，不代表实测需求、平台规则或客户成果。后续编辑应继续保留这种区分。
+
+费用篇的 USD 6,000 表格仅为假设数字演算，不是 Bluewawa 报价、可购买套餐或市场均价；未定价的税费、运输等项目在正文单独说明。修改时必须保留假设、排除项及费用口径，不能将演示数字改写为已验证价格。90 天是建议的项目周期，不保证获客或排名；代理商评估篇披露 Bluewawa 自身提供相关服务，不做独立排行榜。
+
+原规划中暂未新增的两个主题：`KOL vs KOC: How to Plan Your First Creator Campaign`（选人及合作组合，与已有简报模板区分）；`WeChat Official Account, Channels or Mini Program?`（产品选型，与已有启动清单区分）。
+
+首页推荐最多三篇，保留平台比较作为首篇，并各选一篇最新的 Rednote 与 WeChat 指南；服务页优先展示本平台文章，最多三篇。文章末尾推荐最多两篇，优先同平台；完整目录保留在 `/insights/`。
+
 ## 首页内容与交付样例
 
 - 首屏下方的 `#sample-work` 展示两组自发演示项目，导航和首屏次按钮均可直达。
@@ -105,7 +126,7 @@
 4. 执行 `npm run build`：生成列表、文章、三张原有页面中 `INSIGHTS:START/END` 内的推荐区块，以及 sitemap。生成区块和文章 HTML 不要手动维护；首页其他内容不会被构建器重写。
 5. 执行 `npm run check`，然后在静态服务器上复查手机与桌面效果。将源文件与生成的 HTML、sitemap 一起提交，GitHub Pages 本身无需安装 Node.js 或执行构建。
 
-当前三篇：平台选择、内容本地化、微信启动清单。概念样例不是客户成果，平台规则和开户路径须在实质更新时重新核验。修改日期应反映内容更新，不应每次构建自动刷新。延后首次上线时，核对文章的发布日期后再构建。
+当前九篇：平台选择、内容本地化、微信启动清单、Rednote 关键词研究、Rednote 达人合作简报、WeChat 首月内容计划、Rednote 费用构成、90 天 Rednote 试运营、代理商评估。概念样例不是客户成果，平台规则和开户路径须在实质更新时重新核验。修改日期应反映内容更新，不应每次构建自动刷新。延后首次上线时，核对文章的发布日期后再构建。
 
 文章正文可包含受信任的 HTML，构建器不接收访客内容。作者、来源及服务 CTA 随正文一起静态输出；新页面共用 Umami，并跟踪服务／联系入口点击（不等同于提交成功）。
 
