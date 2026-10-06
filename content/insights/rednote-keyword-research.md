@@ -14,7 +14,17 @@
   "ctaTitle": "Build your first Chinese content map.",
   "ctaText": "Bring your category, audience and approved product information. We can scope research and localized content around the decisions your customers need to make.",
   "service": "/rednote-marketing/",
-  "serviceLabel": "Explore Rednote strategy services"
+  "serviceLabel": "Explore Rednote strategy services",
+  "relatedGuides": [
+    {
+      "slug": "rednote-content-localization",
+      "reason": "Next: turn research into useful local content"
+    },
+    {
+      "slug": "rednote-creator-brief",
+      "reason": "Then: brief creators around the reader question"
+    }
+  ]
 }
 ---
 

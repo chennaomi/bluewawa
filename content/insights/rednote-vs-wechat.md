@@ -16,7 +16,17 @@
   "service": "/rednote-marketing/",
   "serviceLabel": "Explore Rednote services",
   "secondaryService": "/wechat-marketing/",
-  "secondaryLabel": "Explore WeChat services"
+  "secondaryLabel": "Explore WeChat services",
+  "relatedGuides": [
+    {
+      "slug": "rednote-marketing-costs",
+      "reason": "Next: scope your Rednote budget"
+    },
+    {
+      "slug": "wechat-launch-checklist",
+      "reason": "Taking the WeChat route? Check launch readiness"
+    }
+  ]
 }
 ---
 

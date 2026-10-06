@@ -14,7 +14,17 @@
   "ctaTitle": "Make the first engagement a defined pilot.",
   "ctaText": "Bring an audience, an offer and a practical constraint. We can discuss a first scope with clear deliverables, reporting and a decision at the end.",
   "service": "/rednote-marketing/",
-  "serviceLabel": "Explore Rednote pilot support"
+  "serviceLabel": "Explore Rednote pilot support",
+  "relatedGuides": [
+    {
+      "slug": "evaluate-china-social-media-agency",
+      "reason": "Next: assess who can deliver the pilot"
+    },
+    {
+      "slug": "rednote-keyword-research",
+      "reason": "Prepare: define the questions your content should answer"
+    }
+  ]
 }
 ---
 

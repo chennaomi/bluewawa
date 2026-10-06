@@ -6,7 +6,7 @@
   "category": "China market planning",
   "categoryId": "china-market-planning",
   "datePublished": "2026-09-14",
-  "dateModified": "2026-09-14",
+  "dateModified": "2026-10-06",
   "summary": "Assess what an agency can demonstrate, what its proposal includes and how your team will retain control. Use a practical worksheet for Rednote and WeChat projects.",
   "takeaway": "Evaluate an agency through relevant work, a specific delivery plan, clear reporting and explicit account and handover responsibilities. Ask each supplier the same questions and compare the evidence behind its answers. A polished pitch or a large follower count is not enough to establish fit.",
   "cover": "agency-evaluation",
@@ -16,7 +16,21 @@
   "service": "/rednote-marketing/",
   "serviceLabel": "Review our Rednote services",
   "secondaryService": "/wechat-marketing/",
-  "secondaryLabel": "Review our WeChat services"
+  "secondaryLabel": "Review our WeChat services",
+  "worksheet": {
+    "file": "agency-evaluation.txt",
+    "title": "Your agency evidence worksheet"
+  },
+  "relatedGuides": [
+    {
+      "slug": "rednote-marketing-costs",
+      "reason": "Compare: separate fees, production and media spend"
+    },
+    {
+      "slug": "wechat-launch-checklist",
+      "reason": "Check: responsibilities for a WeChat launch"
+    }
+  ]
 }
 ---
 

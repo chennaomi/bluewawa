@@ -6,7 +6,7 @@
   "category": "Rednote",
   "categoryId": "rednote",
   "datePublished": "2026-09-14",
-  "dateModified": "2026-09-14",
+  "dateModified": "2026-10-06",
   "summary": "Brief creators with a clear reader question, verified facts and room for their own voice. Includes a reusable brief structure and a fictional hospitality example.",
   "takeaway": "A useful creator brief defines the audience, content job, deliverables, verified facts and review process. Agree commercial scope, usage permissions and reporting separately and explicitly. Let the creator contribute their perspective without requiring claims they cannot support.",
   "cover": "creator-brief",
@@ -14,7 +14,21 @@
   "ctaTitle": "Make the creator scope clear before outreach.",
   "ctaText": "We can help connect audience research, creator selection and bilingual briefing with practical content review and reporting.",
   "service": "/rednote-marketing/",
-  "serviceLabel": "Explore Rednote creator services"
+  "serviceLabel": "Explore Rednote creator services",
+  "worksheet": {
+    "file": "rednote-creator-brief.txt",
+    "title": "Your blank creator brief"
+  },
+  "relatedGuides": [
+    {
+      "slug": "rednote-marketing-costs",
+      "reason": "Next: confirm the collaboration budget and exclusions"
+    },
+    {
+      "slug": "rednote-90-day-pilot",
+      "reason": "Plan: place the collaboration within a pilot"
+    }
+  ]
 }
 ---
 

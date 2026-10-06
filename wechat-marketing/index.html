@@ -28,7 +28,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+<!-- CHINESE_FONTS:START -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@400;700;900&amp;display=swap&amp;text=%20!%22%23%24%25%26'()*%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%C2%B7%E2%80%93%E2%80%94%E2%80%98%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A6%E4%B8%AD%E4%BF%A1%E5%BE%AE%E8%90%A5%E9%94%80" />
+<!-- CHINESE_FONTS:END -->
 
   <style>
     :root {
@@ -471,6 +474,8 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/assets/site.css" />
+<script defer src="/assets/site.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -482,11 +487,22 @@
       <div class="nav-links">
         <a href="#strategy">Strategy</a>
         <a href="#services">Deliverables</a>
-        <a href="#process">How we work</a>
+        <a href="#getting-started">Before we start</a>
         <a href="/insights/">Insights</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a class="nav-cta" href="../#contact">Book a call →</a>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <div class="mobile-nav-links">
+          <a href="#strategy">Strategy</a>
+          <a href="#services">Deliverables</a>
+          <a href="#getting-started">Before we start</a>
+          <a href="/insights/">Insights</a>
+          <a href="#faq">FAQ</a>
+          <a href="/#contact" data-umami-event="contact-click" data-umami-event-page="wechat" data-umami-event-placement="mobile-nav">Contact</a>
+        </div>
+      </details>
+      <a class="nav-cta" href="../#contact" data-umami-event="contact-click" data-umami-event-page="wechat" data-umami-event-placement="nav">Let's talk →</a>
     </nav>
   </header>
 
@@ -495,10 +511,10 @@
       <div class="wrap hero-grid">
         <div>
           <p class="eyebrow">WeChat Marketing / 微信营销</p>
-          <h1 id="hero-title">Turn attention into <em>owned relationships.</em></h1>
+          <h1 id="hero-title">WeChat marketing<br />for <em>global brands.</em></h1>
           <p class="hero-copy">We help global brands build a connected WeChat presence—from first discovery to repeat engagement. <strong>Strategy, localized content, platform operations and conversion journeys, built in China.</strong></p>
           <div class="actions">
-            <a class="button-primary" href="../#contact">Plan your WeChat strategy</a>
+            <a class="button-primary" href="../#contact" data-umami-event="contact-click" data-umami-event-page="wechat" data-umami-event-placement="hero">Plan your WeChat strategy</a>
             <a class="button-secondary" href="#services">Explore services</a>
           </div>
         </div>
@@ -608,6 +624,37 @@
       </div>
     </section>
 
+    <section class="engagement" id="getting-started" aria-labelledby="engagement-title">
+      <div class="wrap">
+        <p class="section-label">Before we start</p>
+        <h2 class="section-title" id="engagement-title">A clear brief. A <em>workable scope</em>.</h2>
+        <p class="engagement-intro">Start with a customer task you can support: an enquiry, an event registration or a service request. Prepare an account owner, a content reviewer and someone responsible for follow-up.</p>
+        <div class="engagement-grid">
+          <article class="engagement-card">
+            <p class="engagement-number">01</p>
+            <h3>What to bring</h3>
+            <ul><li>Your intended customer journey, target audience and existing account details.</li><li>Approved brand assets, product facts and the pages or systems you want to connect.</li><li>Account ownership information, review and response contacts, timing and budget.</li></ul>
+          </article>
+          <article class="engagement-card">
+            <p class="engagement-number">02</p>
+            <h3>What we agree</h3>
+            <ul><li>The account pathway and the permissions to verify before committing to a build.</li><li>Content formats, review rounds, menu destinations and the first useful feature set.</li><li>Who handles enquiries, reporting, maintenance, account access and handover.</li></ul>
+          </article>
+          <article class="engagement-card">
+            <p class="engagement-number">03</p>
+            <h3>What needs its own scope</h3>
+            <ul><li>Mini Program or H5 development and integrations with CRM, payment or logistics systems.</li><li>Original video production, paid distribution and third-party service charges.</li><li>Ongoing technical maintenance and additional features beyond the agreed release.</li></ul>
+          </article>
+        </div>
+        <p class="engagement-note">Account registration does not automatically enable every feature. Confirm availability for the intended entity and account; the proposal should state what is included, optional or excluded.</p>
+        <div class="engagement-links">
+          <a href="/insights/wechat-launch-checklist/">Use the launch checklist <span aria-hidden="true">↗</span></a>
+          <a href="/insights/wechat-content-calendar/">Plan the first content month <span aria-hidden="true">↗</span></a>
+          <a href="/#contact" data-umami-event="contact-click" data-umami-event-page="wechat" data-umami-event-placement="getting-started">Discuss your WeChat scope <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="process" id="process" aria-labelledby="process-title">
       <div class="wrap">
         <div class="section-head">
@@ -664,7 +711,7 @@
         <h2 id="cta-title">Build a WeChat presence that leads somewhere.</h2>
         <p>Tell us what you want to achieve in China. We will help you identify the right WeChat ecosystem, priorities and next step.</p>
         <div class="actions">
-          <a class="button-primary" href="../#contact">Talk to Bluewawa</a>
+          <a class="button-primary" href="../#contact" data-umami-event="contact-click" data-umami-event-page="wechat" data-umami-event-placement="final-cta">Talk to Bluewawa</a>
           <a class="button-secondary" href="../rednote-marketing/">Explore Rednote marketing</a>
         </div>
       </div>
@@ -686,8 +733,8 @@
           <a href="../#services">Services</a>
           <a href="../#why">Why us</a>
           <a href="../#about">About</a>
-          <a href="../#contact">Contact</a>
-          <a href="https://wa.me/8618611314374" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="../#contact" data-umami-event="contact-click" data-umami-event-page="wechat" data-umami-event-placement="footer">Contact</a>
+          <a href="https://wa.me/8618611314374" target="_blank" rel="noopener noreferrer" data-umami-event="whatsapp-click" data-umami-event-page="wechat" data-umami-event-placement="footer">WhatsApp</a>
         </div>
       </div>
       <div class="copyright">© 2026 Bluewawa Media · WeChat Marketing in China</div>
@@ -703,6 +750,7 @@
       window.addEventListener('scroll', updateVisibility, { passive: true });
       button.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+        document.querySelector('.logo')?.focus({ preventScroll: true });
       });
       updateVisibility();
     })();

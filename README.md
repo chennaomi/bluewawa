@@ -7,7 +7,7 @@
 
 | 文件 | 说明 |
 | --- | --- |
-| `index.html` | 官网首页，主要 HTML/CSS/JS 内联；文章推荐区共用 `insights/assets/teaser.css` |
+| `index.html` | 官网首页，HTML/CSS 主要内联，交互脚本见 `assets/home.js`；文章推荐区共用 `insights/assets/teaser.css` |
 | `rednote-marketing/index.html` | Rednote Marketing 独立 SEO 落地页 |
 | `wechat-marketing/index.html` | WeChat Marketing 独立 SEO 落地页 |
 | `insights/index.html` | 生成的英文文章列表页 |
@@ -39,7 +39,7 @@
 
 ### 联系方式
 
-- 联系表单为 `mailto:` 方案——提交后调起用户本地邮件客户端，收件人写死在页面底部 JS 的 `TO` 常量里（`hello@bluewawa.media`）。后续可升级为 Formspree 等表单服务
+- 联系表单为 `mailto:` 方案——提交后调起用户本地邮件客户端，收件人在 `assets/contact.js` 的 `TO` 常量里（`hello@bluewawa.media`）。后续可升级为 Formspree 等表单服务
 - Contact 区块已上线的真实链接：Email（`mailto:hello@bluewawa.media`）、WhatsApp（`wa.me/8618611314374`）、Facebook（`facebook.com/profile.php?id=61590503946333`）、TikTok（`tiktok.com/@bluewawa.media`）。页脚 Social 栏包含 WhatsApp、TikTok 和 Facebook 真实链接
 - WeChat / LinkedIn 联系方式暂以 HTML 注释形式保留在 Contact 区块中，待账号就绪后取消注释
 
@@ -112,7 +112,7 @@
 
 - 标题词遮罩有内边距补偿，防止 Playfair 斜体悬挑被裁切，改字号/字体后需复查
 - 所有入场动画都已加入 `prefers-reduced-motion` 豁免列表，新增动画时记得同步
-- 印章在窄屏下隐藏（已有媒体查询规则），并带鼠标反向视差（页面底部 JS）
+- 印章在窄屏下隐藏（已有媒体查询规则），并带鼠标反向视差（`assets/home.js`）
 
 ## 本地预览
 
@@ -146,7 +146,47 @@ npm run preview
 
 推送到 `main` 分支即由 GitHub Pages 自动发布。注意保持 canonical / og:url / sitemap 中的 `https://www.bluewawa.media/` 与实际域名一致。
 
-## 待办
+## 页面质量修复（2026-10-06）
+
+- 首页与服务页使用 `assets/site.css` / `assets/site.js` 补齐窄屏菜单、锚点偏移与键盘操作。菜单使用原生 `details`，无 JavaScript 时也可展开；启用 JavaScript 后支持 Esc 关闭及页内跳转后的焦点转移。
+- 首页交互移至 `assets/home.js`。鼠标动画仅在可见首屏内响应，位置收敛后停止刷新；离开、滚动、切换标签页或开启减少动画时取消。首页及服务页的装饰动画在离屏或标签页隐藏时暂停。
+- 统一首页 FAQ 与对应 JSON-LD；90 天说明为评估周期。修复微信服务页在 320px 窄屏下标题裁切及首页隐藏返回按钮的键盘焦点问题。
+- 联系方式仍为 `mailto:`，页面明确提示需在邮件客户端发送；不表示已完成预约。
+
+首页与两张服务页的关键链接使用 Umami 原生属性事件（[官方文档](https://docs.umami.is/docs/track-events)）：
+
+| 事件 | 含义 |
+| --- | --- |
+| `contact-click` | 点击指向首页 Contact 区块的入口 |
+| `email-click` | 点击直接 Email 链接 |
+| `whatsapp-click` | 点击 WhatsApp 链接 |
+
+事件属性 `page` 为 `home` / `rednote` / `wechat`；`placement` 为 `nav` / `mobile-nav` / `hero` / `sample-work` / `getting-started` / `final-cta` / `contact` / `footer` 中适用的位置。这些事件仅代表点击，不代表发送、提交成功或预约完成。表单字段不作为事件属性发送；既有 Insights 事件命名保持不变。无需新增统计账号，部署后在现有 Umami 项目中查看。
+
+`npm run check` 额外检查上述链接的事件标记，以及首页 FAQ 可见答案与结构化数据的一致性。
+
+## 首页与合作说明精简（2026-10-06）
+
+- 首页将 Services 移到概念作品之后，提供 Rednote / WeChat 服务页直达入口。Services 聚焦服务内容，Why us 聚焦范围、审核和复盘，About 聚焦团队所在地与沟通方式；保留原有区块 ID、品牌主视觉和概念样例。
+- 两张服务页新增 `#getting-started`（Before we start），分别说明启动资料、需要约定的工作范围，以及需明确列出的费用或另行界定的开发工作。内容依据现有预算、试运营和微信启动指南，不构成固定报价或统一套餐。
+- 桌面与手机导航均可直达合作准备说明；区块提供对应指南链接及已有 Contact 入口，新入口沿用点击统计并以 `getting-started` 标明位置。
+
+## 可用模板与文章咨询入口（2026-10-06）
+
+- 达人合作简报、微信首月日历、代理商评估三篇文章提供完整空白工作表，可复制、下载 `.txt` 或单独打印。源文件位于 `content/worksheets/`，通过文章 JSON 元数据的 `worksheet.file` / `worksheet.title` 关联；构建时生成 `insights/assets/downloads/` 文件和页面预览，请勿直接编辑生成文件。
+- 下载使用原生链接，不挂接会接管跳转的统计事件；关闭 JavaScript 时仍能查看和下载。复制失败时选中文本供手动复制。打印按钮只输出工作表，普通浏览器打印仍可输出文章。
+- 九篇文章的咨询入口携带预设主题。`templates/contact-topics.mjs` 统一维护主题、按钮文案与提示，构建时更新首页 `CONTACT_TOPICS` 区块。`assets/contact.js` 仅接受预设主题，在邮件草稿中加入主题和对应指南链接，切换主题不会覆盖访客填写的内容。仍需用户在邮件客户端发送。
+- 检查命令为 `npm run build`、`npm run check`、`npm test`。检查覆盖模板源文件／页面／下载一致性、主题链接，以及邮件草稿、复制失败回退和打印清理逻辑。浏览器另行核对实际布局与交互。
+
+## 搜索主题、阅读路径与加载优化（2026-10-06）
+
+- 两张服务页的 H1 明确说明平台营销服务及 global brands，Rednote 标题与首屏同时说明 Xiaohongshu 名称，保留现有 URL。
+- 每篇文章的 JSON 元数据增加 `relatedGuides`：两个 `{ "slug": "目标文章", "reason": "阅读理由" }`。构建器检查目标存在、无重复且不推荐自身。文章底部按指定顺序输出阅读理由、标题和摘要，服务入口仍在正文之后。
+- 首页两张下方装饰图使用原生懒加载及 640 / 1280 / 1920 像素响应式资源，保持原有视差效果。图片为装饰用途，使用空 alt；区块高度不依赖图片加载。
+- 首页与服务页的中文字体使用 Google Fonts `text` 子集（[官方说明](https://developers.google.com/fonts/docs/getting_started#optimizing_your_font_requests)）。`scripts/font-subsets.mjs` 在构建时从源码提取中文字符，并保留 ASCII 与常用标点；拉丁字体沿用完整请求。修改中文后运行 `npm run build`，`npm run check` 会检测过期子集。动态输入的其他汉字使用系统字体回退。
+- 本地性能记录见 `docs/performance-2026-10-06.md`。本地预览数据不能当作线上 Core Web Vitals、真实移动网络表现或排名提升的证据。
+
+## 待办事项
 
 - [ ] Contact 区块中注释掉的 WeChat / LinkedIn 信息待账号就绪后启用
 - [ ] 联系表单升级为 Formspree（可选）

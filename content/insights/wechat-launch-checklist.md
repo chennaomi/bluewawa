@@ -14,7 +14,17 @@
   "ctaTitle": "Turn the checklist into a practical launch scope.",
   "ctaText": "Our WeChat services connect account planning, Chinese content, customer journeys and ongoing operations.",
   "service": "/wechat-marketing/",
-  "serviceLabel": "Explore WeChat services"
+  "serviceLabel": "Explore WeChat services",
+  "relatedGuides": [
+    {
+      "slug": "wechat-content-calendar",
+      "reason": "Next: plan your first month of content"
+    },
+    {
+      "slug": "evaluate-china-social-media-agency",
+      "reason": "Then: agree delivery ownership with your agency"
+    }
+  ]
 }
 ---
 

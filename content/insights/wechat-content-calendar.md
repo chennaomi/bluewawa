@@ -6,7 +6,7 @@
   "category": "WeChat",
   "categoryId": "wechat",
   "datePublished": "2026-09-14",
-  "dateModified": "2026-09-14",
+  "dateModified": "2026-10-06",
   "summary": "Build a manageable editorial month around introduction, evaluation, practical questions and follow-up. Includes a concept calendar and an approval workflow.",
   "takeaway": "Plan the first month around customer questions and the team's ability to answer them. Give each article a purpose, verified source material, an owner and a tested next step. Treat the calendar as a production plan; confirm publishing permissions and timing for the actual account.",
   "cover": "content-calendar",
@@ -14,7 +14,21 @@
   "ctaTitle": "Plan a month your team can deliver.",
   "ctaText": "We can help turn approved brand information into Chinese articles, an editorial schedule and a clear customer follow-up journey.",
   "service": "/wechat-marketing/",
-  "serviceLabel": "Explore WeChat content services"
+  "serviceLabel": "Explore WeChat content services",
+  "worksheet": {
+    "file": "wechat-content-calendar.txt",
+    "title": "Your first-month content plan"
+  },
+  "relatedGuides": [
+    {
+      "slug": "wechat-launch-checklist",
+      "reason": "Check: account and customer-journey readiness"
+    },
+    {
+      "slug": "evaluate-china-social-media-agency",
+      "reason": "Next: assess content review and delivery support"
+    }
+  ]
 }
 ---
 

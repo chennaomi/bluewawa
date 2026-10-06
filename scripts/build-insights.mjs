@@ -2,7 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Marked, Renderer } from 'marked';
-import { articlePage, indexPage, relatedLinks, redirectPage, origin } from '../templates/insights.mjs';
+import { articlePage, indexPage, relatedLinks, redirectPage, origin, escape } from '../templates/insights.mjs';
+import { contactTopics } from '../templates/contact-topics.mjs';
+import { updateChineseFonts } from './font-subsets.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sourceDir = path.join(root, 'content', 'insights');
@@ -23,6 +25,13 @@ const articles = fs.readdirSync(sourceDir).filter(file=>file.endsWith('.md')).ma
   }
   if (article.dateModified < article.datePublished) throw new Error(`${file}: modified date precedes publication`);
   if (!/^[a-z0-9-]+$/.test(article.cover) || !fs.existsSync(path.join(root,'insights','assets',`${article.cover}.svg`))) throw new Error(`${file}: missing cover`);
+  if (article.worksheet) {
+    const { file: worksheetFile, title } = article.worksheet;
+    if (typeof worksheetFile !== 'string' || !/^[a-z0-9-]+\.txt$/.test(worksheetFile) || typeof title !== 'string' || !title.trim()) throw new Error(`${file}: invalid worksheet`);
+    const text = fs.readFileSync(path.join(root, 'content', 'worksheets', worksheetFile), 'utf8').trim();
+    if (!text) throw new Error(`${file}: empty worksheet`);
+    article.worksheet = { file: worksheetFile, title, text: `${text}\n\nGuide: ${origin}/insights/${article.slug}/\n` };
+  }
   const headings = [];
   const usedIds = new Set();
   const renderer = new Renderer();
@@ -53,6 +62,14 @@ const articles = fs.readdirSync(sourceDir).filter(file=>file.endsWith('.md')).ma
 
 if (new Set(articles.map(article=>article.slug)).size !== articles.length) throw new Error('Duplicate article slugs');
 if (articles.length < 1) throw new Error('At least one article is required');
+const articleSlugs = new Set(articles.map(article => article.slug));
+for (const article of articles) {
+  const related = article.relatedGuides;
+  if (!Array.isArray(related) || related.length !== 2 || new Set(related.map(item => item.slug)).size !== related.length ||
+    related.some(item => !articleSlugs.has(item.slug) || item.slug === article.slug || typeof item.reason !== 'string' || !item.reason.trim())) {
+    throw new Error(`${article.slug}: provide two distinct relatedGuides with existing slugs and reading reasons`);
+  }
+}
 const routes = new Set(['assets', ...articles.map(article => article.slug)]);
 for (const article of articles) for (const alias of article.aliases || []) {
   if (routes.has(alias)) throw new Error(`Duplicate or reserved article alias: ${alias}`);
@@ -63,6 +80,11 @@ for (const article of articles) {
   const directory = path.join(root,'insights',article.slug);
   fs.mkdirSync(directory,{recursive:true});
   fs.writeFileSync(path.join(directory,'index.html'),articlePage(article,articles));
+  if (article.worksheet) {
+    const downloads = path.join(root, 'insights', 'assets', 'downloads');
+    fs.mkdirSync(downloads, { recursive: true });
+    fs.writeFileSync(path.join(downloads, article.worksheet.file), article.worksheet.text);
+  }
   for (const alias of article.aliases || []) {
     const aliasDirectory = path.join(root,'insights',alias);
     fs.mkdirSync(aliasDirectory,{recursive:true});
@@ -71,20 +93,28 @@ for (const article of articles) {
 }
 fs.writeFileSync(path.join(root,'insights','index.html'),indexPage(articles));
 
+// The same allowlist generates article links and the homepage's topic options.
+const homepage = path.join(root, 'index.html');
+const homeSource = fs.readFileSync(homepage, 'utf8');
+const topicMarker = /<!-- CONTACT_TOPICS:START -->[\s\S]*?<!-- CONTACT_TOPICS:END -->/;
+if (!topicMarker.test(homeSource)) throw new Error('Homepage is missing contact topic markers');
+const topicOptions = Object.entries(contactTopics).map(([id, topic]) => `<option value="${escape(id)}" data-prompt="${escape(topic.prompt)}">${escape(topic.label)}</option>`).join('\n');
+fs.writeFileSync(homepage, homeSource.replace(topicMarker, `<!-- CONTACT_TOPICS:START -->\n<option value="">General enquiry</option>\n${topicOptions}\n<!-- CONTACT_TOPICS:END -->`));
+
 const pages = [{file:'index.html',category:null},{file:'rednote-marketing/index.html',category:'rednote'},{file:'wechat-marketing/index.html',category:'wechat'}];
 for (const page of pages) {
   const file = path.join(root,page.file);
   const source = fs.readFileSync(file,'utf8');
   const marker = /<!-- INSIGHTS:START -->[\s\S]*?<!-- INSIGHTS:END -->/;
   if (!marker.test(source)) throw new Error(`${page.file}: missing insights insertion markers`);
-  fs.writeFileSync(file,source.replace(marker,`<!-- INSIGHTS:START -->\n${relatedLinks(articles,page.category)}\n<!-- INSIGHTS:END -->`));
+  fs.writeFileSync(file,updateChineseFonts(source.replace(marker,`<!-- INSIGHTS:START -->\n${relatedLinks(articles,page.category)}\n<!-- INSIGHTS:END -->`)));
 }
 
 const latestDate = articles.reduce((latest,article)=>article.dateModified > latest ? article.dateModified : latest,'2026-09-09');
 const sitemapEntries = [
-  {url:'/',date:'2026-09-14'},
-  {url:'/rednote-marketing/',date:'2026-09-14'},
-  {url:'/wechat-marketing/',date:'2026-09-14'},
+  {url:'/',date:'2026-10-06'},
+  {url:'/rednote-marketing/',date:'2026-10-06'},
+  {url:'/wechat-marketing/',date:'2026-10-06'},
   {url:'/insights/',date:latestDate},
   ...articles.map(article=>({url:`/insights/${article.slug}/`,date:article.dateModified}))
 ];

@@ -1,3 +1,4 @@
+import { contactTopics, contactHref } from './contact-topics.mjs';
 export const origin = 'https://www.bluewawa.media';
 export const escape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 export const dateLabel = date => new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`));
@@ -25,7 +26,7 @@ export function redirectPage(article) {
 }
 const schemaScript = schema => `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>`;
 
-function head({title, description, path, schema}) {
+function head({title, description, path, schema, worksheet = false}) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,6 +56,7 @@ function head({title, description, path, schema}) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/insights/assets/insights.css">
+${worksheet ? '<script defer src="/insights/assets/worksheet.js"></script>' : ''}
   ${schemaScript(schema)}
 </head>
 <body>
@@ -62,18 +64,18 @@ function head({title, description, path, schema}) {
   <a class="skip-link" href="#main-content">Skip to content</a>`;
 }
 
-function header() {
+function header(article) {
   const links = `<a href="/rednote-marketing/">Rednote</a><a href="/wechat-marketing/">WeChat</a><a href="/insights/" aria-current="${'true'}">Insights</a><a href="/#about">About</a>`;
   return `<header class="site-header"><nav class="site-nav shell" aria-label="Primary navigation">
     <a class="logo" href="/" aria-label="Bluewawa Media home"><span>Blue</span><b>wawa</b><i>.</i></a>
     <div class="desktop-links">${links}</div>
-    <a class="nav-contact" href="/#contact" data-umami-event="insights-contact-click">Let's talk <span aria-hidden="true">↗</span></a>
-    <details class="mobile-menu"><summary>Menu</summary><div>${links}<a href="/#contact">Contact</a></div></details>
+    <a class="nav-contact" href="${contactHref(article)}" data-umami-event="insights-contact-click">Let's talk <span aria-hidden="true">↗</span></a>
+    <details class="mobile-menu"><summary>Menu</summary><div>${links}<a href="${contactHref(article)}" data-umami-event="insights-contact-click">Contact</a></div></details>
   </nav></header>`;
 }
 
-function footer() {
-  return `<footer class="site-footer"><div class="shell footer-inner"><div><a class="logo" href="/" aria-label="Bluewawa Media home"><span>Blue</span><b>wawa</b><i>.</i></a><p>Local context. Clear next steps.<br>China social media marketing for global brands.</p></div><nav aria-label="Footer navigation"><a href="/insights/">All insights</a><a href="/rednote-marketing/">Rednote marketing</a><a href="/wechat-marketing/">WeChat marketing</a><a href="/#about">About Bluewawa</a><a href="/#contact">Contact</a></nav><p class="copyright">© 2026 Bluewawa Media</p></div></footer>
+function footer(article) {
+  return `<footer class="site-footer"><div class="shell footer-inner"><div><a class="logo" href="/" aria-label="Bluewawa Media home"><span>Blue</span><b>wawa</b><i>.</i></a><p>Local context. Clear next steps.<br>China social media marketing for global brands.</p></div><nav aria-label="Footer navigation"><a href="/insights/">All insights</a><a href="/rednote-marketing/">Rednote marketing</a><a href="/wechat-marketing/">WeChat marketing</a><a href="/#about">About Bluewawa</a><a href="${contactHref(article)}" data-umami-event="insights-contact-click">Contact</a></nav><p class="copyright">© 2026 Bluewawa Media</p></div></footer>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="70b4ca0b-05bd-4a04-8910-1d719dd67725"></script>
 </body>
 </html>
@@ -105,11 +107,9 @@ export function articlePage(article, articles) {
     {'@type':'BlogPosting','@id':`${origin}${path}#article`,headline:article.title,description:article.description,url:origin+path,mainEntityOfPage:origin+path,inLanguage:'en',articleSection:article.category,image:[`${origin}/og-image.png`],datePublished:`${article.datePublished}T09:00:00+08:00`,dateModified:`${article.dateModified}T09:00:00+08:00`,author:{'@type':'Organization',name:'Bluewawa Media',url:`${origin}/#about`},publisher:{'@type':'Organization',name:'Bluewawa Media',url:origin+'/',logo:{'@type':'ImageObject',url:origin+'/favicon.png'}}},
     {'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:origin+'/'},{'@type':'ListItem',position:2,name:'Insights',item:origin+'/insights/'},{'@type':'ListItem',position:3,name:article.title,item:origin+path}]}
   ]};
-  const toc = `<ol>${article.headings.filter(heading=>heading.depth===2).map(heading=>`<li><a href="#${heading.id}">${escape(heading.text)}</a></li>`).join('')}</ol>`;
-  const related = articles.filter(other=>other.slug!==article.slug)
-    .sort((a,b)=>Number(b.categoryId===article.categoryId)-Number(a.categoryId===article.categoryId))
-    .slice(0,2);
-  return head({title:article.title,description:article.description,path,schema}) + header() + `
+  const toc = `<ol>${article.headings.filter(heading=>heading.depth===2).map(heading=>`<li><a href="#${heading.id}">${escape(heading.text)}</a></li>`).join('')}${article.worksheet ? '<li><a href="#worksheet">Use the blank worksheet</a></li>' : ''}</ol>`;
+  const related = article.relatedGuides.map(item => ({...item, article: articles.find(other => other.slug === item.slug)}));
+  return head({title:article.title,description:article.description,path,schema,worksheet:!!article.worksheet}) + header(article) + `
   <main id="main-content">
     <div class="shell"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span><span>${escape(article.category)}</span></nav></div>
     <article>
@@ -118,16 +118,37 @@ export function articlePage(article, articles) {
         <aside class="desktop-toc"><nav aria-label="On this page"><p class="eyebrow">In this guide</p>${toc}</nav><a class="toc-back" href="/insights/">← All insights</a></aside>
         <div class="reading-column">
           <aside class="short-answer" aria-label="In brief"><span class="eyebrow">The short answer</span><p>${escape(article.takeaway)}</p></aside>
+${article.worksheet ? '<a class="worksheet-jump" href="#worksheet">Use the blank worksheet ↓ <span>Copy, download or print · No signup</span></a>' : ''}
           <details class="mobile-toc"><summary>In this guide</summary><nav aria-label="Article contents">${toc}</nav></details>
           <figure class="article-cover"><img src="/insights/assets/${article.cover}.svg" alt="${escape(article.coverAlt)}" width="1200" height="630"><figcaption>Bluewawa planning illustration${article.categoryId === 'rednote' ? ' · Concept example' : ''}</figcaption></figure>
           <div class="prose">${article.html}</div>
+${worksheetPanel(article)}
           <aside class="author-note" aria-label="About the author"><span class="author-monogram" aria-hidden="true">B.</span><div><h2>Bluewawa Media</h2><p>China-based social media localization for global brands. These guides explain our planning approach; concept examples are labelled where used.</p><a href="/#about">About our work ↗</a></div></aside>
-          <section class="article-cta" aria-labelledby="next-step-title"><p class="eyebrow">Your next step</p><h2 id="next-step-title">${escape(article.ctaTitle)}</h2><p>${escape(article.ctaText)}</p><div class="cta-links"><a href="${article.service}" data-umami-event="insights-service-click">${escape(article.serviceLabel)} ↗</a>${article.secondaryService ? `<a href="${article.secondaryService}" data-umami-event="insights-service-click">${escape(article.secondaryLabel)} ↗</a>` : ''}<a href="/#contact" data-umami-event="insights-contact-click">Discuss your brief ↗</a></div></section>
+          <section class="article-cta" aria-labelledby="next-step-title"><p class="eyebrow">Your next step</p><h2 id="next-step-title">${escape(article.ctaTitle)}</h2><p>${escape(article.ctaText)}</p><div class="cta-links"><a href="${article.service}" data-umami-event="insights-service-click">${escape(article.serviceLabel)} ↗</a>${article.secondaryService ? `<a href="${article.secondaryService}" data-umami-event="insights-service-click">${escape(article.secondaryLabel)} ↗</a>` : ''}<a href="${contactHref(article)}" data-umami-event="insights-contact-click" data-umami-event-topic="${escape(article.slug)}">${escape(contactTopics[article.slug]?.cta || 'Discuss your brief')} ↗</a></div></section>
         </div>
       </div>
     </article>
-    <section class="shell related-section" aria-labelledby="related-title"><div class="section-heading"><h2 id="related-title">Keep exploring.</h2><a href="/insights/">All insights ↗</a></div><div class="guide-grid">${related.map(other=>card(other)).join('')}</div></section>
-  </main>` + footer();
+    <section class="shell related-section" aria-labelledby="related-title"><div class="section-heading"><h2 id="related-title">Plan your next step.</h2><a href="/insights/">All insights ↗</a></div><div class="guide-grid">${related.map(item=>`<article class="reading-step"><p class="eyebrow">${escape(item.reason)}</p><h3><a href="${articleUrl(item.article)}">${escape(item.article.title)}</a></h3><p>${escape(item.article.summary)}</p><a class="text-link" href="${articleUrl(item.article)}" aria-label="Read ${escape(item.article.title)}">Read the guide ↗</a></article>`).join('')}</div></section>
+  </main>` + footer(article);
+}
+
+function worksheetPanel(article) {
+  const worksheet = article.worksheet;
+  if (!worksheet) return '';
+  return `<section class="worksheet" id="worksheet" aria-labelledby="worksheet-title">
+    <p class="eyebrow">Put this guide to work</p>
+    <h2 id="worksheet-title">${escape(worksheet.title)}</h2>
+    <p>Copy the blank worksheet into your own document and replace the prompts. No email address or signup needed.</p>
+    <div class="worksheet-actions">
+      <button type="button" data-copy-worksheet hidden>Copy worksheet</button>
+      <a href="/insights/assets/downloads/${escape(worksheet.file)}" download="${escape(worksheet.file)}">Download .txt</a>
+      <button type="button" data-print-worksheet hidden>Print worksheet</button>
+    </div>
+    <p class="worksheet-status" id="worksheet-status" role="status" aria-live="polite"></p>
+    <label for="worksheet-text">Blank worksheet — select the text to copy manually</label>
+    <textarea id="worksheet-text" readonly rows="12" spellcheck="false" aria-describedby="worksheet-status">${escape(worksheet.text)}</textarea>
+    <pre class="worksheet-print-content" aria-hidden="true">${escape(worksheet.text)}</pre>
+  </section>`;
 }
 
 export function relatedLinks(articles, category) {

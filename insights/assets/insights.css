@@ -11,3 +11,36 @@
 @media(max-width:540px){.shell{width:calc(100% - 40px)}.site-nav{gap:16px}.logo{font-size:24px}.nav-contact{display:none}.mobile-menu{margin-left:auto}.intro-grid h1{font-size:52px;letter-spacing:-2px}.intro-grid>div>p{font-size:16px}.eyebrow{font-size:10px;letter-spacing:1.5px}.topic-links a{font-size:11px}.featured-guide .guide-copy{padding:24px}.featured-guide h2{font-size:32px}.guide-section{padding-block:45px 50px}.guide-grid{grid-template-columns:1fr;gap:22px}.section-heading{display:block}.section-heading h2{font-size:30px;margin-bottom:12px}.guide-copy{padding:22px 0}.article-header h1{font-size:39px;letter-spacing:-1px}.article-deck{font-size:17px}.article-meta{font-size:11px}.short-answer{padding:22px}.short-answer p{font-size:17px}.prose{font-size:17px;line-height:1.85}.prose h2{font-size:29px;margin-top:38px}.prose blockquote{padding:20px;font-size:22px}.example-copy{padding:20px}.article-cta{padding:25px}.article-cta h2{font-size:29px}.author-note{gap:15px}.author-monogram{flex-basis:42px;height:42px;font-size:26px}.footer-inner{grid-template-columns:1fr;gap:24px}.footer-inner nav{justify-content:flex-start}.index-cta{padding-block:45px}.index-cta h2{font-size:42px}.article-cover{margin:25px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.site-header,.site-footer,.desktop-toc,.mobile-toc,.related-section,.article-cta,.skip-link{display:none}.shell{width:100%}.article-layout{display:block}.article-header h1{font-size:32pt}.prose{font-size:11pt}.prose h2{break-after:avoid;font-size:20pt}.table-scroll{overflow:visible}.table-scroll table{min-width:0;font-size:9pt}.article-cover{max-width:450px}.short-answer,.example-copy{break-inside:avoid}body{background:white;color:black}}
+
+/* Reusable worksheets are static content: download and manual copy need no JS. */
+.reading-step{min-width:0;border-top:2px solid var(--terra);padding:24px 0}
+.reading-step h3{font-size:28px;color:var(--navy);margin:16px 0}
+.reading-step>p:not(.eyebrow){font-size:16px;color:var(--muted)}
+.worksheet-jump{display:block;margin-top:20px;padding:16px 20px;border:1px solid var(--navy);color:var(--navy);font-size:15px;font-weight:600}
+.worksheet-jump span{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:4px}
+.worksheet{margin:48px 0;padding:30px;background:#eee9dc;border-top:3px solid var(--terra)}
+.worksheet h2{font-size:32px;color:var(--navy);margin:14px 0 18px}
+.worksheet>p:not(.eyebrow){font-size:15px;color:var(--muted)}
+.worksheet-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
+.worksheet-actions button,.worksheet-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border:1px solid var(--navy);background:transparent;color:var(--navy);font:600 13px/1.5 Inter,Arial,sans-serif;cursor:pointer}
+.worksheet-actions button:hover,.worksheet-actions a:hover{background:var(--navy);color:var(--paper);text-decoration:none}
+.worksheet-actions [hidden]{display:none}
+.worksheet-actions button:focus-visible,.worksheet textarea:focus-visible{outline:3px solid var(--terra);outline-offset:4px}
+.worksheet .worksheet-status{min-height:1.65em;margin-bottom:16px;color:var(--navy)}
+.worksheet label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:10px}
+.worksheet textarea{display:block;width:100%;min-height:280px;resize:vertical;border:1px solid #a5aab3;border-radius:0;padding:16px;background:var(--paper);color:var(--ink);font:14px/1.7 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.worksheet-print-content,#worksheet-print{display:none}
+@media(max-width:600px){.worksheet{padding:22px 18px}.worksheet h2{font-size:28px}.worksheet-actions>*{flex:1 1 140px}.worksheet textarea{font-size:16px}}
+
+@media print{
+  @page{margin:18mm}
+  html{scroll-behavior:auto}body{background:#fff;color:#000;font:11pt/1.5 Arial,sans-serif}
+  .site-header,.site-footer,.breadcrumbs,.desktop-toc,.mobile-toc,.article-cover,.related-section,.author-note,.article-cta,.worksheet-jump,.worksheet-actions,.worksheet-status,.worksheet label,.worksheet textarea,.skip-link{display:none!important}
+  .shell{width:auto;margin:0}.article-layout{display:block;padding:0}.article-header{padding:0 0 20px}.article-header h1{font-size:26pt;color:#000}.article-deck,.short-answer p{font-size:11pt}.article-meta{font-size:9pt}.short-answer{padding:14px;background:none;border:1px solid #aaa}
+  .prose{font-size:11pt;line-height:1.5}.prose h2{font-size:18pt;margin:24px 0 12px}.prose h3{font-size:14pt}.prose h2,.prose h3,.worksheet h2{break-after:avoid}
+  .table-scroll{overflow:visible;border:0}.table-scroll table{min-width:0;font-size:9pt}.table-scroll td,.table-scroll th{padding:8px;border:1px solid #aaa;background:#fff!important;color:#000}.table-scroll thead{display:table-header-group}.table-scroll tr{break-inside:avoid}
+  .worksheet{padding:0;margin:24px 0;border:0;background:none}.worksheet h2{font-size:18pt;color:#000}.worksheet-print-content{display:block}
+  .worksheet-print-content,#worksheet-print pre{white-space:pre-wrap;overflow-wrap:anywhere;font:10pt/1.55 Arial,sans-serif;margin:16px 0;color:#000}
+  body.printing-worksheet>:not(#worksheet-print){display:none!important}
+  body.printing-worksheet #worksheet-print{display:block}
+}

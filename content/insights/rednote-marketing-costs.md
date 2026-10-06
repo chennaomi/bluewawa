@@ -14,7 +14,17 @@
   "ctaTitle": "Ask for a budget you can assess line by line.",
   "ctaText": "Share your audience, available assets, intended scope and budget constraints. We can discuss the work required and identify what needs a separate quote.",
   "service": "/rednote-marketing/",
-  "serviceLabel": "Explore Rednote marketing services"
+  "serviceLabel": "Explore Rednote marketing services",
+  "relatedGuides": [
+    {
+      "slug": "rednote-90-day-pilot",
+      "reason": "Next: turn the budget into a bounded pilot"
+    },
+    {
+      "slug": "evaluate-china-social-media-agency",
+      "reason": "Then: compare the scope and evidence from agencies"
+    }
+  ]
 }
 ---
 

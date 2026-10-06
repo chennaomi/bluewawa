@@ -36,7 +36,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<!-- CHINESE_FONTS:START -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@400;700;900&amp;display=swap&amp;text=%20!%22%23%24%25%26'()*%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%C2%B7%E2%80%93%E2%80%94%E2%80%98%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A6%E3%80%82%E4%B8%80%E4%B8%8B%E4%B8%8D%E4%B8%9C%E4%B8%A4%E4%B8%AA%E4%B9%8E%E4%B9%9F%E4%B9%A6%E4%BA%86%E4%BA%8C%E4%BA%A4%E4%BA%AC%E4%BA%BA%E4%BB%8E%E4%BB%AC%E4%BC%97%E4%BC%A0%E4%BD%8F%E4%BD%A0%E4%BF%A1%E5%81%87%E5%84%BF%E5%85%88%E5%85%A5%E5%86%85%E5%86%8D%E5%86%B3%E5%87%A0%E5%87%BA%E5%89%8D%E5%8C%96%E5%8D%88%E5%8D%97%E5%8D%9A%E5%8E%BB%E5%8F%91%E5%8F%B0%E5%90%88%E5%90%8C%E5%91%8A%E5%91%A8%E5%92%8C%E5%92%A8%E5%93%87%E5%93%AA%E5%9B%A2%E5%9C%A8%E5%9C%B0%E5%9F%9F%E5%A4%9A%E5%A4%9C%E5%A4%A7%E5%A4%A9%E5%A4%B4%E5%A5%BD%E5%A7%8B%E5%AA%92%E5%AE%89%E5%AE%9A%E5%AE%9D%E5%AE%B9%E5%AE%BF%E5%B0%8F%E5%B0%B1%E5%B2%B8%E5%B9%B3%E5%BC%80%E5%BE%AE%E5%BF%AB%E6%83%B3%E6%84%8F%E6%85%A2%E6%88%91%E6%88%98%E6%88%BF%E6%89%8B%E6%8A%80%E6%8A%8A%E6%8A%96%E6%8B%BC%E6%8C%87%E6%8E%92%E6%90%BA%E6%95%A3%E6%95%B0%E6%96%B9%E6%97%A5%E6%97%B6%E6%98%AF%E6%99%AF%E6%9B%B4%E6%9C%89%E6%9C%9F%E6%9C%AB%E6%9C%AC%E6%9C%AF%E6%9D%A1%E6%9D%A5%E6%AD%A5%E6%B2%BF%E6%B3%95%E6%B5%B7%E6%B7%98%E6%BB%A1%E7%82%B9%E7%8C%AA%E7%8C%AB%E7%95%99%E7%95%A5%E7%9A%84%E7%9C%8B%E7%9D%80%E7%9D%A1%E7%9F%A5%E7%A7%81%E7%A8%8B%E7%AA%9D%E7%AB%99%E7%AC%AC%E7%B3%BB%E7%BA%A2%E7%BB%99%E7%BE%8E%E8%81%94%E8%83%BD%E8%90%A5%E8%93%9D%E8%9C%82%E8%A1%8C%E8%A7%89%E8%A7%A3%E8%AE%A1%E8%AF%81%E8%AF%84%E8%AF%89%E8%AF%A2%E8%B5%B0%E8%B5%B6%E8%B5%B7%E8%BE%B9%E8%BF%90%E8%BF%98%E8%BF%99%E8%BF%9B%E9%80%82%E9%86%92%E9%87%8C%E9%97%A8%E9%97%B4%E9%9F%B3%E9%A2%84%E9%A3%8E%E9%A3%9E%E9%A9%AC%E9%AA%8C%EF%BC%8C%EF%BC%9F" />
+<!-- CHINESE_FONTS:END -->
 <style>
   :root {
     --navy: #182E66;
@@ -66,7 +69,7 @@
   a { color: inherit; text-decoration: none; cursor: pointer; }
   button { font-family: inherit; cursor: pointer; }
   summary { cursor: pointer; }
-  .tag { cursor: pointer; }
+  .tag { cursor: default; }
   input, textarea { cursor: text; }
   a:focus-visible,
   button:focus-visible,
@@ -388,8 +391,8 @@
     font-size: clamp(18px, 2vw, 28px);
     line-height: 1.4;
     color: var(--cream-dim);
-    max-width: none;
-    white-space: nowrap;
+    max-width: 100%;
+    white-space: normal;
   }
   .hero-sub .zh { color: var(--yellow); font-weight: 600; }
   .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -619,9 +622,8 @@
     position: absolute;
     top: -20%; left: 0;
     width: 100%; height: 140%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: center;
     z-index: 0;
     will-change: transform;
   }
@@ -1219,6 +1221,8 @@
     outline: none;
     transition: border-color 0.2s;
   }
+  .contact-form input:focus-visible,
+  .contact-form textarea:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
   .contact-form input:focus,
   .contact-form textarea:focus { border-bottom-color: var(--yellow); }
   .contact-form textarea { resize: vertical; min-height: 80px; }
@@ -1391,6 +1395,7 @@
     display: flex; align-items: center; justify-content: center;
     box-shadow: 0 8px 24px rgba(15,13,19,0.4), 0 0 0 1px rgba(255,206,6,0.3);
     opacity: 0;
+    visibility: hidden;
     transform: translateY(20px) scale(0.85);
     pointer-events: none;
     transition: opacity 0.35s cubic-bezier(0.16,1,0.3,1),
@@ -1400,6 +1405,7 @@
   }
   .back-to-top.visible {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0) scale(1);
     pointer-events: auto;
   }
@@ -1476,7 +1482,6 @@
     "availableLanguage": ["en", "zh-CN"]
   },
   "sameAs": [
-    "https://www.linkedin.com/company/bluewawa-media",
     "https://www.facebook.com/profile.php?id=61590503946333",
     "https://www.tiktok.com/@bluewawa.media",
     "https://wa.me/8618611314374"
@@ -1485,10 +1490,10 @@
     "@type": "OfferCatalog",
     "name": "Services",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Operation", "description": "Rednote and WeChat account setup, content, community and paid ads." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Account Operations", "description": "Rednote and WeChat account planning, publishing, community workflows, creator coordination and reporting." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Localization", "description": "Native Chinese copywriting, cover design and short-video editing." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Development", "description": "WeChat Mini Programs, H5 campaign pages and data dashboards." } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consulting", "description": "China go-to-market strategy, platform planning and compliance." } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consulting", "description": "China launch priorities, platform planning, budgets and pilot scope." } }
     ]
   }
 }
@@ -1510,38 +1515,58 @@
     {
       "@type": "Question",
       "name": "Do we need a Chinese business entity to start?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. We help brands launch through cross-border setups first, then localize when the numbers justify it." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not in every case. Account options and available functions depend on your entity, market and intended activities. We review the setup before agreeing a launch scope."
+      }
     },
     {
       "@type": "Question",
       "name": "How long until we see results on Rednote?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Real traction in 60–90 days if content and seeding are done right. Anyone promising faster is selling you bots." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 90-day pilot provides time to test content, review audience signals and assess relevant enquiries. Results depend on your offer, starting point, scope and follow-up; the pilot is an evaluation period, not a guarantee of growth."
+      }
     },
     {
       "@type": "Question",
       "name": "What's a realistic budget for a 3-month pilot?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It depends on scope and platform mix. We'll size it together on the call — no surprises, no inflated retainers." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on scope and platform mix. We'll size it together on the call — no surprises, no inflated retainers."
+      }
     },
     {
       "@type": "Question",
       "name": "Do we need to be on both Rednote and WeChat?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. We'll recommend the right mix for your stage — usually Rednote first for discovery and reputation, then WeChat to convert and retain through Official Accounts, Mini Programs and private community." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. We'll recommend the right mix for your stage — usually Rednote first for discovery and reputation, then WeChat to convert and retain through Official Accounts, Mini Programs and private community (私域)."
+      }
     },
     {
       "@type": "Question",
       "name": "Can you build the tech — Mini Programs, H5, dashboards?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all in-house. WeChat Mini Programs, H5 campaign pages, membership systems and data dashboards, with WeChat Pay and logistics integration." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all in-house. WeChat Mini Programs, H5 campaign pages, membership systems and data dashboards — with WeChat Pay and logistics integration. Content and development sit on the same team, so nothing gets lost between vendors."
+      }
     },
     {
       "@type": "Question",
       "name": "How do you report progress and prove ROI?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Regular bilingual reports plus a shared live dashboard — content performance, audience profiles, engagement, leads and conversion funnels." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Regular bilingual reports plus a shared live dashboard — content performance, audience profiles, engagement, leads and conversion funnels. We tie content to outcomes you can read in English, not just likes."
+      }
     }
   ]
 }
 </script>
 <!-- ============ umami analytics script ============ -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="70b4ca0b-05bd-4a04-8910-1d719dd67725"></script>
+<link rel="stylesheet" href="/assets/site.css" />
+<script defer src="/assets/site.js"></script>
 </head>
 <body>
 
@@ -1552,13 +1577,25 @@
   <a href="#top" class="logo"><span class="b">Blue</span><span class="w">wawa</span><span class="dot">.</span></a>
   <div class="nav-links">
     <a href="#sample-work">Sample work</a>
-    <a href="#platforms">Platforms</a>
     <a href="#services">Services</a>
+    <a href="#platforms">Platforms</a>
     <a href="#why">Why us</a>
     <a href="#process">How we work</a>
     <a href="/insights/">Insights</a>
   </div>
-  <a href="#contact" class="nav-cta">Book a call →</a>
+  <details class="mobile-nav">
+        <summary>Menu</summary>
+        <div class="mobile-nav-links">
+          <a href="#sample-work">Sample work</a>
+          <a href="#services">Services</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#why">Why us</a>
+          <a href="#process">How we work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/#contact" data-umami-event="contact-click" data-umami-event-page="home" data-umami-event-placement="mobile-nav">Contact</a>
+        </div>
+      </details>
+      <a href="#contact" class="nav-cta" data-umami-event="contact-click" data-umami-event-page="home" data-umami-event-placement="nav">Let's talk →</a>
 </nav>
 </header>
 
@@ -1593,7 +1630,7 @@
       We help your brand get <span class="zh">seen</span>, <span class="zh">remembered</span>, and <span class="zh">grow</span> in China.
     </p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn-primary">Book a call →</a>
+      <a href="#contact" class="btn-primary" data-umami-event="contact-click" data-umami-event-page="home" data-umami-event-placement="hero">Let's talk →</a>
       <a href="#sample-work" class="btn-secondary">See sample work</a>
     </div>
   </div>
@@ -1712,7 +1749,55 @@
 
   <div class="samples-footer">
     <p>Both samples are self-initiated demonstrations for a fictional business. They illustrate our approach and proposed deliverables, not client engagements or measured campaign results.</p>
-    <a class="samples-contact" href="#contact">Discuss your brief →</a>
+    <a class="samples-contact" href="#contact" data-umami-event="contact-click" data-umami-event-page="home" data-umami-event-placement="sample-work">Discuss your brief →</a>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="block deep" id="services" aria-labelledby="services-title">
+  <div class="section-label">What we do</div>
+  <h2 class="section-title" id="services-title">Build your <em>China presence</em>.</h2>
+  <div class="service-routes" aria-label="Explore platform services">
+    <a href="/rednote-marketing/">Rednote marketing <span aria-hidden="true">↗</span></a>
+    <a href="/wechat-marketing/">WeChat marketing <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="services-grid">
+    <div class="service">
+      <div class="service-num">01</div>
+      <h3>Account Operations</h3>
+      <div class="zh-sub" lang="zh-CN">平台运营</div>
+      <ul>
+        <li>Account planning, publishing and community workflows</li>
+        <li>Creator coordination and campaign reporting</li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-num">02</div>
+      <h3>Content Localization</h3>
+      <div class="zh-sub" lang="zh-CN">内容本地化</div>
+      <ul>
+        <li>Chinese copy, cover design and short-video editing</li>
+        <li>Adaptation of global assets for local audiences</li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-num">03</div>
+      <h3>Development</h3>
+      <div class="zh-sub" lang="zh-CN">技术开发</div>
+      <ul>
+        <li>Mini Programs and mobile H5 campaign pages</li>
+        <li>Enquiry, membership and CRM integrations</li>
+      </ul>
+    </div>
+    <div class="service">
+      <div class="service-num">04</div>
+      <h3>Consulting</h3>
+      <div class="zh-sub" lang="zh-CN">战略咨询</div>
+      <ul>
+        <li>Audience, platform and launch priorities</li>
+        <li>Budget planning and a defined pilot scope</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -1720,7 +1805,7 @@
 <section class="block" id="platforms">
   <div class="section-label">Where We Play</div>
   <h2 class="section-title">Two <em>platforms</em>.<br />One <span class="terra">mission</span>.</h2>
-  <p style="font-size: 17px; color: var(--cream-dim); margin-bottom: 56px; max-width: 640px;">The two ecosystems that decide whether a brand exists in China: <strong style="color:var(--cream)">Rednote</strong> for discovery, <strong style="color:var(--cream)">WeChat</strong> for the closed loop. We work natively on both.</p>
+  <p style="font-size: 17px; color: var(--cream-dim); margin-bottom: 56px; max-width: 640px;">Two platforms with different roles in your China customer journey: <strong style="color:var(--cream)">Rednote</strong> for discovery, <strong style="color:var(--cream)">WeChat</strong> for the closed loop. We work natively on both.</p>
   <div class="platforms-grid">
     <article class="platform-card xhs">
       <div class="platform-logo">
@@ -1777,7 +1862,7 @@
 <section class="block" id="problem">
   <div class="section-label">The China Problem</div>
   <h2 class="section-title">So you want to <em>crack China</em>?</h2>
-  <p style="font-size: 18px; color: var(--cream-dim); margin-bottom: 48px; max-width: 600px;">Most brands try one of three things. None of them work.</p>
+  <p style="font-size: 18px; color: var(--cream-dim); margin-bottom: 48px; max-width: 600px;">Three common shortcuts can leave important gaps in a China launch.</p>
   <div class="problem-grid">
     <div class="problem-card">
       <div class="x">✕</div>
@@ -1787,12 +1872,12 @@
     <div class="problem-card">
       <div class="x">✕</div>
       <h3>"We'll translate our English content."</h3>
-      <p>A direct translation in China reads like a robot wrote it. Chinese consumers can smell foreign copy from a mile away (字面翻译 = 翻车).</p>
+      <p>Translation alone can miss the questions, references and formats that make content useful to a Chinese audience.</p>
     </div>
     <div class="problem-card">
       <div class="x">✕</div>
       <h3>"We'll hire one KOL and see."</h3>
-      <p>China runs on KOC seeding (素人种草), not one-off influencer drops. One post ≠ a strategy.</p>
+      <p>A creator post needs a clear brief, an audience fit and a follow-up plan. One post alone cannot validate a whole strategy.</p>
     </div>
   </div>
   <p class="problem-closing">You don't need a translator.<br />You need a <span class="yellow">localizer</span>.</p>
@@ -1800,7 +1885,7 @@
 
 <!-- ============ INTERLUDE 1 ============ -->
 <section class="interlude dark">
-  <div class="parallax-bg" data-speed="0.35" style="background-image: url('https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1920&q=80&auto=format&fit=crop');"></div>
+  <img class="parallax-bg" data-speed="0.35" src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1920&amp;q=80&amp;auto=format&amp;fit=crop" srcset="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=640&amp;q=80&amp;auto=format&amp;fit=crop 640w, https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1280&amp;q=80&amp;auto=format&amp;fit=crop 1280w, https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1920&amp;q=80&amp;auto=format&amp;fit=crop 1920w" sizes="100vw" loading="lazy" decoding="async" alt="" aria-hidden="true" />
   <div class="interlude-content">
     <div class="section-label">A different playbook</div>
     <h2>There's a <em>better way</em>.<br />有更好的方法。</h2>
@@ -1808,95 +1893,37 @@
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="block deep" id="services">
-  <div class="section-label">What We Do</div>
-  <h2 class="section-title">Four things. We do them <em>well</em>.</h2>
-  <div class="services-grid">
-    <div class="service">
-      <div class="service-num">01</div>
-      <h3>Social Operation</h3>
-      <div class="zh-sub">平台运营</div>
-      <p class="tagline">We run your accounts like locals, because we are.</p>
-      <ul>
-        <li>Rednote (小红书) account setup, seeding-note matrix, search keywords</li>
-        <li>WeChat (微信) Official Account, Channels (视频号) + Mini Program ops</li>
-        <li>Private community (私域) building, KOL/KOC campaigns &amp; paid ads</li>
-      </ul>
-    </div>
-    <div class="service">
-      <div class="service-num">02</div>
-      <h3>Content Localization</h3>
-      <div class="zh-sub">内容本地化</div>
-      <p class="tagline">Not translation. Re-creation.</p>
-      <ul>
-        <li>Native Chinese copywriting by humans who grew up here</li>
-        <li>Cover design + short-video editing tuned to Rednote &amp; Channels</li>
-        <li>KOL & KOC campaigns with real engagement, not bot views</li>
-      </ul>
-    </div>
-    <div class="service">
-      <div class="service-num">03</div>
-      <h3>Development</h3>
-      <div class="zh-sub">技术开发</div>
-      <p class="tagline">Tech that actually works inside the Great Firewall.</p>
-      <ul>
-        <li>WeChat Mini Programs (小程序)</li>
-        <li>H5 campaign pages</li>
-        <li>CRM + private traffic (私域) integration</li>
-      </ul>
-    </div>
-    <div class="service">
-      <div class="service-num">04</div>
-      <h3>Consulting</h3>
-      <div class="zh-sub">战略咨询</div>
-      <p class="tagline">Before you spend money, talk to us.</p>
-      <ul>
-        <li>China go-to-market strategy</li>
-        <li>Platform & budget planning</li>
-        <li>Compliance: ICP filing (ICP 备案), ad law, cross-border</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- ============ INTERLUDE 2 ============ -->
 <section class="interlude warm">
-  <div class="parallax-bg" data-speed="0.4" style="background-image: url('https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=1920&q=80&auto=format&fit=crop');"></div>
+  <img class="parallax-bg" data-speed="0.4" src="https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=1920&amp;q=80&amp;auto=format&amp;fit=crop" srcset="https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=640&amp;q=80&amp;auto=format&amp;fit=crop 640w, https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=1280&amp;q=80&amp;auto=format&amp;fit=crop 1280w, https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=1920&amp;q=80&amp;auto=format&amp;fit=crop 1920w" sizes="100vw" loading="lazy" decoding="async" alt="" aria-hidden="true" />
   <div class="interlude-content">
     <div class="section-label">The pace</div>
     <h2>China moves at<br />the <em>speed of social</em>.</h2>
-    <p>Hesitate, and your competitor already owns the hashtag. <span class="zh">慢一步，少一年。</span></p>
+    <p>Start with a focused test. Learn from the response and refine your next move. <span class="zh">先验证，再前进。</span></p>
   </div>
 </section>
 
 <!-- ============ WHY ============ -->
-<section class="block" id="why">
+<section class="block" id="why" aria-labelledby="why-title">
   <div class="section-label">Why Bluewawa</div>
-  <h2 class="section-title">Why brands <em>choose us</em>.</h2>
-  <div class="why-grid">
+  <h2 class="section-title" id="why-title">Know what happens <em>next</em>.</h2>
+  <div class="why-grid delivery-principles">
     <div class="pillar">
       <div class="pillar-num">01</div>
-      <h3>Sharp <em>focus</em>.</h3>
-      <p>We only do China social media localization — Rednote and WeChat — with a systematic, repeatable methodology. No jack-of-all-trades.</p>
+      <h3>Define the <em>scope</em>.</h3>
+      <p>Agree deliverables, responsibilities and budget before execution, with separate decisions for additional production, creators or media.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">02</div>
-      <h3>Blended <em>team</em>.</h3>
-      <p>A China &amp; international team means no cultural mismatch and barrier-free English communication. You get the local context without the language gap.</p>
+      <h3>Review with <em>context</em>.</h3>
+      <p>Review Chinese drafts with English explanations. Confirm product facts, creative choices and customer destinations before publishing.</p>
     </div>
     <div class="pillar">
       <div class="pillar-num">03</div>
-      <h3>Content <em>+ tech engine</em>.</h3>
-      <p>We write notes that actually perform <em>and</em> build the Mini Programs, H5 and dashboards behind them. One team, not five vendors stitched together.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-num">04</div>
-      <h3>Transparent <em>reporting</em>.</h3>
-      <p>Regular bilingual reports on growth, engagement, leads and conversion — progress you can see and understand. No "engagement rate" smoke screens.</p>
+      <h3>Learn from <em>evidence</em>.</h3>
+      <p>Separate delivery, audience signals and verified enquiries. Use each review to decide what to continue, adjust or stop.</p>
     </div>
   </div>
-  <p class="problem-closing" style="margin-top:64px;">Not just an operations agency — <span class="yellow">your China partner</span>.</p>
 </section>
 
 <!-- ============ PROCESS ============ -->
@@ -1960,11 +1987,11 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary>Do we need a Chinese business entity to start?</summary>
-      <div class="answer">No. We help brands launch through cross-border (跨境) setups first, then localize when the numbers justify it.</div>
+      <div class="answer">Not in every case. Account options and available functions depend on your entity, market and intended activities. We review the setup before agreeing a launch scope.</div>
     </details>
     <details class="faq-item">
       <summary>How long until we see results on Rednote?</summary>
-      <div class="answer">Real traction in 60–90 days if content + seeding are done right. Anyone promising faster is selling you bots.</div>
+      <div class="answer">A 90-day pilot provides time to test content, review audience signals and assess relevant enquiries. Results depend on your offer, starting point, scope and follow-up; the pilot is an evaluation period, not a guarantee of growth.</div>
     </details>
     <details class="faq-item">
       <summary>What's a realistic budget for a 3-month pilot?</summary>
@@ -1986,38 +2013,22 @@
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section class="block deep" id="about">
+<section class="block deep" id="about" aria-labelledby="about-title">
   <div class="section-label">About</div>
-  <h2 class="section-title">Who <em>we are</em>.</h2>
-  <div class="about">
-    <div class="about-facts">
-      <div class="about-facts-seal">中国</div>
-      <div class="fact">
-        <div class="fact-num">01</div>
-        <h3>Based in <em>China</em>.</h3>
-        <div class="zh">基于中国 · 服务世界</div>
-        <p>We live and work where your customers scroll, search and decide. No timezone telephone games, no second-hand context.</p>
-      </div>
-      <div class="fact">
-        <div class="fact-num">02</div>
-        <h3><em>Bilingual</em> team.</h3>
-        <div class="zh">双语团队 · 无缝沟通</div>
-        <p>A blended China &amp; international crew across strategy, content, design and dev. English in, native Chinese out.</p>
-      </div>
-      <div class="fact">
-        <div class="fact-num">03</div>
-        <h3>In-house, <em>not outsourced</em>.</h3>
-        <div class="zh">自有团队 · 不外包</div>
-        <p>Every post, video, page and Mini Program is built by our own team. No freelancer roulette, no vendor stitching.</p>
-      </div>
+  <h2 class="section-title" id="about-title">Your team, <em>in China</em>.</h2>
+  <div class="about about-brief">
+    <div class="about-text">
+      <p><strong>Bluewawa Media is a China-based team serving overseas brands.</strong></p>
+      <p>Strategy, content, design and development work together, with English communication and native Chinese execution.</p>
     </div>
-    <div class="about-right">
-      <div class="about-text">
-        <p><strong>Bluewawa Media is a China-based, bilingual social media localization partner.</strong> We help overseas brands grow on Rednote (小红书) and WeChat (微信) — through content that doesn't feel translated and strategy that doesn't feel borrowed.</p>
-        <p>A blended China &amp; international team across strategy, content, design, and dev. We're not the biggest. We're the ones who actually pick up the phone.</p>
+    <div class="about-facts">
+      <div class="fact">
+        <h3>Local <em>context</em>.</h3>
+        <p>Based in China, working with the platforms and audiences your brand wants to reach.</p>
       </div>
-      <div class="about-quote">
-        "Content that doesn't feel translated. Strategy that doesn't feel <span class="yellow">borrowed</span>."
+      <div class="fact">
+        <h3>Clear <em>communication</em>.</h3>
+        <p>Discuss briefs, approvals and reports in English. Our working time zone is GMT+8.</p>
       </div>
     </div>
   </div>
@@ -2030,7 +2041,8 @@
   <p style="font-size: 18px; color: var(--cream-dim); max-width: 600px; margin-bottom: 8px;">Your product already earned its audience everywhere else. China is the gap — let's close it. 30-minute call, no deck, no pitch.</p>
 
   <div class="contact-grid">
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" aria-describedby="contact-help">
+      <p id="contact-help" class="contact-help">This form opens your email app with a draft. Send the email there to request a call.</p>
       <div class="field">
         <label for="contact-name">Your name</label>
         <input id="contact-name" type="text" name="name" autocomplete="name" required />
@@ -2048,16 +2060,34 @@
         <input id="contact-country" type="text" name="country" autocomplete="country-name" />
       </div>
       <div class="field">
+        <label for="contact-topic">What would you like to discuss? (optional)</label>
+        <select id="contact-topic" name="topic" aria-describedby="contact-topic-help">
+          <!-- CONTACT_TOPICS:START -->
+<option value="">General enquiry</option>
+<option value="rednote-vs-wechat" data-prompt="Tell us who you want to reach and what you want them to do next.">Choosing Rednote or WeChat</option>
+<option value="rednote-content-localization" data-prompt="Tell us about your audience, existing assets and the content you need to adapt.">Rednote content localization</option>
+<option value="wechat-launch-checklist" data-prompt="Share your account status, intended customer journey and what is ready for launch.">WeChat launch planning</option>
+<option value="rednote-keyword-research" data-prompt="Describe your category, audience and the questions your content should answer.">Rednote keyword research</option>
+<option value="rednote-creator-brief" data-prompt="Share the content idea, proposed deliverables and any creator or production constraints.">Rednote creator collaboration</option>
+<option value="wechat-content-calendar" data-prompt="Tell us about your customer journey, available assets and review capacity.">WeChat content planning</option>
+<option value="rednote-marketing-costs" data-prompt="Share your intended scope, timing and budget constraints, if you have them.">Rednote budget and scope</option>
+<option value="rednote-90-day-pilot" data-prompt="What should a first pilot help you learn, and what can your team support?">Rednote pilot planning</option>
+<option value="evaluate-china-social-media-agency" data-prompt="Share your priorities, required deliverables and the evidence you need to assess fit.">Agency fit and delivery scope</option>
+<!-- CONTACT_TOPICS:END -->
+        </select>
+        <p id="contact-topic-help" class="contact-topic-help" aria-live="polite">Choose a topic, or describe your plans below.</p>
+      </div>
+      <div class="field">
         <label for="contact-message">What are you trying to do in China?</label>
         <textarea id="contact-message" name="message" rows="3"></textarea>
       </div>
-      <button type="submit">Book my free China-readiness call →</button>
+      <button type="submit">Open email to request a call →</button>
     </form>
 
     <div class="contact-info">
       <h3>Other ways to reach us</h3>
-      <p><strong>Email</strong><a href="mailto:hello@bluewawa.media">hello@bluewawa.media</a></p>
-      <p><strong>WhatsApp</strong><a href="https://wa.me/8618611314374" target="_blank" rel="noopener noreferrer">+86 186 1131 4374</a></p>
+      <p><strong>Email</strong><a href="mailto:hello@bluewawa.media" data-umami-event="email-click" data-umami-event-page="home" data-umami-event-placement="contact">hello@bluewawa.media</a></p>
+      <p><strong>WhatsApp</strong><a href="https://wa.me/8618611314374" target="_blank" rel="noopener noreferrer" data-umami-event="whatsapp-click" data-umami-event-page="home" data-umami-event-placement="contact">+86 186 1131 4374</a></p>
       <p><strong>Facebook</strong><a href="https://www.facebook.com/profile.php?id=61590503946333" target="_blank" rel="noopener noreferrer">facebook.com/bluewawa</a></p>
       <p><strong>TikTok</strong><a href="https://www.tiktok.com/@bluewawa.media" target="_blank" rel="noopener noreferrer">@bluewawa.media</a></p>
       <!-- <p><strong>WeChat</strong>Scan QR or search: bluewawa_media</p>
@@ -2090,11 +2120,11 @@
         <a href="#about">About</a>
         <a href="#why">Why us</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" data-umami-event="contact-click" data-umami-event-page="home" data-umami-event-placement="footer">Contact</a>
       </div>
       <div class="footer-col">
         <h2>Social</h2>
-        <a href="https://wa.me/8618611314374" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://wa.me/8618611314374" target="_blank" rel="noopener noreferrer" data-umami-event="whatsapp-click" data-umami-event-page="home" data-umami-event-placement="footer">WhatsApp</a>
         <a href="https://www.tiktok.com/@bluewawa.media" target="_blank" rel="noopener noreferrer">TikTok</a>
         <a href="https://www.facebook.com/profile.php?id=61590503946333" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
@@ -2112,204 +2142,8 @@
   <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script>
-(function() {
-  // Skip interactions on touch devices and reduced-motion users
-  const isTouch = window.matchMedia('(hover: none)').matches;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (isTouch || reducedMotion) return;
-
-  const hero = document.querySelector('.hero');
-  const spotlight = document.querySelector('.cursor-spotlight');
-  const headline = document.querySelector('.hero-headline');
-  if (!hero) return;
-
-  let targetX = 0, targetY = 0;
-  let currentX = 0, currentY = 0;
-  let inHero = false;
-
-  hero.addEventListener('mouseenter', () => { inHero = true; });
-  hero.addEventListener('mouseleave', () => {
-    inHero = false;
-    if (headline) headline.style.transform = '';
-  });
-
-  hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
-    targetX = e.clientX - rect.left;
-    targetY = e.clientY - rect.top;
-  });
-
-  function tick() {
-    // Lerp for smooth follow
-    currentX += (targetX - currentX) * 0.12;
-    currentY += (targetY - currentY) * 0.12;
-
-    if (spotlight && inHero) {
-      spotlight.style.transform = `translate(${currentX - 300}px, ${currentY - 300}px)`;
-    }
-
-    if (headline && inHero) {
-      const rect = hero.getBoundingClientRect();
-      const nx = (currentX / rect.width - 0.5) * 2;
-      const ny = (currentY / rect.height - 0.5) * 2;
-      headline.style.transform =
-        `perspective(1400px) rotateX(${ny * -2.5}deg) rotateY(${nx * 3}deg) translateZ(0)`;
-    }
-
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-
-  // Magnetic effect on buttons
-  const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .tag');
-  magneticBtns.forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const strength = btn.classList.contains('tag') ? 0.25 : 0.35;
-      btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-    });
-  });
-
-  // Subtle parallax on the floating seal (counter to mouse for depth)
-  const seal = document.querySelector('.seal-floating');
-  if (seal) {
-    hero.addEventListener('mousemove', (e) => {
-      const rect = hero.getBoundingClientRect();
-      const nx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      const ny = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-      seal.style.setProperty('--mx', `${nx * -20}px`);
-      seal.style.setProperty('--my', `${ny * -20}px`);
-    });
-  }
-})();
-
-// Back to top button
-(function() {
-  const btn = document.querySelector('.back-to-top');
-  if (!btn) return;
-
-  const threshold = 600;
-  let ticking = false;
-
-  function check() {
-    if (window.scrollY > threshold) {
-      btn.classList.add('visible');
-    } else {
-      btn.classList.remove('visible');
-    }
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(check);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Magnetic effect
-  const isTouch = window.matchMedia('(hover: none)').matches;
-  if (!isTouch) {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.setProperty('--bx', `${x * 0.3}px`);
-      btn.style.setProperty('--by', `${y * 0.3}px`);
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.setProperty('--bx', '0px');
-      btn.style.setProperty('--by', '0px');
-    });
-  }
-})();
-
-// Scroll parallax for interlude background images
-(function() {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) return;
-
-  const parallaxLayers = document.querySelectorAll('.parallax-bg');
-  if (!parallaxLayers.length) return;
-
-  let ticking = false;
-
-  function updateParallax() {
-    const viewportH = window.innerHeight;
-    parallaxLayers.forEach(layer => {
-      const parent = layer.parentElement;
-      const rect = parent.getBoundingClientRect();
-      // Only update if section is roughly in viewport (perf)
-      if (rect.bottom < -200 || rect.top > viewportH + 200) return;
-      const speed = parseFloat(layer.dataset.speed || 0.35);
-      // Center-based offset — when section center is at viewport center, offset = 0
-      const sectionCenter = rect.top + rect.height / 2;
-      const viewportCenter = viewportH / 2;
-      const offset = (viewportCenter - sectionCenter) * speed;
-      layer.style.transform = `translate3d(0, ${offset}px, 0)`;
-    });
-    ticking = false;
-  }
-
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
-  updateParallax();
-})();
-
-// Contact form — open user's email client with a prefilled message
-(function() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-  const TO = 'hello@bluewawa.media';
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const get = (k) => (data.get(k) || '').toString().trim();
-    const name = get('name');
-    const company = get('company');
-    const email = get('email');
-    const country = get('country');
-    const message = get('message');
-
-    const subject = `New China-readiness inquiry — ${name}${company ? ' / ' + company : ''}`;
-    const body =
-`Hi Bluewawa team,
-
-I'd like to book a free China-readiness call.
-
-— Name: ${name}
-— Company: ${company || '—'}
-— Work email: ${email}
-— Country / region: ${country || '—'}
-
-What I'm trying to do in China:
-${message || '(not specified)'}
-
-Thanks!`;
-
-    const href = `mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = href;
-  });
-})();
-</script>
+<script defer src="/assets/home.js"></script>
+<script defer src="/assets/contact.js"></script>
 
 </body>
 </html>

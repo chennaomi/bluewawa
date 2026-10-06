@@ -1,7 +1,9 @@
 ---
 {
   "slug": "rednote-content-localization",
-  "aliases": ["xiaohongshu-content-localization"],
+  "aliases": [
+    "xiaohongshu-content-localization"
+  ],
   "title": "How to Localize Brand Content for Rednote",
   "description": "A worked Rednote content localization example: turn an English brief into Chinese headlines, a cover and a note, with practical review and handover steps.",
   "category": "Rednote",
@@ -15,7 +17,17 @@
   "ctaTitle": "Bring a brief. Start with a focused content scope.",
   "ctaText": "See how our Rednote services connect research, native Chinese copy, creative production and reporting.",
   "service": "/rednote-marketing/",
-  "serviceLabel": "Explore Rednote content services"
+  "serviceLabel": "Explore Rednote content services",
+  "relatedGuides": [
+    {
+      "slug": "rednote-creator-brief",
+      "reason": "Next: turn the content direction into a creator brief"
+    },
+    {
+      "slug": "rednote-keyword-research",
+      "reason": "Check: support your creative choices with research"
+    }
+  ]
 }
 ---
 

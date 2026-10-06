@@ -1,0 +1,107 @@
+/* Shared navigation and accessibility fixes for the three marketing pages. */
+html { scroll-padding-top: 104px; }
+#sample-work { scroll-margin-top: 0; }
+header nav { position: relative; }
+.mobile-nav { display: none; }
+.hero-grid > * { min-width: 0; }
+.contact-help { color: var(--cream-dim); font-size: 14px; margin-bottom: 24px; }
+.contact-info a { overflow-wrap: anywhere; }
+.contact-form button { max-width: 100%; }
+.contact-form select {
+  width: 100%; min-height: 48px; padding: 12px; border: 1px solid var(--cream-dimmer);
+  border-radius: 0; background: var(--navy-deep); color: var(--cream); font: inherit;
+}
+.contact-form select:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
+.contact-topic-help { margin-top: 10px; color: var(--cream-dim); font-size: 14px; line-height: 1.6; }
+
+/* Concise service choices and delivery principles on the homepage. */
+.service-routes { display: flex; flex-wrap: wrap; gap: 16px; margin: -12px 0 36px; }
+.service-routes a {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  min-height: 48px; padding: 14px 20px; border: 1px solid var(--yellow);
+  color: var(--yellow); font-size: 15px; font-weight: 600;
+}
+.service-routes a:hover { background: var(--yellow); color: var(--black); }
+.why-grid.delivery-principles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.delivery-principles .pillar { padding-bottom: 0; }
+.about-brief .fact { padding: 24px 0; }
+.about-brief .fact h3 { font-size: 26px; }
+
+/* Shared pre-engagement information, with platform-specific content. */
+main section.engagement { padding: 96px 0; background: var(--navy-deep); color: var(--cream); }
+.engagement .section-label { color: var(--yellow); }
+.engagement .section-title { margin: 20px 0 24px; }
+.engagement-intro { max-width: 780px; color: var(--cream-dim); font-size: 17px; line-height: 1.75; }
+.engagement-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
+.engagement-card { padding: 28px; border-top: 2px solid var(--yellow); background: var(--navy); }
+.engagement-number { color: var(--yellow); font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; }
+.engagement-card h3 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.15; margin-bottom: 24px; }
+.engagement-card ul { padding-left: 18px; color: var(--cream-dim); font-size: 14px; line-height: 1.75; }
+.engagement-card li + li { margin-top: 16px; }
+.engagement-card li::marker { color: var(--yellow); }
+.engagement-note { max-width: 900px; margin-top: 28px; color: var(--cream-dim); font-size: 14px; line-height: 1.75; }
+.engagement-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 24px; }
+.engagement-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--yellow); font-size: 14px; border-bottom: 1px solid var(--line); }
+.engagement-links a:hover { border-color: var(--yellow); }
+
+@media (max-width: 960px) {
+  .why-grid.delivery-principles, .engagement-grid { grid-template-columns: 1fr; }
+  .engagement-card { padding: 24px; }
+  main section.engagement { padding: 72px 0; }
+}
+@media (max-width: 600px) {
+  #services .service { padding: 32px 24px; }
+  .service-routes { margin-top: 0; }
+  .service-routes a { width: 100%; }
+}
+.hero.motion-paused .orb,
+.hero.motion-paused .orbit,
+.hero.motion-paused .seal-floating,
+.hero.motion-paused .scroll-indicator .line,
+.contact-section.motion-paused::before,
+.contact-section.motion-paused::after { animation-play-state: paused; }
+
+@media (max-width: 1100px) {
+  header nav { gap: 12px; }
+  header .nav-links { display: none; }
+  header .logo { white-space: nowrap; flex-shrink: 0; }
+  header .nav-cta { white-space: nowrap; }
+  .mobile-nav { display: block; margin-left: auto; }
+  .mobile-nav > summary {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 8px 12px; list-style: none;
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer;
+    line-height: 1.4; letter-spacing: normal;
+    border: 1px solid var(--line); color: var(--cream);
+  }
+  .mobile-nav > summary::-webkit-details-marker { display: none; }
+  .mobile-nav > summary::after {
+    content: '+'; position: static; margin-left: 8px;
+    color: inherit; font: inherit; flex-shrink: 0;
+  }
+  .mobile-nav[open] > summary::after { content: '−'; }
+  .mobile-nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    max-height: calc(100svh - 100px); overflow-y: auto;
+    display: grid; gap: 4px; padding: 16px 24px;
+    background: var(--navy-deep); border-bottom: 1px solid var(--line);
+    box-shadow: 0 16px 24px rgba(0,0,0,.2);
+  }
+  .mobile-nav-links a { display: flex; align-items: center; min-height: 44px; padding: 8px; }
+  .mobile-nav-links a:hover { color: var(--yellow); }
+}
+
+@media (max-width: 400px) {
+  header nav { padding-left: 16px; padding-right: 16px; gap: 8px; }
+  header .logo { font-size: 19px; }
+  header .nav-cta { padding: 12px 10px; font-size: 11px; }
+  .mobile-nav > summary { padding: 8px; font-size: 13px; }
+  .hero-grid h1 { font-size: clamp(40px, 13vw, 52px); }
+  .hero-grid .eyebrow { flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .hero-headline, .hl-word, .seal-floating, .parallax-bg { transform: none !important; }
+}
